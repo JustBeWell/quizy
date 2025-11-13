@@ -1,0 +1,255 @@
+{
+  "name": "Sistema Financiero y Dinero",
+  "questions": [
+    {
+      "id": 1,
+      "question": "El Banco Central Europeo tiene como objetivo principal:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Maximizar el empleo"
+        },
+        {
+          "key": "b",
+          "text": "Mantener la estabilidad de precios"
+        },
+        {
+          "key": "c",
+          "text": "Aumentar el PIB"
+        },
+        {
+          "key": "d",
+          "text": "Recaudar impuestos"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Las funciones del dinero son:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Medio de cambio, unidad de cuenta, depósito de valor"
+        },
+        {
+          "key": "b",
+          "text": "Solo medio de cambio"
+        },
+        {
+          "key": "c",
+          "text": "Solo decoración"
+        },
+        {
+          "key": "d",
+          "text": "Ninguna función"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Los bancos comerciales:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Solo guardan dinero"
+        },
+        {
+          "key": "b",
+          "text": "Captan depósitos y conceden préstamos"
+        },
+        {
+          "key": "c",
+          "text": "Solo prestan"
+        },
+        {
+          "key": "d",
+          "text": "Emiten billetes"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "El tipo de interés es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "El precio del dinero"
+        },
+        {
+          "key": "b",
+          "text": "Un impuesto"
+        },
+        {
+          "key": "c",
+          "text": "Un salario"
+        },
+        {
+          "key": "d",
+          "text": "Una tasa de desempleo"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "La bolsa de valores es un mercado donde se negocian:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Solo bienes físicos"
+        },
+        {
+          "key": "b",
+          "text": "Acciones y otros valores"
+        },
+        {
+          "key": "c",
+          "text": "Solo inmuebles"
+        },
+        {
+          "key": "d",
+          "text": "Solo alimentos"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Un accionista es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Un empleado"
+        },
+        {
+          "key": "b",
+          "text": "Un propietario parcial de la empresa"
+        },
+        {
+          "key": "c",
+          "text": "Un cliente"
+        },
+        {
+          "key": "d",
+          "text": "Un proveedor"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "El riesgo financiero se refiere a:",
+      "options": [
+        {
+          "key": "a",
+          "text": "La posibilidad de pérdidas"
+        },
+        {
+          "key": "b",
+          "text": "Ganar siempre"
+        },
+        {
+          "key": "c",
+          "text": "No invertir"
+        },
+        {
+          "key": "d",
+          "text": "Solo ahorrar"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "La diversificación de inversiones busca:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Aumentar el riesgo"
+        },
+        {
+          "key": "b",
+          "text": "Reducir el riesgo"
+        },
+        {
+          "key": "c",
+          "text": "Eliminar beneficios"
+        },
+        {
+          "key": "d",
+          "text": "Perder dinero"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Un depósito a plazo fijo:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Se puede retirar en cualquier momento"
+        },
+        {
+          "key": "b",
+          "text": "Tiene un periodo determinado"
+        },
+        {
+          "key": "c",
+          "text": "No da intereses"
+        },
+        {
+          "key": "d",
+          "text": "No existe"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "La política monetaria la lleva a cabo:",
+      "options": [
+        {
+          "key": "a",
+          "text": "El gobierno"
+        },
+        {
+          "key": "b",
+          "text": "El banco central"
+        },
+        {
+          "key": "c",
+          "text": "Las empresas"
+        },
+        {
+          "key": "d",
+          "text": "Los sindicatos"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

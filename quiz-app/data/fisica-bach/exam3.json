@@ -1,0 +1,255 @@
+{
+  "name": "Energía y Trabajo",
+  "questions": [
+    {
+      "id": 1,
+      "question": "El trabajo se mide en:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Newtons"
+        },
+        {
+          "key": "b",
+          "text": "Julios"
+        },
+        {
+          "key": "c",
+          "text": "Watts"
+        },
+        {
+          "key": "d",
+          "text": "Metros"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "La energía cinética depende de:",
+      "options": [
+        {
+          "key": "a",
+          "text": "La masa"
+        },
+        {
+          "key": "b",
+          "text": "La velocidad"
+        },
+        {
+          "key": "c",
+          "text": "La masa y la velocidad"
+        },
+        {
+          "key": "d",
+          "text": "Solo la altura"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "La fórmula de la energía cinética es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "E = m·g·h"
+        },
+        {
+          "key": "b",
+          "text": "E = ½·m·v²"
+        },
+        {
+          "key": "c",
+          "text": "E = F·d"
+        },
+        {
+          "key": "d",
+          "text": "E = m·a"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "La energía potencial gravitatoria es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "E = ½·m·v²"
+        },
+        {
+          "key": "b",
+          "text": "E = m·g·h"
+        },
+        {
+          "key": "c",
+          "text": "E = F·d"
+        },
+        {
+          "key": "d",
+          "text": "E = P·t"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "El principio de conservación de la energía establece que:",
+      "options": [
+        {
+          "key": "a",
+          "text": "La energía se crea"
+        },
+        {
+          "key": "b",
+          "text": "La energía se destruye"
+        },
+        {
+          "key": "c",
+          "text": "La energía ni se crea ni se destruye, solo se transforma"
+        },
+        {
+          "key": "d",
+          "text": "La energía es infinita"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "El trabajo realizado por una fuerza perpendicular al desplazamiento es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Máximo"
+        },
+        {
+          "key": "b",
+          "text": "Mínimo"
+        },
+        {
+          "key": "c",
+          "text": "Cero"
+        },
+        {
+          "key": "d",
+          "text": "Negativo"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "La potencia es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Trabajo por unidad de tiempo"
+        },
+        {
+          "key": "b",
+          "text": "Fuerza por desplazamiento"
+        },
+        {
+          "key": "c",
+          "text": "Masa por aceleración"
+        },
+        {
+          "key": "d",
+          "text": "Energía total"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Un objeto de 2 kg cae desde 5 m. Su energía potencial inicial es (g=10 m/s²):",
+      "options": [
+        {
+          "key": "a",
+          "text": "10 J"
+        },
+        {
+          "key": "b",
+          "text": "50 J"
+        },
+        {
+          "key": "c",
+          "text": "100 J"
+        },
+        {
+          "key": "d",
+          "text": "200 J"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Si un objeto duplica su velocidad, su energía cinética:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Se duplica"
+        },
+        {
+          "key": "b",
+          "text": "Se triplica"
+        },
+        {
+          "key": "c",
+          "text": "Se cuadruplica"
+        },
+        {
+          "key": "d",
+          "text": "Permanece igual"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "La unidad de potencia en el SI es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Julio"
+        },
+        {
+          "key": "b",
+          "text": "Newton"
+        },
+        {
+          "key": "c",
+          "text": "Watt"
+        },
+        {
+          "key": "d",
+          "text": "Voltio"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    }
+  ]
+}

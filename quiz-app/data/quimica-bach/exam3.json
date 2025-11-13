@@ -1,0 +1,255 @@
+{
+  "name": "Reacciones Químicas y Estequiometría",
+  "questions": [
+    {
+      "id": 1,
+      "question": "En una reacción química, la masa:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Se crea"
+        },
+        {
+          "key": "b",
+          "text": "Se destruye"
+        },
+        {
+          "key": "c",
+          "text": "Se conserva"
+        },
+        {
+          "key": "d",
+          "text": "Aumenta siempre"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Un mol contiene:",
+      "options": [
+        {
+          "key": "a",
+          "text": "6.02 × 10²³ partículas"
+        },
+        {
+          "key": "b",
+          "text": "1000 partículas"
+        },
+        {
+          "key": "c",
+          "text": "100 partículas"
+        },
+        {
+          "key": "d",
+          "text": "12 partículas"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "La masa molar del agua (H₂O) es aproximadamente:",
+      "options": [
+        {
+          "key": "a",
+          "text": "2 g/mol"
+        },
+        {
+          "key": "b",
+          "text": "16 g/mol"
+        },
+        {
+          "key": "c",
+          "text": "18 g/mol"
+        },
+        {
+          "key": "d",
+          "text": "20 g/mol"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Una reacción exotérmica:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Absorbe calor"
+        },
+        {
+          "key": "b",
+          "text": "Libera calor"
+        },
+        {
+          "key": "c",
+          "text": "No intercambia calor"
+        },
+        {
+          "key": "d",
+          "text": "Solo ocurre en frío"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "En la ecuación 2H₂ + O₂ → 2H₂O, el coeficiente estequiométrico del H₂ es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "1"
+        },
+        {
+          "key": "b",
+          "text": "2"
+        },
+        {
+          "key": "c",
+          "text": "3"
+        },
+        {
+          "key": "d",
+          "text": "4"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Un catalizador:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Se consume en la reacción"
+        },
+        {
+          "key": "b",
+          "text": "Acelera la reacción sin consumirse"
+        },
+        {
+          "key": "c",
+          "text": "Frena la reacción"
+        },
+        {
+          "key": "d",
+          "text": "Cambia los productos"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "La velocidad de reacción aumenta con:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Temperatura"
+        },
+        {
+          "key": "b",
+          "text": "Concentración"
+        },
+        {
+          "key": "c",
+          "text": "Catalizadores"
+        },
+        {
+          "key": "d",
+          "text": "Todas las anteriores"
+        }
+      ],
+      "answers": [
+        "d"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "El reactivo limitante es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "El que sobra"
+        },
+        {
+          "key": "b",
+          "text": "El que se consume primero"
+        },
+        {
+          "key": "c",
+          "text": "El más caro"
+        },
+        {
+          "key": "d",
+          "text": "El de menor masa"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Una reacción de combustión requiere:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Agua"
+        },
+        {
+          "key": "b",
+          "text": "Oxígeno"
+        },
+        {
+          "key": "c",
+          "text": "Nitrógeno"
+        },
+        {
+          "key": "d",
+          "text": "Helio"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "El pH de una disolución neutra es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "7"
+        },
+        {
+          "key": "c",
+          "text": "14"
+        },
+        {
+          "key": "d",
+          "text": "10"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "name": "Álgebra Lineal: Matrices y Determinantes",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Una matriz 2×3 tiene:",
+      "options": [
+        {
+          "key": "a",
+          "text": "2 filas y 3 columnas"
+        },
+        {
+          "key": "b",
+          "text": "3 filas y 2 columnas"
+        },
+        {
+          "key": "c",
+          "text": "5 elementos"
+        },
+        {
+          "key": "d",
+          "text": "6 filas"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "El determinante de una matriz 2×2 [[a,b],[c,d]] es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "a+d-b-c"
+        },
+        {
+          "key": "b",
+          "text": "ad-bc"
+        },
+        {
+          "key": "c",
+          "text": "ac-bd"
+        },
+        {
+          "key": "d",
+          "text": "abcd"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Dos matrices se pueden multiplicar si:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Tienen igual tamaño"
+        },
+        {
+          "key": "b",
+          "text": "El número de columnas de la primera = filas de la segunda"
+        },
+        {
+          "key": "c",
+          "text": "Son cuadradas"
+        },
+        {
+          "key": "d",
+          "text": "Siempre se pueden multiplicar"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "La matriz identidad cumple:",
+      "options": [
+        {
+          "key": "a",
+          "text": "A·I = A"
+        },
+        {
+          "key": "b",
+          "text": "A·I = 0"
+        },
+        {
+          "key": "c",
+          "text": "A·I = I"
+        },
+        {
+          "key": "d",
+          "text": "No existe"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "El rango de una matriz es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "El número de filas"
+        },
+        {
+          "key": "b",
+          "text": "El número de columnas"
+        },
+        {
+          "key": "c",
+          "text": "El número de filas/columnas linealmente independientes"
+        },
+        {
+          "key": "d",
+          "text": "El determinante"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Una matriz tiene inversa si:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Es cuadrada"
+        },
+        {
+          "key": "b",
+          "text": "Su determinante es distinto de cero"
+        },
+        {
+          "key": "c",
+          "text": "Es simétrica"
+        },
+        {
+          "key": "d",
+          "text": "Tiene rango 1"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "La matriz traspuesta de A se denota:",
+      "options": [
+        {
+          "key": "a",
+          "text": "A⁻¹"
+        },
+        {
+          "key": "b",
+          "text": "Aᵀ"
+        },
+        {
+          "key": "c",
+          "text": "|A|"
+        },
+        {
+          "key": "d",
+          "text": "A²"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "El determinante de una matriz triangular es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Cero"
+        },
+        {
+          "key": "b",
+          "text": "Uno"
+        },
+        {
+          "key": "c",
+          "text": "El producto de los elementos de la diagonal"
+        },
+        {
+          "key": "d",
+          "text": "La suma de todos los elementos"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Si |A| = 0, la matriz es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Invertible"
+        },
+        {
+          "key": "b",
+          "text": "Singular"
+        },
+        {
+          "key": "c",
+          "text": "Identidad"
+        },
+        {
+          "key": "d",
+          "text": "Nula"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "La multiplicación de matrices es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Conmutativa"
+        },
+        {
+          "key": "b",
+          "text": "No conmutativa"
+        },
+        {
+          "key": "c",
+          "text": "Imposible"
+        },
+        {
+          "key": "d",
+          "text": "Solo para matrices cuadradas"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

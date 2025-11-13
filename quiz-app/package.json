@@ -1,0 +1,37 @@
+{
+  "name": "quiz-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "db:init": "node scripts/db/init_db.js",
+    "db:migrate": "node scripts/db/apply_migrations.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.29.0",
+    "@upstash/ratelimit": "^2.0.7",
+    "@upstash/redis": "^1.35.6",
+    "autoprefixer": "^10.4.14",
+    "bcryptjs": "^3.0.3",
+    "clsx": "^1.2.1",
+    "framer-motion": "^10.12.16",
+    "html2canvas": "^1.4.1",
+    "jsonwebtoken": "^9.0.2",
+    "jspdf": "^2.5.1",
+    "mongodb": "^7.0.0",
+    "next": "13.5.6",
+    "nodemailer": "^7.0.10",
+    "openai": "^6.8.1",
+    "pdf-parse": "^1.1.1",
+    "pg": "^8.11.0",
+    "postcss": "^8.4.24",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "^3.4.6"
+  },
+  "devDependencies": {
+    "dotenv": "^17.2.3"
+  }
+}

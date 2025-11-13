@@ -1,0 +1,130 @@
+{
+  "name": "Estructura de la Materia",
+  "questions": [
+    {
+      "id": 1,
+      "question": "¿Qué partículas subatómicas tienen carga negativa?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Protones"
+        },
+        {
+          "key": "b",
+          "text": "Neutrones"
+        },
+        {
+          "key": "c",
+          "text": "Electrones"
+        },
+        {
+          "key": "d",
+          "text": "Quarks"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "¿Qué determina el número atómico de un elemento?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Número de neutrones"
+        },
+        {
+          "key": "b",
+          "text": "Número de protones"
+        },
+        {
+          "key": "c",
+          "text": "Número de electrones"
+        },
+        {
+          "key": "d",
+          "text": "Suma de protones y neutrones"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "¿Cuál es el símbolo químico del sodio?",
+      "options": [
+        {
+          "key": "a",
+          "text": "S"
+        },
+        {
+          "key": "b",
+          "text": "So"
+        },
+        {
+          "key": "c",
+          "text": "Na"
+        },
+        {
+          "key": "d",
+          "text": "Sd"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Los elementos de un mismo grupo en la tabla periódica tienen:",
+      "options": [
+        {
+          "key": "a",
+          "text": "El mismo número de electrones"
+        },
+        {
+          "key": "b",
+          "text": "El mismo número de protones"
+        },
+        {
+          "key": "c",
+          "text": "El mismo número de electrones en su última capa"
+        },
+        {
+          "key": "d",
+          "text": "La misma masa atómica"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "¿Qué tipo de enlace se forma cuando dos átomos comparten electrones?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Enlace iónico"
+        },
+        {
+          "key": "b",
+          "text": "Enlace covalente"
+        },
+        {
+          "key": "c",
+          "text": "Enlace metálico"
+        },
+        {
+          "key": "d",
+          "text": "Enlace de hidrógeno"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

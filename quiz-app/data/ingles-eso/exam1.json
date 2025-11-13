@@ -1,0 +1,255 @@
+{
+  "name": "Grammar: Present Tenses",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Choose the correct form: She ___ to school every day.",
+      "options": [
+        {
+          "key": "a",
+          "text": "go"
+        },
+        {
+          "key": "b",
+          "text": "goes"
+        },
+        {
+          "key": "c",
+          "text": "going"
+        },
+        {
+          "key": "d",
+          "text": "gone"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What is happening now? They ___ football.",
+      "options": [
+        {
+          "key": "a",
+          "text": "play"
+        },
+        {
+          "key": "b",
+          "text": "plays"
+        },
+        {
+          "key": "c",
+          "text": "are playing"
+        },
+        {
+          "key": "d",
+          "text": "played"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Complete: I ___ English since 2020.",
+      "options": [
+        {
+          "key": "a",
+          "text": "study"
+        },
+        {
+          "key": "b",
+          "text": "am studying"
+        },
+        {
+          "key": "c",
+          "text": "have studied"
+        },
+        {
+          "key": "d",
+          "text": "studied"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "She ___ her homework right now.",
+      "options": [
+        {
+          "key": "a",
+          "text": "does"
+        },
+        {
+          "key": "b",
+          "text": "is doing"
+        },
+        {
+          "key": "c",
+          "text": "do"
+        },
+        {
+          "key": "d",
+          "text": "has done"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "We usually ___ breakfast at 8 am.",
+      "options": [
+        {
+          "key": "a",
+          "text": "have"
+        },
+        {
+          "key": "b",
+          "text": "has"
+        },
+        {
+          "key": "c",
+          "text": "are having"
+        },
+        {
+          "key": "d",
+          "text": "had"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "How long ___ here?",
+      "options": [
+        {
+          "key": "a",
+          "text": "do you live"
+        },
+        {
+          "key": "b",
+          "text": "are you living"
+        },
+        {
+          "key": "c",
+          "text": "have you lived"
+        },
+        {
+          "key": "d",
+          "text": "did you live"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Look! The sun ___.",
+      "options": [
+        {
+          "key": "a",
+          "text": "shines"
+        },
+        {
+          "key": "b",
+          "text": "is shining"
+        },
+        {
+          "key": "c",
+          "text": "shine"
+        },
+        {
+          "key": "d",
+          "text": "has shined"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "He ___ three languages fluently.",
+      "options": [
+        {
+          "key": "a",
+          "text": "speak"
+        },
+        {
+          "key": "b",
+          "text": "speaks"
+        },
+        {
+          "key": "c",
+          "text": "is speaking"
+        },
+        {
+          "key": "d",
+          "text": "has spoken"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "I ___ my keys! I can't find them.",
+      "options": [
+        {
+          "key": "a",
+          "text": "lose"
+        },
+        {
+          "key": "b",
+          "text": "am losing"
+        },
+        {
+          "key": "c",
+          "text": "have lost"
+        },
+        {
+          "key": "d",
+          "text": "lost"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Water ___ at 100 degrees Celsius.",
+      "options": [
+        {
+          "key": "a",
+          "text": "boil"
+        },
+        {
+          "key": "b",
+          "text": "boils"
+        },
+        {
+          "key": "c",
+          "text": "is boiling"
+        },
+        {
+          "key": "d",
+          "text": "has boiled"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

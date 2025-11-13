@@ -1,0 +1,255 @@
+{
+  "name": "Números Reales y Complejos",
+  "questions": [
+    {
+      "id": 1,
+      "question": "¿Cuál es la parte imaginaria de 3 + 4i?",
+      "options": [
+        {
+          "key": "a",
+          "text": "3"
+        },
+        {
+          "key": "b",
+          "text": "4"
+        },
+        {
+          "key": "c",
+          "text": "4i"
+        },
+        {
+          "key": "d",
+          "text": "7"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "El número π es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Racional"
+        },
+        {
+          "key": "b",
+          "text": "Irracional"
+        },
+        {
+          "key": "c",
+          "text": "Entero"
+        },
+        {
+          "key": "d",
+          "text": "Imaginario"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Calcula: (2 + 3i) + (1 - 2i)",
+      "options": [
+        {
+          "key": "a",
+          "text": "3 + i"
+        },
+        {
+          "key": "b",
+          "text": "3 - i"
+        },
+        {
+          "key": "c",
+          "text": "1 + i"
+        },
+        {
+          "key": "d",
+          "text": "3 + 5i"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "El conjugado de 5 - 7i es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "-5 + 7i"
+        },
+        {
+          "key": "b",
+          "text": "5 + 7i"
+        },
+        {
+          "key": "c",
+          "text": "-5 - 7i"
+        },
+        {
+          "key": "d",
+          "text": "7 - 5i"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "√(-16) es igual a:",
+      "options": [
+        {
+          "key": "a",
+          "text": "-4"
+        },
+        {
+          "key": "b",
+          "text": "4i"
+        },
+        {
+          "key": "c",
+          "text": "-4i"
+        },
+        {
+          "key": "d",
+          "text": "No existe"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "El valor absoluto de -8 es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "-8"
+        },
+        {
+          "key": "b",
+          "text": "0"
+        },
+        {
+          "key": "c",
+          "text": "8"
+        },
+        {
+          "key": "d",
+          "text": "±8"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Resuelve: |2x - 4| = 6",
+      "options": [
+        {
+          "key": "a",
+          "text": "x = 5"
+        },
+        {
+          "key": "b",
+          "text": "x = -1 o x = 5"
+        },
+        {
+          "key": "c",
+          "text": "x = 1"
+        },
+        {
+          "key": "d",
+          "text": "x = 3"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "El módulo de 3 + 4i es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "3"
+        },
+        {
+          "key": "b",
+          "text": "4"
+        },
+        {
+          "key": "c",
+          "text": "5"
+        },
+        {
+          "key": "d",
+          "text": "7"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Entre dos números racionales siempre hay:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Un entero"
+        },
+        {
+          "key": "b",
+          "text": "Infinitos racionales"
+        },
+        {
+          "key": "c",
+          "text": "Un primo"
+        },
+        {
+          "key": "d",
+          "text": "Nada"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "(2i)(3i) es igual a:",
+      "options": [
+        {
+          "key": "a",
+          "text": "6i"
+        },
+        {
+          "key": "b",
+          "text": "-6"
+        },
+        {
+          "key": "c",
+          "text": "6"
+        },
+        {
+          "key": "d",
+          "text": "-6i"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

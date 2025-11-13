@@ -1,0 +1,130 @@
+{
+  "name": "Geología: Rocas y Minerales",
+  "questions": [
+    {
+      "id": 1,
+      "question": "¿Qué tipo de roca se forma por enfriamiento del magma?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Roca sedimentaria"
+        },
+        {
+          "key": "b",
+          "text": "Roca metamórfica"
+        },
+        {
+          "key": "c",
+          "text": "Roca ígnea"
+        },
+        {
+          "key": "d",
+          "text": "Roca volcánica"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "El granito es un ejemplo de roca:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Sedimentaria"
+        },
+        {
+          "key": "b",
+          "text": "Ígnea plutónica"
+        },
+        {
+          "key": "c",
+          "text": "Ígnea volcánica"
+        },
+        {
+          "key": "d",
+          "text": "Metamórfica"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "¿Cuál es el mineral más duro según la escala de Mohs?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Cuarzo"
+        },
+        {
+          "key": "b",
+          "text": "Diamante"
+        },
+        {
+          "key": "c",
+          "text": "Corindón"
+        },
+        {
+          "key": "d",
+          "text": "Topacio"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Las rocas sedimentarias se forman por:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Enfriamiento del magma"
+        },
+        {
+          "key": "b",
+          "text": "Presión y temperatura extremas"
+        },
+        {
+          "key": "c",
+          "text": "Acumulación y compactación de sedimentos"
+        },
+        {
+          "key": "d",
+          "text": "Erosión del viento"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "El mármol es una roca metamórfica que proviene de:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Granito"
+        },
+        {
+          "key": "b",
+          "text": "Basalto"
+        },
+        {
+          "key": "c",
+          "text": "Caliza"
+        },
+        {
+          "key": "d",
+          "text": "Arenisca"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    }
+  ]
+}

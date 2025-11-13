@@ -1,0 +1,255 @@
+{
+  "name": "Trigonometría",
+  "questions": [
+    {
+      "id": 1,
+      "question": "sen²(x) + cos²(x) es igual a:",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "1"
+        },
+        {
+          "key": "c",
+          "text": "2"
+        },
+        {
+          "key": "d",
+          "text": "tan(x)"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "El valor de sen(30°) es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "1/2"
+        },
+        {
+          "key": "b",
+          "text": "√2/2"
+        },
+        {
+          "key": "c",
+          "text": "√3/2"
+        },
+        {
+          "key": "d",
+          "text": "1"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "cos(60°) es igual a:",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "1/2"
+        },
+        {
+          "key": "c",
+          "text": "√2/2"
+        },
+        {
+          "key": "d",
+          "text": "√3/2"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "tan(45°) es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "1/2"
+        },
+        {
+          "key": "c",
+          "text": "1"
+        },
+        {
+          "key": "d",
+          "text": "√3"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "El periodo de sen(x) es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "π"
+        },
+        {
+          "key": "b",
+          "text": "2π"
+        },
+        {
+          "key": "c",
+          "text": "π/2"
+        },
+        {
+          "key": "d",
+          "text": "4π"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "sen(90°) es igual a:",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "1/2"
+        },
+        {
+          "key": "c",
+          "text": "1"
+        },
+        {
+          "key": "d",
+          "text": "√2/2"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "La función cos(x) es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Par"
+        },
+        {
+          "key": "b",
+          "text": "Impar"
+        },
+        {
+          "key": "c",
+          "text": "Ni par ni impar"
+        },
+        {
+          "key": "d",
+          "text": "Constante"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "El valor de cos(0°) es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "1/2"
+        },
+        {
+          "key": "c",
+          "text": "1"
+        },
+        {
+          "key": "d",
+          "text": "-1"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "sen(-x) es igual a:",
+      "options": [
+        {
+          "key": "a",
+          "text": "sen(x)"
+        },
+        {
+          "key": "b",
+          "text": "-sen(x)"
+        },
+        {
+          "key": "c",
+          "text": "cos(x)"
+        },
+        {
+          "key": "d",
+          "text": "-cos(x)"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "En un triángulo rectángulo, sen(α) se define como:",
+      "options": [
+        {
+          "key": "a",
+          "text": "cateto adyacente / hipotenusa"
+        },
+        {
+          "key": "b",
+          "text": "cateto opuesto / hipotenusa"
+        },
+        {
+          "key": "c",
+          "text": "hipotenusa / cateto opuesto"
+        },
+        {
+          "key": "d",
+          "text": "cateto opuesto / cateto adyacente"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "name": "Filosofía Antigua: Platón y Aristóteles",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Según Platón, ¿dónde se encuentran las Ideas o Formas perfectas?",
+      "options": [
+        {
+          "key": "a",
+          "text": "En el mundo sensible"
+        },
+        {
+          "key": "b",
+          "text": "En el mundo inteligible"
+        },
+        {
+          "key": "c",
+          "text": "En la mente humana"
+        },
+        {
+          "key": "d",
+          "text": "No existen"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "El mito de la caverna de Platón representa:",
+      "options": [
+        {
+          "key": "a",
+          "text": "La teoría del conocimiento"
+        },
+        {
+          "key": "b",
+          "text": "La teoría política"
+        },
+        {
+          "key": "c",
+          "text": "La teoría ética"
+        },
+        {
+          "key": "d",
+          "text": "Todas las anteriores"
+        }
+      ],
+      "answers": [
+        "d"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Para Aristóteles, la causa final de un ser es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Su materia"
+        },
+        {
+          "key": "b",
+          "text": "Su forma"
+        },
+        {
+          "key": "c",
+          "text": "Su propósito o finalidad"
+        },
+        {
+          "key": "d",
+          "text": "Su origen"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Aristóteles define al ser humano como:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Un animal racional"
+        },
+        {
+          "key": "b",
+          "text": "Un ser político"
+        },
+        {
+          "key": "c",
+          "text": "Ambas definiciones son correctas"
+        },
+        {
+          "key": "d",
+          "text": "Un alma inmortal"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "La virtud, según Aristóteles, es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Innata en el ser humano"
+        },
+        {
+          "key": "b",
+          "text": "Un término medio entre dos extremos"
+        },
+        {
+          "key": "c",
+          "text": "Imposible de alcanzar"
+        },
+        {
+          "key": "d",
+          "text": "Solo para filósofos"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

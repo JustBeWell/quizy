@@ -1,0 +1,255 @@
+{
+  "name": "Vocabulary: Daily Life and Family",
+  "questions": [
+    {
+      "id": 1,
+      "question": "My mother's sister is my ___.",
+      "options": [
+        {
+          "key": "a",
+          "text": "cousin"
+        },
+        {
+          "key": "b",
+          "text": "aunt"
+        },
+        {
+          "key": "c",
+          "text": "niece"
+        },
+        {
+          "key": "d",
+          "text": "sister"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What do you call your father's father?",
+      "options": [
+        {
+          "key": "a",
+          "text": "uncle"
+        },
+        {
+          "key": "b",
+          "text": "brother"
+        },
+        {
+          "key": "c",
+          "text": "grandfather"
+        },
+        {
+          "key": "d",
+          "text": "cousin"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "I ___ my teeth every morning.",
+      "options": [
+        {
+          "key": "a",
+          "text": "wash"
+        },
+        {
+          "key": "b",
+          "text": "brush"
+        },
+        {
+          "key": "c",
+          "text": "clean"
+        },
+        {
+          "key": "d",
+          "text": "make"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "We usually ___ dinner at 8 pm.",
+      "options": [
+        {
+          "key": "a",
+          "text": "do"
+        },
+        {
+          "key": "b",
+          "text": "make"
+        },
+        {
+          "key": "c",
+          "text": "have"
+        },
+        {
+          "key": "d",
+          "text": "take"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "The opposite of \"cheap\" is:",
+      "options": [
+        {
+          "key": "a",
+          "text": "poor"
+        },
+        {
+          "key": "b",
+          "text": "expensive"
+        },
+        {
+          "key": "c",
+          "text": "rich"
+        },
+        {
+          "key": "d",
+          "text": "big"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "A place where you can buy medicine:",
+      "options": [
+        {
+          "key": "a",
+          "text": "bakery"
+        },
+        {
+          "key": "b",
+          "text": "pharmacy"
+        },
+        {
+          "key": "c",
+          "text": "library"
+        },
+        {
+          "key": "d",
+          "text": "bank"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Your brother's daughter is your:",
+      "options": [
+        {
+          "key": "a",
+          "text": "niece"
+        },
+        {
+          "key": "b",
+          "text": "nephew"
+        },
+        {
+          "key": "c",
+          "text": "cousin"
+        },
+        {
+          "key": "d",
+          "text": "sister"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "What time do you usually ___ up?",
+      "options": [
+        {
+          "key": "a",
+          "text": "stand"
+        },
+        {
+          "key": "b",
+          "text": "get"
+        },
+        {
+          "key": "c",
+          "text": "make"
+        },
+        {
+          "key": "d",
+          "text": "take"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "I need to ___ my room before my parents arrive.",
+      "options": [
+        {
+          "key": "a",
+          "text": "do"
+        },
+        {
+          "key": "b",
+          "text": "make"
+        },
+        {
+          "key": "c",
+          "text": "clean"
+        },
+        {
+          "key": "d",
+          "text": "wash"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "The meal you have in the middle of the day:",
+      "options": [
+        {
+          "key": "a",
+          "text": "breakfast"
+        },
+        {
+          "key": "b",
+          "text": "lunch"
+        },
+        {
+          "key": "c",
+          "text": "dinner"
+        },
+        {
+          "key": "d",
+          "text": "supper"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

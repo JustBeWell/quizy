@@ -1,0 +1,255 @@
+{
+  "name": "Historia Antigua: Grecia y Roma",
+  "questions": [
+    {
+      "id": 1,
+      "question": "La democracia nació en:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Roma"
+        },
+        {
+          "key": "b",
+          "text": "Atenas"
+        },
+        {
+          "key": "c",
+          "text": "Esparta"
+        },
+        {
+          "key": "d",
+          "text": "Creta"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "¿Quién fue el primer emperador romano?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Julio César"
+        },
+        {
+          "key": "b",
+          "text": "Augusto"
+        },
+        {
+          "key": "c",
+          "text": "Nerón"
+        },
+        {
+          "key": "d",
+          "text": "Trajano"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Los Juegos Olímpicos se celebraban en honor a:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Ares"
+        },
+        {
+          "key": "b",
+          "text": "Apolo"
+        },
+        {
+          "key": "c",
+          "text": "Zeus"
+        },
+        {
+          "key": "d",
+          "text": "Poseidón"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "La civilización romana surgió en:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Grecia"
+        },
+        {
+          "key": "b",
+          "text": "Italia"
+        },
+        {
+          "key": "c",
+          "text": "España"
+        },
+        {
+          "key": "d",
+          "text": "Francia"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Alejandro Magno fue rey de:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Esparta"
+        },
+        {
+          "key": "b",
+          "text": "Atenas"
+        },
+        {
+          "key": "c",
+          "text": "Macedonia"
+        },
+        {
+          "key": "d",
+          "text": "Persia"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "El Senado era la institución principal de:",
+      "options": [
+        {
+          "key": "a",
+          "text": "La República Romana"
+        },
+        {
+          "key": "b",
+          "text": "Atenas democrática"
+        },
+        {
+          "key": "c",
+          "text": "Esparta"
+        },
+        {
+          "key": "d",
+          "text": "El Imperio Persa"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "¿En qué año cayó el Imperio Romano de Occidente?",
+      "options": [
+        {
+          "key": "a",
+          "text": "395 d.C."
+        },
+        {
+          "key": "b",
+          "text": "410 d.C."
+        },
+        {
+          "key": "c",
+          "text": "476 d.C."
+        },
+        {
+          "key": "d",
+          "text": "500 d.C."
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "La Guerra del Peloponeso enfrentó a:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Atenas y Esparta"
+        },
+        {
+          "key": "b",
+          "text": "Roma y Cartago"
+        },
+        {
+          "key": "c",
+          "text": "Grecia y Persia"
+        },
+        {
+          "key": "d",
+          "text": "Macedonia y Persia"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Hispania fue conquistada por:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Los griegos"
+        },
+        {
+          "key": "b",
+          "text": "Los romanos"
+        },
+        {
+          "key": "c",
+          "text": "Los cartagineses"
+        },
+        {
+          "key": "d",
+          "text": "Los visigodos"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "El Coliseo romano se construyó para:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Ceremonias religiosas"
+        },
+        {
+          "key": "b",
+          "text": "Espectáculos públicos"
+        },
+        {
+          "key": "c",
+          "text": "Reuniones del Senado"
+        },
+        {
+          "key": "d",
+          "text": "Residencia imperial"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

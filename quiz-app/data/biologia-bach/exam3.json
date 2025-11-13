@@ -1,0 +1,255 @@
+{
+  "name": "Bioquímica y Metabolismo",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Las enzimas son:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Lípidos"
+        },
+        {
+          "key": "b",
+          "text": "Proteínas catalizadoras"
+        },
+        {
+          "key": "c",
+          "text": "Carbohidratos"
+        },
+        {
+          "key": "d",
+          "text": "Ácidos nucleicos"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "El ATP es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Una proteína"
+        },
+        {
+          "key": "b",
+          "text": "La moneda energética de la célula"
+        },
+        {
+          "key": "c",
+          "text": "Un lípido"
+        },
+        {
+          "key": "d",
+          "text": "Un tipo de ADN"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "La glucólisis ocurre en:",
+      "options": [
+        {
+          "key": "a",
+          "text": "El núcleo"
+        },
+        {
+          "key": "b",
+          "text": "Las mitocondrias"
+        },
+        {
+          "key": "c",
+          "text": "El citoplasma"
+        },
+        {
+          "key": "d",
+          "text": "Los cloroplastos"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "La fotosíntesis produce:",
+      "options": [
+        {
+          "key": "a",
+          "text": "CO₂ y H₂O"
+        },
+        {
+          "key": "b",
+          "text": "Glucosa y O₂"
+        },
+        {
+          "key": "c",
+          "text": "Solo ATP"
+        },
+        {
+          "key": "d",
+          "text": "Proteínas"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "La respiración celular ocurre en:",
+      "options": [
+        {
+          "key": "a",
+          "text": "El núcleo"
+        },
+        {
+          "key": "b",
+          "text": "Los cloroplastos"
+        },
+        {
+          "key": "c",
+          "text": "Las mitocondrias"
+        },
+        {
+          "key": "d",
+          "text": "Los ribosomas"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Los lípidos son:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Hidrofílicos"
+        },
+        {
+          "key": "b",
+          "text": "Hidrofóbicos"
+        },
+        {
+          "key": "c",
+          "text": "Proteínas"
+        },
+        {
+          "key": "d",
+          "text": "Ácidos nucleicos"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Los aminoácidos son los monómeros de:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Carbohidratos"
+        },
+        {
+          "key": "b",
+          "text": "Lípidos"
+        },
+        {
+          "key": "c",
+          "text": "Proteínas"
+        },
+        {
+          "key": "d",
+          "text": "Ácidos nucleicos"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "El ciclo de Krebs ocurre en:",
+      "options": [
+        {
+          "key": "a",
+          "text": "El citoplasma"
+        },
+        {
+          "key": "b",
+          "text": "La matriz mitocondrial"
+        },
+        {
+          "key": "c",
+          "text": "El núcleo"
+        },
+        {
+          "key": "d",
+          "text": "Los ribosomas"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "La fermentación es un proceso:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Aeróbico"
+        },
+        {
+          "key": "b",
+          "text": "Anaeróbico"
+        },
+        {
+          "key": "c",
+          "text": "Fotosintético"
+        },
+        {
+          "key": "d",
+          "text": "Nuclear"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Los carbohidratos se descomponen en:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Aminoácidos"
+        },
+        {
+          "key": "b",
+          "text": "Ácidos grasos"
+        },
+        {
+          "key": "c",
+          "text": "Monosacáridos"
+        },
+        {
+          "key": "d",
+          "text": "Nucleótidos"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    }
+  ]
+}

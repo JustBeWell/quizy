@@ -1,0 +1,255 @@
+{
+  "name": "Evolución y Biodiversidad",
+  "questions": [
+    {
+      "id": 1,
+      "question": "La teoría de la evolución por selección natural fue propuesta por:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Mendel"
+        },
+        {
+          "key": "b",
+          "text": "Lamarck"
+        },
+        {
+          "key": "c",
+          "text": "Darwin"
+        },
+        {
+          "key": "d",
+          "text": "Watson"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "La selección natural favorece:",
+      "options": [
+        {
+          "key": "a",
+          "text": "A los más grandes"
+        },
+        {
+          "key": "b",
+          "text": "A los mejor adaptados"
+        },
+        {
+          "key": "c",
+          "text": "A los más fuertes"
+        },
+        {
+          "key": "d",
+          "text": "A todos por igual"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Las pruebas anatómicas de la evolución incluyen:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Órganos homólogos"
+        },
+        {
+          "key": "b",
+          "text": "Solo fósiles"
+        },
+        {
+          "key": "c",
+          "text": "Solo ADN"
+        },
+        {
+          "key": "d",
+          "text": "Ninguna prueba"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Un fósil es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Un organismo vivo"
+        },
+        {
+          "key": "b",
+          "text": "Restos o huellas de organismos antiguos"
+        },
+        {
+          "key": "c",
+          "text": "Una roca"
+        },
+        {
+          "key": "d",
+          "text": "Un mineral"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "La especiación es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "La extinción de especies"
+        },
+        {
+          "key": "b",
+          "text": "La formación de nuevas especies"
+        },
+        {
+          "key": "c",
+          "text": "La migración"
+        },
+        {
+          "key": "d",
+          "text": "La hibernación"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Los cinco reinos son:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Monera, Protista, Fungi, Plantae, Animalia"
+        },
+        {
+          "key": "b",
+          "text": "Solo Plantae y Animalia"
+        },
+        {
+          "key": "c",
+          "text": "Bacteria, Archaea, Eukarya"
+        },
+        {
+          "key": "d",
+          "text": "Vertebrados e invertebrados"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Las bacterias pertenecen al reino:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Protista"
+        },
+        {
+          "key": "b",
+          "text": "Monera"
+        },
+        {
+          "key": "c",
+          "text": "Fungi"
+        },
+        {
+          "key": "d",
+          "text": "Plantae"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "La biodiversidad se refiere a:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Solo plantas"
+        },
+        {
+          "key": "b",
+          "text": "Solo animales"
+        },
+        {
+          "key": "c",
+          "text": "La variedad de seres vivos"
+        },
+        {
+          "key": "d",
+          "text": "Solo bacterias"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Un ecosistema incluye:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Solo seres vivos"
+        },
+        {
+          "key": "b",
+          "text": "Solo factores físicos"
+        },
+        {
+          "key": "c",
+          "text": "Seres vivos y su medio ambiente"
+        },
+        {
+          "key": "d",
+          "text": "Solo plantas"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "La adaptación es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Un proceso rápido"
+        },
+        {
+          "key": "b",
+          "text": "Una característica que aumenta la supervivencia"
+        },
+        {
+          "key": "c",
+          "text": "Una enfermedad"
+        },
+        {
+          "key": "d",
+          "text": "Imposible"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

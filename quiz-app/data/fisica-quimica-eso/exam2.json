@@ -1,0 +1,130 @@
+{
+  "name": "Leyes del Movimiento",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Según la primera ley de Newton, un cuerpo en reposo:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Siempre estará en movimiento"
+        },
+        {
+          "key": "b",
+          "text": "Permanecerá en reposo a menos que actúe una fuerza"
+        },
+        {
+          "key": "c",
+          "text": "Acelerará constantemente"
+        },
+        {
+          "key": "d",
+          "text": "Caerá por la gravedad"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "La fórmula F = m · a corresponde a:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Primera ley de Newton"
+        },
+        {
+          "key": "b",
+          "text": "Segunda ley de Newton"
+        },
+        {
+          "key": "c",
+          "text": "Tercera ley de Newton"
+        },
+        {
+          "key": "d",
+          "text": "Ley de gravitación universal"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Si duplicamos la masa de un objeto y aplicamos la misma fuerza, su aceleración:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Se duplica"
+        },
+        {
+          "key": "b",
+          "text": "Se reduce a la mitad"
+        },
+        {
+          "key": "c",
+          "text": "Se cuadruplica"
+        },
+        {
+          "key": "d",
+          "text": "No cambia"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Un objeto se mueve con velocidad constante. Esto significa que:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Su aceleración es cero"
+        },
+        {
+          "key": "b",
+          "text": "No actúan fuerzas sobre él"
+        },
+        {
+          "key": "c",
+          "text": "Las fuerzas están equilibradas"
+        },
+        {
+          "key": "d",
+          "text": "Todas las anteriores son correctas"
+        }
+      ],
+      "answers": [
+        "d"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "La tercera ley de Newton establece que:",
+      "options": [
+        {
+          "key": "a",
+          "text": "A toda acción le corresponde una reacción igual y opuesta"
+        },
+        {
+          "key": "b",
+          "text": "La fuerza es igual a masa por aceleración"
+        },
+        {
+          "key": "c",
+          "text": "Un cuerpo permanece en reposo o movimiento uniforme"
+        },
+        {
+          "key": "d",
+          "text": "La energía no se crea ni se destruye"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "name": "Literatura Española: Siglo de Oro",
+  "questions": [
+    {
+      "id": 1,
+      "question": "¿Quién escribió \"Don Quijote de la Mancha\"?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Lope de Vega"
+        },
+        {
+          "key": "b",
+          "text": "Miguel de Cervantes"
+        },
+        {
+          "key": "c",
+          "text": "Garcilaso de la Vega"
+        },
+        {
+          "key": "d",
+          "text": "Calderón de la Barca"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "El Siglo de Oro español comprende:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Siglos XVI y XVII"
+        },
+        {
+          "key": "b",
+          "text": "Solo el siglo XVI"
+        },
+        {
+          "key": "c",
+          "text": "Siglos XVIII y XIX"
+        },
+        {
+          "key": "d",
+          "text": "Solo el siglo XVII"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Garcilaso de la Vega introdujo en España:",
+      "options": [
+        {
+          "key": "a",
+          "text": "El romance"
+        },
+        {
+          "key": "b",
+          "text": "El soneto italiano"
+        },
+        {
+          "key": "c",
+          "text": "La novela"
+        },
+        {
+          "key": "d",
+          "text": "El teatro"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "\"Fuenteovejuna\" fue escrita por:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Cervantes"
+        },
+        {
+          "key": "b",
+          "text": "Lope de Vega"
+        },
+        {
+          "key": "c",
+          "text": "Quevedo"
+        },
+        {
+          "key": "d",
+          "text": "Góngora"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "La obra \"La vida es sueño\" es de:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Lope de Vega"
+        },
+        {
+          "key": "b",
+          "text": "Tirso de Molina"
+        },
+        {
+          "key": "c",
+          "text": "Calderón de la Barca"
+        },
+        {
+          "key": "d",
+          "text": "Cervantes"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "El Lazarillo de Tormes es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Una novela caballeresca"
+        },
+        {
+          "key": "b",
+          "text": "Una novela picaresca"
+        },
+        {
+          "key": "c",
+          "text": "Una obra de teatro"
+        },
+        {
+          "key": "d",
+          "text": "Un poema épico"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Luis de Góngora es representante del:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Conceptismo"
+        },
+        {
+          "key": "b",
+          "text": "Culteranismo"
+        },
+        {
+          "key": "c",
+          "text": "Realismo"
+        },
+        {
+          "key": "d",
+          "text": "Romanticismo"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Francisco de Quevedo es conocido por su:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Prosa satírica"
+        },
+        {
+          "key": "b",
+          "text": "Teatro religioso"
+        },
+        {
+          "key": "c",
+          "text": "Novela caballeresca"
+        },
+        {
+          "key": "d",
+          "text": "Poesía épica"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "El teatro del Siglo de Oro se caracteriza por:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Respetar las tres unidades clásicas"
+        },
+        {
+          "key": "b",
+          "text": "Mezclar lo trágico y lo cómico"
+        },
+        {
+          "key": "c",
+          "text": "Ser solo religioso"
+        },
+        {
+          "key": "d",
+          "text": "Estar en prosa"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Santa Teresa de Jesús escribió:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Novelas"
+        },
+        {
+          "key": "b",
+          "text": "Obras místicas"
+        },
+        {
+          "key": "c",
+          "text": "Teatro"
+        },
+        {
+          "key": "d",
+          "text": "Poesía épica"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

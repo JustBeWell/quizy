@@ -1,0 +1,255 @@
+{
+  "name": "Geografía Física: Relieve y Clima",
+  "questions": [
+    {
+      "id": 1,
+      "question": "¿Cuál es el río más largo de España?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Ebro"
+        },
+        {
+          "key": "b",
+          "text": "Tajo"
+        },
+        {
+          "key": "c",
+          "text": "Duero"
+        },
+        {
+          "key": "d",
+          "text": "Guadalquivir"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Los Pirineos separan España de:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Portugal"
+        },
+        {
+          "key": "b",
+          "text": "Francia"
+        },
+        {
+          "key": "c",
+          "text": "Andorra"
+        },
+        {
+          "key": "d",
+          "text": "Marruecos"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "¿Qué tipo de clima predomina en Galicia?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Mediterráneo"
+        },
+        {
+          "key": "b",
+          "text": "Continental"
+        },
+        {
+          "key": "c",
+          "text": "Oceánico"
+        },
+        {
+          "key": "d",
+          "text": "Subtropical"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "El pico más alto de España es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Aneto"
+        },
+        {
+          "key": "b",
+          "text": "Mulhacén"
+        },
+        {
+          "key": "c",
+          "text": "Teide"
+        },
+        {
+          "key": "d",
+          "text": "Veleta"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "¿Qué mar baña la costa este de España?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Mar Cantábrico"
+        },
+        {
+          "key": "b",
+          "text": "Océano Atlántico"
+        },
+        {
+          "key": "c",
+          "text": "Mar Mediterráneo"
+        },
+        {
+          "key": "d",
+          "text": "Mar de Alborán"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "La Meseta Central es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Una cordillera"
+        },
+        {
+          "key": "b",
+          "text": "Una llanura elevada"
+        },
+        {
+          "key": "c",
+          "text": "Un valle"
+        },
+        {
+          "key": "d",
+          "text": "Una depresión"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "¿Qué comunidad autónoma tiene clima subtropical?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Cataluña"
+        },
+        {
+          "key": "b",
+          "text": "Galicia"
+        },
+        {
+          "key": "c",
+          "text": "Canarias"
+        },
+        {
+          "key": "d",
+          "text": "Andalucía"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "El Sistema Central atraviesa:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Andalucía"
+        },
+        {
+          "key": "b",
+          "text": "La Meseta"
+        },
+        {
+          "key": "c",
+          "text": "Cataluña"
+        },
+        {
+          "key": "d",
+          "text": "Galicia"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "¿Cuál es la depresión más importante de España?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Del Ebro"
+        },
+        {
+          "key": "b",
+          "text": "Del Duero"
+        },
+        {
+          "key": "c",
+          "text": "Del Tajo"
+        },
+        {
+          "key": "d",
+          "text": "Del Júcar"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Las Islas Baleares están en el:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Océano Atlántico"
+        },
+        {
+          "key": "b",
+          "text": "Mar Cantábrico"
+        },
+        {
+          "key": "c",
+          "text": "Mar Mediterráneo"
+        },
+        {
+          "key": "d",
+          "text": "Estrecho de Gibraltar"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "name": "Estructura Atómica y Tabla Periódica",
+  "questions": [
+    {
+      "id": 1,
+      "question": "El número atómico indica:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Número de neutrones"
+        },
+        {
+          "key": "b",
+          "text": "Número de protones"
+        },
+        {
+          "key": "c",
+          "text": "Masa atómica"
+        },
+        {
+          "key": "d",
+          "text": "Número de electrones libres"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Los elementos del mismo grupo tienen:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Igual masa atómica"
+        },
+        {
+          "key": "b",
+          "text": "Igual número de protones"
+        },
+        {
+          "key": "c",
+          "text": "Igual configuración electrónica externa"
+        },
+        {
+          "key": "d",
+          "text": "Igual número de neutrones"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Un isótopo tiene distinto número de:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Protones"
+        },
+        {
+          "key": "b",
+          "text": "Electrones"
+        },
+        {
+          "key": "c",
+          "text": "Neutrones"
+        },
+        {
+          "key": "d",
+          "text": "Átomos"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Los gases nobles se caracterizan por:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Ser muy reactivos"
+        },
+        {
+          "key": "b",
+          "text": "Tener capa externa completa"
+        },
+        {
+          "key": "c",
+          "text": "Ser metales"
+        },
+        {
+          "key": "d",
+          "text": "Formar enlaces iónicos"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "El radio atómico aumenta:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Hacia arriba y derecha"
+        },
+        {
+          "key": "b",
+          "text": "Hacia abajo y izquierda"
+        },
+        {
+          "key": "c",
+          "text": "Hacia arriba y izquierda"
+        },
+        {
+          "key": "d",
+          "text": "Hacia abajo y derecha"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "La electronegatividad es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "La tendencia a ganar electrones"
+        },
+        {
+          "key": "b",
+          "text": "La tendencia a perder electrones"
+        },
+        {
+          "key": "c",
+          "text": "El número de electrones"
+        },
+        {
+          "key": "d",
+          "text": "La masa del electrón"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "El elemento más electronegativo es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Oxígeno"
+        },
+        {
+          "key": "b",
+          "text": "Cloro"
+        },
+        {
+          "key": "c",
+          "text": "Flúor"
+        },
+        {
+          "key": "d",
+          "text": "Nitrógeno"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Los metales alcalinos están en el grupo:",
+      "options": [
+        {
+          "key": "a",
+          "text": "1"
+        },
+        {
+          "key": "b",
+          "text": "2"
+        },
+        {
+          "key": "c",
+          "text": "17"
+        },
+        {
+          "key": "d",
+          "text": "18"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Un catión se forma cuando un átomo:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Gana electrones"
+        },
+        {
+          "key": "b",
+          "text": "Pierde electrones"
+        },
+        {
+          "key": "c",
+          "text": "Gana protones"
+        },
+        {
+          "key": "d",
+          "text": "Pierde neutrones"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Los halógenos están en el grupo:",
+      "options": [
+        {
+          "key": "a",
+          "text": "1"
+        },
+        {
+          "key": "b",
+          "text": "2"
+        },
+        {
+          "key": "c",
+          "text": "17"
+        },
+        {
+          "key": "d",
+          "text": "18"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    }
+  ]
+}

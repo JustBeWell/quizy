@@ -1,0 +1,255 @@
+{
+  "name": "Cálculo Integral",
+  "questions": [
+    {
+      "id": 1,
+      "question": "La integral de x dx es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "x"
+        },
+        {
+          "key": "b",
+          "text": "x²/2 + C"
+        },
+        {
+          "key": "c",
+          "text": "x² + C"
+        },
+        {
+          "key": "d",
+          "text": "2x + C"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "La integral de una constante k es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "k"
+        },
+        {
+          "key": "c",
+          "text": "kx + C"
+        },
+        {
+          "key": "d",
+          "text": "k/x + C"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "∫ cos(x) dx es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "sen(x) + C"
+        },
+        {
+          "key": "b",
+          "text": "-sen(x) + C"
+        },
+        {
+          "key": "c",
+          "text": "cos(x) + C"
+        },
+        {
+          "key": "d",
+          "text": "-cos(x) + C"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "∫ eˣ dx es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "eˣ⁺¹ + C"
+        },
+        {
+          "key": "b",
+          "text": "eˣ + C"
+        },
+        {
+          "key": "c",
+          "text": "xeˣ + C"
+        },
+        {
+          "key": "d",
+          "text": "eˣ/x + C"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "El Teorema Fundamental del Cálculo relaciona:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Derivadas e integrales"
+        },
+        {
+          "key": "b",
+          "text": "Límites y derivadas"
+        },
+        {
+          "key": "c",
+          "text": "Solo integrales"
+        },
+        {
+          "key": "d",
+          "text": "Solo derivadas"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "∫₀² 2x dx es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "2"
+        },
+        {
+          "key": "b",
+          "text": "4"
+        },
+        {
+          "key": "c",
+          "text": "6"
+        },
+        {
+          "key": "d",
+          "text": "8"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "La integral definida representa:",
+      "options": [
+        {
+          "key": "a",
+          "text": "La pendiente"
+        },
+        {
+          "key": "b",
+          "text": "El área bajo la curva"
+        },
+        {
+          "key": "c",
+          "text": "El máximo"
+        },
+        {
+          "key": "d",
+          "text": "El límite"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "∫ 1/x dx es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "x² + C"
+        },
+        {
+          "key": "b",
+          "text": "ln(x) + C"
+        },
+        {
+          "key": "c",
+          "text": "1/x² + C"
+        },
+        {
+          "key": "d",
+          "text": "eˣ + C"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "∫ sen(x) dx es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "cos(x) + C"
+        },
+        {
+          "key": "b",
+          "text": "-cos(x) + C"
+        },
+        {
+          "key": "c",
+          "text": "sen(x) + C"
+        },
+        {
+          "key": "d",
+          "text": "-sen(x) + C"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "La constante de integración C aparece en:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Integrales definidas"
+        },
+        {
+          "key": "b",
+          "text": "Integrales indefinidas"
+        },
+        {
+          "key": "c",
+          "text": "Derivadas"
+        },
+        {
+          "key": "d",
+          "text": "Límites"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

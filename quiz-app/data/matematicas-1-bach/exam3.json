@@ -1,0 +1,255 @@
+{
+  "name": "Límites y Continuidad",
+  "questions": [
+    {
+      "id": 1,
+      "question": "lim(x→∞) (1/x) es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "1"
+        },
+        {
+          "key": "c",
+          "text": "∞"
+        },
+        {
+          "key": "d",
+          "text": "No existe"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Una función es continua en un punto si:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Existe el límite"
+        },
+        {
+          "key": "b",
+          "text": "Existe el límite y coincide con el valor de la función"
+        },
+        {
+          "key": "c",
+          "text": "Está definida"
+        },
+        {
+          "key": "d",
+          "text": "Es derivable"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "lim(x→0) (sen(x)/x) es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "1"
+        },
+        {
+          "key": "c",
+          "text": "∞"
+        },
+        {
+          "key": "d",
+          "text": "No existe"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Una asíntota vertical se da cuando:",
+      "options": [
+        {
+          "key": "a",
+          "text": "El límite es finito"
+        },
+        {
+          "key": "b",
+          "text": "El límite es infinito"
+        },
+        {
+          "key": "c",
+          "text": "La función es continua"
+        },
+        {
+          "key": "d",
+          "text": "La función es constante"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "lim(x→2) (x² - 4)/(x - 2) es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "2"
+        },
+        {
+          "key": "c",
+          "text": "4"
+        },
+        {
+          "key": "d",
+          "text": "No existe"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "La función f(x) = 1/x tiene una discontinuidad en:",
+      "options": [
+        {
+          "key": "a",
+          "text": "x = 1"
+        },
+        {
+          "key": "b",
+          "text": "x = 0"
+        },
+        {
+          "key": "c",
+          "text": "x = -1"
+        },
+        {
+          "key": "d",
+          "text": "Es continua en todos los puntos"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "lim(x→∞) (3x² + 2x)/(x² - 1) es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "1"
+        },
+        {
+          "key": "c",
+          "text": "3"
+        },
+        {
+          "key": "d",
+          "text": "∞"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Una función polinómica es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Continua en ℝ"
+        },
+        {
+          "key": "b",
+          "text": "Discontinua"
+        },
+        {
+          "key": "c",
+          "text": "No derivable"
+        },
+        {
+          "key": "d",
+          "text": "Periódica"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Si lim(x→a⁺) f(x) ≠ lim(x→a⁻) f(x), la función tiene:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Continuidad"
+        },
+        {
+          "key": "b",
+          "text": "Discontinuidad de salto"
+        },
+        {
+          "key": "c",
+          "text": "Discontinuidad evitable"
+        },
+        {
+          "key": "d",
+          "text": "Asíntota horizontal"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "lim(x→0⁺) (1/x) es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "-∞"
+        },
+        {
+          "key": "c",
+          "text": "+∞"
+        },
+        {
+          "key": "d",
+          "text": "1"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    }
+  ]
+}

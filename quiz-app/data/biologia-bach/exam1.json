@@ -1,0 +1,255 @@
+{
+  "name": "Genética y Herencia",
+  "questions": [
+    {
+      "id": 1,
+      "question": "El ADN está formado por:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Aminoácidos"
+        },
+        {
+          "key": "b",
+          "text": "Nucleótidos"
+        },
+        {
+          "key": "c",
+          "text": "Lípidos"
+        },
+        {
+          "key": "d",
+          "text": "Glúcidos"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Las leyes de la herencia fueron descubiertas por:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Darwin"
+        },
+        {
+          "key": "b",
+          "text": "Mendel"
+        },
+        {
+          "key": "c",
+          "text": "Watson"
+        },
+        {
+          "key": "d",
+          "text": "Lamarck"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Un alelo dominante se representa con:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Letra minúscula"
+        },
+        {
+          "key": "b",
+          "text": "Letra mayúscula"
+        },
+        {
+          "key": "c",
+          "text": "Números"
+        },
+        {
+          "key": "d",
+          "text": "Símbolos"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "El genotipo Aa es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Homocigoto dominante"
+        },
+        {
+          "key": "b",
+          "text": "Homocigoto recesivo"
+        },
+        {
+          "key": "c",
+          "text": "Heterocigoto"
+        },
+        {
+          "key": "d",
+          "text": "Mutante"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "El código genético está formado por:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Dupletes"
+        },
+        {
+          "key": "b",
+          "text": "Tripletes (codones)"
+        },
+        {
+          "key": "c",
+          "text": "Cuatripletes"
+        },
+        {
+          "key": "d",
+          "text": "Quintupletes"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "La transcripción es el proceso de:",
+      "options": [
+        {
+          "key": "a",
+          "text": "ADN → ARN"
+        },
+        {
+          "key": "b",
+          "text": "ARN → Proteína"
+        },
+        {
+          "key": "c",
+          "text": "ADN → ADN"
+        },
+        {
+          "key": "d",
+          "text": "Proteína → ARN"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "La traducción ocurre en:",
+      "options": [
+        {
+          "key": "a",
+          "text": "El núcleo"
+        },
+        {
+          "key": "b",
+          "text": "Los ribosomas"
+        },
+        {
+          "key": "c",
+          "text": "Las mitocondrias"
+        },
+        {
+          "key": "d",
+          "text": "El retículo"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Una mutación es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Un cambio en el ADN"
+        },
+        {
+          "key": "b",
+          "text": "Una división celular"
+        },
+        {
+          "key": "c",
+          "text": "Un tipo de reproducción"
+        },
+        {
+          "key": "d",
+          "text": "Una enfermedad"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Los cromosomas homólogos:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Son idénticos"
+        },
+        {
+          "key": "b",
+          "text": "Contienen genes para los mismos caracteres"
+        },
+        {
+          "key": "c",
+          "text": "Solo existen en bacterias"
+        },
+        {
+          "key": "d",
+          "text": "No existen"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "El cariotipo humano tiene:",
+      "options": [
+        {
+          "key": "a",
+          "text": "23 cromosomas"
+        },
+        {
+          "key": "b",
+          "text": "46 cromosomas"
+        },
+        {
+          "key": "c",
+          "text": "48 cromosomas"
+        },
+        {
+          "key": "d",
+          "text": "92 cromosomas"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "name": "La Transición Democrática",
+  "questions": [
+    {
+      "id": 1,
+      "question": "¿En qué año murió Francisco Franco?",
+      "options": [
+        {
+          "key": "a",
+          "text": "1973"
+        },
+        {
+          "key": "b",
+          "text": "1975"
+        },
+        {
+          "key": "c",
+          "text": "1977"
+        },
+        {
+          "key": "d",
+          "text": "1978"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "¿Quién fue proclamado Rey de España tras la muerte de Franco?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Juan de Borbón"
+        },
+        {
+          "key": "b",
+          "text": "Juan Carlos I"
+        },
+        {
+          "key": "c",
+          "text": "Alfonso XIII"
+        },
+        {
+          "key": "d",
+          "text": "Felipe VI"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "La Constitución Española fue aprobada en referéndum en:",
+      "options": [
+        {
+          "key": "a",
+          "text": "1975"
+        },
+        {
+          "key": "b",
+          "text": "1977"
+        },
+        {
+          "key": "c",
+          "text": "1978"
+        },
+        {
+          "key": "d",
+          "text": "1979"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "¿Quién fue el primer presidente del gobierno elegido democráticamente tras el franquismo?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Adolfo Suárez"
+        },
+        {
+          "key": "b",
+          "text": "Felipe González"
+        },
+        {
+          "key": "c",
+          "text": "Leopoldo Calvo-Sotelo"
+        },
+        {
+          "key": "d",
+          "text": "Santiago Carrillo"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "El intento de golpe de Estado del 23-F tuvo lugar en:",
+      "options": [
+        {
+          "key": "a",
+          "text": "1978"
+        },
+        {
+          "key": "b",
+          "text": "1979"
+        },
+        {
+          "key": "c",
+          "text": "1981"
+        },
+        {
+          "key": "d",
+          "text": "1982"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "name": "Proporcionalidad y Porcentajes",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Si 3 kg de manzanas cuestan 6€, ¿cuánto costarán 5 kg?",
+      "options": [
+        {
+          "key": "a",
+          "text": "8€"
+        },
+        {
+          "key": "b",
+          "text": "9€"
+        },
+        {
+          "key": "c",
+          "text": "10€"
+        },
+        {
+          "key": "d",
+          "text": "12€"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "¿Cuánto es el 25% de 80?",
+      "options": [
+        {
+          "key": "a",
+          "text": "15"
+        },
+        {
+          "key": "b",
+          "text": "20"
+        },
+        {
+          "key": "c",
+          "text": "25"
+        },
+        {
+          "key": "d",
+          "text": "30"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Un artículo de 50€ tiene un descuento del 20%. ¿Cuánto pagarás?",
+      "options": [
+        {
+          "key": "a",
+          "text": "30€"
+        },
+        {
+          "key": "b",
+          "text": "35€"
+        },
+        {
+          "key": "c",
+          "text": "40€"
+        },
+        {
+          "key": "d",
+          "text": "45€"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Si 4 obreros tardan 6 días en hacer un trabajo, ¿cuánto tardarán 8 obreros?",
+      "options": [
+        {
+          "key": "a",
+          "text": "2 días"
+        },
+        {
+          "key": "b",
+          "text": "3 días"
+        },
+        {
+          "key": "c",
+          "text": "4 días"
+        },
+        {
+          "key": "d",
+          "text": "12 días"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "¿Qué porcentaje es 15 de 60?",
+      "options": [
+        {
+          "key": "a",
+          "text": "15%"
+        },
+        {
+          "key": "b",
+          "text": "20%"
+        },
+        {
+          "key": "c",
+          "text": "25%"
+        },
+        {
+          "key": "d",
+          "text": "30%"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Si aumentamos 200 en un 15%, obtenemos:",
+      "options": [
+        {
+          "key": "a",
+          "text": "215"
+        },
+        {
+          "key": "b",
+          "text": "220"
+        },
+        {
+          "key": "c",
+          "text": "230"
+        },
+        {
+          "key": "d",
+          "text": "300"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "La razón entre 12 y 18 simplificada es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "1/2"
+        },
+        {
+          "key": "b",
+          "text": "2/3"
+        },
+        {
+          "key": "c",
+          "text": "3/4"
+        },
+        {
+          "key": "d",
+          "text": "6/9"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Un coche consume 6 litros en 100 km. ¿Cuánto consumirá en 250 km?",
+      "options": [
+        {
+          "key": "a",
+          "text": "12 litros"
+        },
+        {
+          "key": "b",
+          "text": "15 litros"
+        },
+        {
+          "key": "c",
+          "text": "18 litros"
+        },
+        {
+          "key": "d",
+          "text": "20 litros"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "El IVA es el 21%. ¿Cuánto pagas por un artículo de 100€ con IVA?",
+      "options": [
+        {
+          "key": "a",
+          "text": "110€"
+        },
+        {
+          "key": "b",
+          "text": "115€"
+        },
+        {
+          "key": "c",
+          "text": "121€"
+        },
+        {
+          "key": "d",
+          "text": "130€"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Si una magnitud disminuye de 80 a 60, el porcentaje de disminución es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "20%"
+        },
+        {
+          "key": "b",
+          "text": "25%"
+        },
+        {
+          "key": "c",
+          "text": "30%"
+        },
+        {
+          "key": "d",
+          "text": "33%"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

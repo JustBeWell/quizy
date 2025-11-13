@@ -1,0 +1,434 @@
+[
+  {
+    "id": 1,
+    "question": "En un sistema virtualizado mediante “hosted hypervisor”, los procesos de una MV podrían listarse con `ps`:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Desde cualquier MV"
+      },
+      {
+        "key": "b",
+        "text": "Sólo en su MV"
+      },
+      {
+        "key": "c",
+        "text": "Desde el SO host"
+      },
+      {
+        "key": "d",
+        "text": "Sólo desde el hipervisor"
+      }
+    ],
+    "answers": [
+      "c"
+    ]
+  },
+  {
+    "id": 2,
+    "question": "Operación de revertir un estado anterior de un snapshot de disco virtual:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Rollback"
+      },
+      {
+        "key": "b",
+        "text": "Playback"
+      },
+      {
+        "key": "c",
+        "text": "Fallback"
+      },
+      {
+        "key": "d",
+        "text": "Callback"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 3,
+    "question": "Al revertir a un estado anterior de un snapshot…",
+    "options": [
+      {
+        "key": "a",
+        "text": "Se consolidan los cambios del Δ"
+      },
+      {
+        "key": "b",
+        "text": "Se realiza la intersección del disco base y Δ"
+      },
+      {
+        "key": "c",
+        "text": "Se descarta el disco base y queda Δ"
+      },
+      {
+        "key": "d",
+        "text": "Se descartan completamente los cambios del Δ"
+      }
+    ],
+    "answers": [
+      "d"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "Técnica de virtualización usada por VMware en su software pionero:",
+    "options": [],
+    "answers": [
+      "traducción binaria"
+    ]
+  },
+  {
+    "id": 5,
+    "question": "Al virtualizar RAM, ¿son necesarias dos MMU (guest y real en el hipervisor)?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Falso"
+      },
+      {
+        "key": "b",
+        "text": "Verdadero"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 6,
+    "question": "“Trap & emulate” implica de-privileging del kernel guest:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Sólo si la CPU no es virtualizable"
+      },
+      {
+        "key": "b",
+        "text": "Sí, parte del funcionamiento"
+      },
+      {
+        "key": "c",
+        "text": "Sólo si no hay VT-x"
+      },
+      {
+        "key": "d",
+        "text": "No en procesadores multicore modernos"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 7,
+    "question": "Snapshot y N escrituras: orden del tiempo de commit:",
+    "options": [
+      {
+        "key": "a",
+        "text": "O(log₂N)"
+      },
+      {
+        "key": "b",
+        "text": "O(1)"
+      },
+      {
+        "key": "c",
+        "text": "O(N)"
+      },
+      {
+        "key": "d",
+        "text": "O(N×N)"
+      }
+    ],
+    "answers": [
+      "c"
+    ]
+  },
+  {
+    "id": 8,
+    "question": "KVM (módulo instalable en Linux) proporciona virtualización…",
+    "options": [
+      {
+        "key": "a",
+        "text": "hosted"
+      },
+      {
+        "key": "b",
+        "text": "paravirtualized"
+      },
+      {
+        "key": "c",
+        "text": "bare-metal"
+      },
+      {
+        "key": "d",
+        "text": "native"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 9,
+    "question": "El sistema operativo que corre sobre una MV es:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Host"
+      },
+      {
+        "key": "b",
+        "text": "Guest"
+      },
+      {
+        "key": "c",
+        "text": "Monitor de sistema"
+      },
+      {
+        "key": "d",
+        "text": "VMM"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 10,
+    "question": "Criterios de Popek & Goldberg:",
+    "options": [],
+    "answers": [
+      "Equivalencia; Control de recursos; Eficiencia"
+    ]
+  },
+  {
+    "id": 11,
+    "question": "¿Qué aplica a “trap & emulate”?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Traducción run-time de instrucciones problemáticas a inocuas"
+      },
+      {
+        "key": "b",
+        "text": "IN/OUT provocan excepciones atendidas por el hipervisor"
+      },
+      {
+        "key": "c",
+        "text": "La MV se ejecuta en un modo no privilegiado del procesador"
+      },
+      {
+        "key": "d",
+        "text": "Una privilegiada genera trap y entra código del hipervisor"
+      }
+    ],
+    "answers": [
+      "b",
+      "c",
+      "d"
+    ]
+  },
+  {
+    "id": 12,
+    "question": "Snapshot A={0:∅,1:∅,2:K,3:M,4:N}; Δ={1:X,2:Y}. Tras commit, R=…",
+    "options": [
+      {
+        "key": "a",
+        "text": "{0:∅,1:X,2:Y,3:M,4:N}"
+      },
+      {
+        "key": "b",
+        "text": "{0:∅,1:∅,2:∅,3:∅,4:∅}"
+      },
+      {
+        "key": "c",
+        "text": "{0:∅,1:X,2:Y,3:∅,4:∅}"
+      },
+      {
+        "key": "d",
+        "text": "{0:∅,1:∅,2:K,3:M,4:N}"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 13,
+    "question": "Rendimiento de binary translation en run-time:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Mejor que trap & emulate"
+      },
+      {
+        "key": "b",
+        "text": "Se optimiza con cachés y reuso de fragmentos"
+      },
+      {
+        "key": "c",
+        "text": "Siempre extremadamente malo"
+      },
+      {
+        "key": "d",
+        "text": "Muy malo si abundan instrucciones inocuas"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 14,
+    "question": "Modo usuario ejecuta instrucción privilegiada → evento:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Un trap"
+      },
+      {
+        "key": "b",
+        "text": "Fallo de página"
+      },
+      {
+        "key": "c",
+        "text": "Fallo de TLB"
+      },
+      {
+        "key": "d",
+        "text": "División por cero"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 15,
+    "question": "Un intérprete de CPU software debe emular:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Todas las instrucciones + interrupciones y traps"
+      },
+      {
+        "key": "b",
+        "text": "Sólo sensitive"
+      },
+      {
+        "key": "c",
+        "text": "Privilegiadas + interrupciones"
+      },
+      {
+        "key": "d",
+        "text": "Sólo privilegiadas"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 16,
+    "question": "¿Qué NO es cierta sobre un disco virtual como fichero imagen?",
+    "options": [
+      {
+        "key": "a",
+        "text": "El acceso es mucho más rápido que en partición nativa"
+      },
+      {
+        "key": "b",
+        "text": "Fácil reubicar sin modificar la MV"
+      },
+      {
+        "key": "c",
+        "text": "Thin provisioning posible"
+      },
+      {
+        "key": "d",
+        "text": "Más portabilidad y flexibilidad"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 17,
+    "question": "(Administrativo no evaluable)",
+    "options": [],
+    "answers": []
+  },
+  {
+    "id": 18,
+    "question": "Por VMM (Virtual Machine Monitor) se entiende:",
+    "options": [
+      {
+        "key": "a",
+        "text": "El hipervisor"
+      },
+      {
+        "key": "b",
+        "text": "El módulo de traducción binaria"
+      },
+      {
+        "key": "c",
+        "text": "El sistema operativo host"
+      },
+      {
+        "key": "d",
+        "text": "El sistema operativo guest"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 19,
+    "question": "¿En qué esquema el SO guest es consciente del hipervisor?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Paravirtualización"
+      },
+      {
+        "key": "b",
+        "text": "Hosted"
+      },
+      {
+        "key": "c",
+        "text": "Full"
+      },
+      {
+        "key": "d",
+        "text": "Nativa"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 20,
+    "question": "Correspondencia v:R→V (real→virtual) es:",
+    "options": [],
+    "answers": [
+      "Isomorfismo"
+    ]
+  },
+  {
+    "id": 21,
+    "question": "¿En qué modo x86 está disponible VT-x?",
+    "options": [],
+    "answers": [
+      "VMX Root mode"
+    ]
+  }
+]

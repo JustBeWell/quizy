@@ -1,0 +1,327 @@
+[
+  {
+    "id": 1,
+    "question": "Empareja los siguientes términos en relación a los niveles de privilegio (anillos) en la familia de CPUs Intel x86 con soporte de virtualización",
+    "options": [],
+    "match_choices": [
+      "Elegir...",
+      "Ring -1",
+      "Ring -2",
+      "Ring 0",
+      "Ring 1",
+      "Ring 2",
+      "Ring 3"
+    ],
+    "match_terms": [
+      "Aplicaciones de usuario del guest",
+      "System Management Mode (SMM)",
+      "Sistema operativo host",
+      "Hipervisor"
+    ],
+    "answers": [
+      "Aplicaciones de usuario del guest -> Ring 3",
+      "System Management Mode (SMM) -> Ring -2",
+      "Sistema operativo host -> Ring 0",
+      "Hipervisor -> Ring -1"
+    ]
+  },
+  {
+    "id": 2,
+    "question": "Dos de las instrucciones que hacen que la arquitectura intel IA32 no sea estrictamente virtualizable son PUSHF/POPF que según la teoría de Popek y Goldberd, dichas instrucciones se clasifican como:",
+    "options": [
+      { "key": "a", "text": "Control sensitive" },
+      { "key": "b", "text": "Volatile" },
+      { "key": "c", "text": "Insensitive" },
+      { "key": "d", "text": "Behaviour sensitive" }
+    ],
+    "answers": ["d"]
+  },
+  {
+    "id": 3,
+    "question": "¿Qué afirmación(es) de las siguientes es(son) aplicable(s) al mecanismo de virtualización \"trap & emulate\"?",
+    "options": [
+      { "key": "a", "text": "La máquina virtual se ejecuta en un modo no-privilegiado del procesador" },
+      { "key": "b", "text": "Las instrucciones tipo IN y OUT, provocan excepciones que luego el hipervisor atiende y simulan el funcionamiento de los controladores de entrada/salida" },
+      { "key": "c", "text": "La ejecución de una instrucción privilegiada genera una excepción de privilegio, dando lugar a la ejecución de una rutina del hipervisor" },
+      { "key": "d", "text": "Las instrucciones más problemáticas del programa se traducen en run-time a fragmentos de código más inocuos" }
+    ],
+    "answers": ["a", "b", "c"]
+  },
+  {
+    "id": 4,
+    "question": "¿Cuál de las siguientes no es una de las funcionalidades claves, de las que normalmente se le atribuye a un hipervisor?",
+    "options": [
+      { "key": "a", "text": "Controlar los privilegios de usuario en las máquinas virtuales" },
+      { "key": "b", "text": "Aislar y multiplexar acceso a recursos de hardware entre VMs" },
+      { "key": "c", "text": "Proveer interfaces de virtualización para dispositivos" },
+      { "key": "d", "text": "Programar el planificador (scheduler) del kernel del guest" }
+    ],
+    "answers": ["a"]
+  },
+  {
+    "id": 5,
+    "question": "El uso de Shadow Page Tables (SPT) en virtualización de memoria...",
+    "options": [
+      { "key": "a", "text": "simplifica la emulación del paso a modo kernel en el guest" },
+      { "key": "b", "text": "permite que el guest gestione directamente la TLB del host" },
+      { "key": "c", "text": "evita que el guest actualice las tablas de páginas sin mediación del hipervisor" },
+      { "key": "d", "text": "no requiere interceptar escrituras a CR3" }
+    ],
+    "answers": ["c"]
+  },
+  {
+    "id": 6,
+    "question": "¿Cuál es la técnica de virtualización que fue empleada por VMware en el software de virtualización del que fueron pioneros?",
+    "options": [],
+    "answers": ["Traducción binaria"]
+  },
+  {
+    "id": 7,
+    "question": "En paravirtualización, ¿qué afirmación es correcta?",
+    "options": [
+      { "key": "a", "text": "El guest no sufre modificaciones y no es consciente del hipervisor" },
+      { "key": "b", "text": "El guest realiza hypercalls a una API del hipervisor para operaciones privilegiadas" },
+      { "key": "c", "text": "Se basa en capturar traps de instrucciones sensibles no privilegiadas" },
+      { "key": "d", "text": "Requiere soporte de EPT/NPT" }
+    ],
+    "answers": ["b"]
+  },
+  {
+    "id": 8,
+    "question": "Con respecto a EPT (Intel) / NPT (AMD) en virtualización de memoria:",
+    "options": [
+      { "key": "a", "text": "Implementan una segunda etapa de traducción de direcciones" },
+      { "key": "b", "text": "Eliminan completamente los fallos de TLB" },
+      { "key": "c", "text": "Reducen la necesidad de Shadow Page Tables" },
+      { "key": "d", "text": "Obligan al guest a usar páginas de 1 GB" }
+    ],
+    "answers": ["a", "c"]
+  },
+  {
+    "id": 9,
+    "question": "Sobre virtualización de E/S basada en emulación:",
+    "options": [
+      { "key": "a", "text": "Consigue rendimiento similar al acceso nativo" },
+      { "key": "b", "text": "Suele implicar mayor overhead que el passthrough (VT-d/IOMMU)" },
+      { "key": "c", "text": "Requiere SR-IOV" },
+      { "key": "d", "text": "No permite compartir dispositivos físicos entre VMs" }
+    ],
+    "answers": ["b"]
+  },
+  {
+    "id": 10,
+    "question": "¿Qué factor constituye una excepción al principio de fidelidad o equivalencia de Popek y Goldberg?",
+    "options": [],
+    "answers": ["Tiempo de ejecución (rendimiento)"]
+  },
+  {
+    "id": 11,
+    "question": "En un sistema virtualizado mediante “hosted virtualization”:",
+    "options": [
+      { "key": "a", "text": "El hipervisor corre directamente sobre el hardware" },
+      { "key": "b", "text": "El hipervisor se ejecuta como una aplicación sobre el sistema operativo host" },
+      { "key": "c", "text": "Los drivers de dispositivos del guest acceden al hardware sin mediación" },
+      { "key": "d", "text": "No hay transición de privilegios al entrar en el hipervisor" }
+    ],
+    "answers": ["b"]
+  },
+  {
+    "id": 12,
+    "question": "La técnica de binary translation se caracteriza por:",
+    "options": [
+      { "key": "a", "text": "Reescribir en tiempo de ejecución instrucciones problemáticas del guest" },
+      { "key": "b", "text": "Ejecutar todo el código del guest en modo kernel" },
+      { "key": "c", "text": "Evitar cualquier cacheo de bloques traducidos" },
+      { "key": "d", "text": "Depender únicamente de traps de hardware" }
+    ],
+    "answers": ["a"]
+  },
+  {
+    "id": 13,
+    "question": "En VTx/AMD-V, la transición a modo hipervisor cuando el guest ejecuta una instrucción privilegiada se realiza mediante:",
+    "options": [
+      { "key": "a", "text": "VM-exit" },
+      { "key": "b", "text": "VM-entry" },
+      { "key": "c", "text": "INT n" },
+      { "key": "d", "text": "SYSCALL/SYSRET" }
+    ],
+    "answers": ["a"]
+  },
+  {
+    "id": 14,
+    "question": "Con respecto a las estructuras de control de VTx (VMCS):",
+    "options": [
+      { "key": "a", "text": "Almacenan el estado del host y del guest para entradas/salidas de la VM" },
+      { "key": "b", "text": "Se configuran para seleccionar qué eventos provocan VM-exit" },
+      { "key": "c", "text": "Son gestionadas por el hipervisor" },
+      { "key": "d", "text": "Todas las anteriores" }
+    ],
+    "answers": ["d"]
+  },
+  {
+    "id": 15,
+    "question": "¿Cuáles son las tres características esenciales de un monitor de máquinas virtuales (VMM) según Popek y Goldberg? [Escriba las iniciales entre paréntesis]",
+    "options": [],
+    "answers": ["Equivalencia", "Control de recursos", "Eficiencia"]
+  },
+  {
+    "id": 16,
+    "question": "¿En qué modo de funcionamiento de una CPU compatible x86 estará disponible el soporte VT-x de virtualización?",
+    "options": [],
+    "answers": ["VMX Root mode"]
+  },
+  {
+    "id": 17,
+    "question": "En virtualización de CPU, un \"trap\":",
+    "options": [
+      { "key": "a", "text": "Es una excepción síncrona que transfiere el control al hipervisor" },
+      { "key": "b", "text": "Es una interrupción asíncrona que llega desde un dispositivo" },
+      { "key": "c", "text": "Sólo puede ser generado por instrucciones del usuario" },
+      { "key": "d", "text": "No implica cambio de privilegio" }
+    ],
+    "answers": ["a"]
+  },
+  {
+    "id": 18,
+    "question": "Sobre SR-IOV:",
+    "options": [
+      { "key": "a", "text": "Permite exponer múltiples funciones virtuales (VFs) a distintas VMs" },
+      { "key": "b", "text": "Requiere IOMMU (VT-d) para aislamiento" },
+      { "key": "c", "text": "Es incompatible con paravirtualización" },
+      { "key": "d", "text": "a y b son correctas" }
+    ],
+    "answers": ["d"]
+  },
+  {
+    "id": 19,
+    "question": "En virtualización de memoria, un fallo de página en el guest:",
+    "options": [
+      { "key": "a", "text": "Siempre provoca un triple fault en el host" },
+      { "key": "b", "text": "Puede causar VM-exit para que el hipervisor maneje las SPT/EPT" },
+      { "key": "c", "text": "Nunca es visible para el hipervisor" },
+      { "key": "d", "text": "Se maneja exclusivamente por el guest sin intervención del host" }
+    ],
+    "answers": ["b"]
+  },
+  {
+    "id": 20,
+    "question": "El objetivo del bit de privilegio CPL en x86 es:",
+    "options": [
+      { "key": "a", "text": "Determinar acceso a segmentos/instrucciones privilegiadas" },
+      { "key": "b", "text": "Habilitar/deshabilitar caching de TLB" },
+      { "key": "c", "text": "Configurar la frecuencia de reloj" },
+      { "key": "d", "text": "Seleccionar páginas de 4 KB vs 2 MB" }
+    ],
+    "answers": ["a"]
+  },
+  {
+    "id": 21,
+    "question": "VirtIO se utiliza típicamente para:",
+    "options": [
+      { "key": "a", "text": "Paravirtualización de dispositivos de E/S" },
+      { "key": "b", "text": "Traducción binaria de instrucciones de CPU" },
+      { "key": "c", "text": "Gestión de memoria de huéspedes" },
+      { "key": "d", "text": "Programación de interrupciones MSI-X" }
+    ],
+    "answers": ["a"]
+  },
+  {
+    "id": 22,
+    "question": "Respecto a KVM (Kernel-based Virtual Machine):",
+    "options": [
+      { "key": "a", "text": "Es un hipervisor tipo 2 alojado en espacio de usuario" },
+      { "key": "b", "text": "Convierte el kernel Linux en un hipervisor apoyándose en VT-x/AMD-V" },
+      { "key": "c", "text": "No requiere soporte de hardware para virtualización" },
+      { "key": "d", "text": "Sólo soporta paravirtualización" }
+    ],
+    "answers": ["b"]
+  },
+  {
+    "id": 23,
+    "question": "Sobre el uso de TLB en sistemas virtualizados:",
+    "options": [
+      { "key": "a", "text": "Los VM-exit suelen invalidar entradas de TLB relevantes" },
+      { "key": "b", "text": "Con EPT/NPT, pueden coexistir TLBs para guest y host" },
+      { "key": "c", "text": "No hay ningún impacto de TLB en rendimiento" },
+      { "key": "d", "text": "a y b son correctas" }
+    ],
+    "answers": ["d"]
+  },
+  {
+    "id": 24,
+    "question": "En QEMU/KVM, el proceso qemu-system-* corre:",
+    "options": [
+      { "key": "a", "text": "En modo kernel" },
+      { "key": "b", "text": "En espacio de usuario, haciendo syscalls e ioctl hacia KVM" },
+      { "key": "c", "text": "Como un módulo del kernel" },
+      { "key": "d", "text": "Dentro de la VM" }
+    ],
+    "answers": ["b"]
+  },
+  {
+    "id": 25,
+    "question": "Sobre los tipos de hipervisor:",
+    "options": [
+      { "key": "a", "text": "Tipo 1 (bare-metal) corre directamente sobre hardware" },
+      { "key": "b", "text": "Tipo 2 (hosted) corre sobre un sistema operativo host" },
+      { "key": "c", "text": "Ambos pueden soportar paravirtualización" },
+      { "key": "d", "text": "Todas las anteriores" }
+    ],
+    "answers": ["d"]
+  },
+  {
+    "id": 26,
+    "question": "Un hipervisor \"microkernelizado\" (Exokernel/Type-1 minimalista):",
+    "options": [
+      { "key": "a", "text": "Expone recursos de hardware de forma segura a las VMs" },
+      { "key": "b", "text": "Incluye drivers completos de todos los dispositivos" },
+      { "key": "c", "text": "No requiere mecanismos de aislamiento" },
+      { "key": "d", "text": "Es un sinónimo de hosted" }
+    ],
+    "answers": ["a"]
+  },
+  {
+    "id": 27,
+    "question": "Sobre NUMA-awareness en hipervisores:",
+    "options": [
+      { "key": "a", "text": "Ayuda a colocar vCPUs y memoria cerca para minimizar latencias" },
+      { "key": "b", "text": "Es irrelevante en servidores multiprocesador" },
+      { "key": "c", "text": "Sólo aplica cuando no hay EPT" },
+      { "key": "d", "text": "Rompe la afinidad de CPU/memoria" }
+    ],
+    "answers": ["a"]
+  },
+  {
+    "id": 28,
+    "question": "En virtualización anidada (nested virtualization):",
+    "options": [
+      { "key": "a", "text": "El hipervisor L0 virtualiza extensiones de virtualización para un hipervisor L1" },
+      { "key": "b", "text": "Es imposible ejecutar un hipervisor dentro de otro" },
+      { "key": "c", "text": "Sólo funciona en ARM" },
+      { "key": "d", "text": "No genera overhead adicional" }
+    ],
+    "answers": ["a"]
+  },
+  {
+    "id": 29,
+    "question": "Cónsiderese que se ejecuta un programa en el modo usuario de una CPU moderna. Si dicho programa intenta realizar la ejecución de una instrucción privilegiada, ¿qué evento tendrá lugar?",
+    "options": [
+      { "key": "a", "text": "Una exceptión de división por cero" },
+      { "key": "b", "text": "Un fallo de página" },
+      { "key": "c", "text": "Un fallo de TLB" },
+      { "key": "d", "text": "Un trap" }
+    ],
+    "answers": ["d"]
+  },
+  {
+    "id": 30,
+    "question": "¿En qué esquema de virtualización, el Sistema Operativo guest es consciente de la existencia del hipervisor?",
+    "options": [
+      { "key": "a", "text": "Full virtualization" },
+      { "key": "b", "text": "Paravirtualización" },
+      { "key": "c", "text": "Hosted virtualization" },
+      { "key": "d", "text": "Virtualización nativa" }
+    ],
+    "answers": ["b"]
+  }
+]

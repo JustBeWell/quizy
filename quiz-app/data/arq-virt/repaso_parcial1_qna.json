@@ -1,0 +1,2394 @@
+[
+  {
+    "id": 1,
+    "question": "En un sistema virtualizado mediante un \"hosted hypervisor\", los procesos de una MV podrían listarse con ps:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Desde cualquiera de las máquinas virtuales"
+      },
+      {
+        "key": "b",
+        "text": "Sólo en la máquina virtual a la que pertenece"
+      },
+      {
+        "key": "c",
+        "text": "Desde el sistema operativo host"
+      },
+      {
+        "key": "d",
+        "text": "Desde el propio hipervisor"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 2,
+    "question": "Operación que revierte un snapshot:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Rollback"
+      },
+      {
+        "key": "b",
+        "text": "Playback"
+      },
+      {
+        "key": "c",
+        "text": "Fallback"
+      },
+      {
+        "key": "d",
+        "text": "Callback"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 3,
+    "question": "Al revertir un snapshot:",
+    "options": [
+      {
+        "key": "a",
+        "text": "se consolidan cambios Δ"
+      },
+      {
+        "key": "b",
+        "text": "se intersectan A y Δ"
+      },
+      {
+        "key": "c",
+        "text": "se descarta A"
+      },
+      {
+        "key": "d",
+        "text": "se descartan cambios Δ"
+      }
+    ],
+    "answers": [
+      "d"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "Técnica clásica usada por VMware inicialmente:",
+    "options": [],
+    "answers": [
+      "traducción binaria"
+    ]
+  },
+  {
+    "id": 5,
+    "question": "Virtualización de RAM requiere dos MMUs:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Falso"
+      },
+      {
+        "key": "b",
+        "text": "Verdadero"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 6,
+    "question": "Trap & emulate implica pérdida de privilegios del guest:",
+    "options": [
+      {
+        "key": "a",
+        "text": "sólo si CPU no virtualizable"
+      },
+      {
+        "key": "b",
+        "text": "sí"
+      },
+      {
+        "key": "c",
+        "text": "sólo sin VT-x"
+      },
+      {
+        "key": "d",
+        "text": "no en CPUs modernas"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 7,
+    "question": "Commit tras N escrituras tiene orden:",
+    "options": [
+      {
+        "key": "a",
+        "text": "O(1)"
+      },
+      {
+        "key": "b",
+        "text": "O(log N)"
+      },
+      {
+        "key": "c",
+        "text": "O(N)"
+      },
+      {
+        "key": "d",
+        "text": "O(N²)"
+      }
+    ],
+    "answers": [
+      "c"
+    ]
+  },
+  {
+    "id": 8,
+    "question": "KVM proporciona virtualización:",
+    "options": [
+      {
+        "key": "a",
+        "text": "hosted"
+      },
+      {
+        "key": "b",
+        "text": "paravirtual"
+      },
+      {
+        "key": "c",
+        "text": "native"
+      },
+      {
+        "key": "d",
+        "text": "bare-metal"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 9,
+    "question": "El SO en una MV es:",
+    "options": [
+      {
+        "key": "a",
+        "text": "host"
+      },
+      {
+        "key": "b",
+        "text": "guest"
+      },
+      {
+        "key": "c",
+        "text": "monitor del sistema"
+      },
+      {
+        "key": "d",
+        "text": "VMM"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 10,
+    "question": "Criterios Popek & Goldberg:",
+    "options": [],
+    "answers": [
+      "equivalencia; control de recursos; eficiencia"
+    ]
+  },
+  {
+    "id": 11,
+    "question": "Sobre trap & emulate:",
+    "options": [
+      {
+        "key": "a",
+        "text": "traduce instrucciones problemáticas"
+      },
+      {
+        "key": "b",
+        "text": "IN/OUT → excepción y rutina de hipervisor"
+      },
+      {
+        "key": "c",
+        "text": "MV en modo no privilegiado"
+      },
+      {
+        "key": "d",
+        "text": "instrucción privilegiada → trap"
+      }
+    ],
+    "answers": [
+      "b",
+      "c",
+      "d"
+    ]
+  },
+  {
+    "id": 12,
+    "question": "Commit de snapshot A y Δ →",
+    "options": [],
+    "answers": [
+      "{0:∅,1:X,2:Y,3:M,4:N}"
+    ]
+  },
+  {
+    "id": 13,
+    "question": "Rendimiento de traducción binaria:",
+    "options": [
+      {
+        "key": "a",
+        "text": "mejor que trap & emulate"
+      },
+      {
+        "key": "b",
+        "text": "optimizable por cachés"
+      },
+      {
+        "key": "c",
+        "text": "extremadamente malo"
+      },
+      {
+        "key": "d",
+        "text": "muy malo si muchas inocuas"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 14,
+    "question": "Instrucción privilegiada en modo usuario causa:",
+    "options": [
+      {
+        "key": "a",
+        "text": "trap"
+      },
+      {
+        "key": "b",
+        "text": "fallo TLB"
+      },
+      {
+        "key": "c",
+        "text": "fallo página"
+      },
+      {
+        "key": "d",
+        "text": "división por cero"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 15,
+    "question": "Un intérprete de CPU debe emular:",
+    "options": [
+      {
+        "key": "a",
+        "text": "sólo sensitive"
+      },
+      {
+        "key": "b",
+        "text": "privilegiadas + interrupciones"
+      },
+      {
+        "key": "c",
+        "text": "sólo privilegiadas"
+      },
+      {
+        "key": "d",
+        "text": "todas + traps"
+      }
+    ],
+    "answers": [
+      "d"
+    ]
+  },
+  {
+    "id": 16,
+    "question": "¿Qué NO es cierto sobre disco virtual como fichero imagen?",
+    "options": [
+      {
+        "key": "a",
+        "text": "más rápido que partición nativa"
+      },
+      {
+        "key": "b",
+        "text": "fácil mover"
+      },
+      {
+        "key": "c",
+        "text": "espacio no asignado"
+      },
+      {
+        "key": "d",
+        "text": "flexible"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 17,
+    "question": "VMM es:",
+    "options": [
+      {
+        "key": "a",
+        "text": "hipervisor"
+      },
+      {
+        "key": "b",
+        "text": "traducción binaria"
+      },
+      {
+        "key": "c",
+        "text": "host"
+      },
+      {
+        "key": "d",
+        "text": "guest"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 18,
+    "question": "Guest consciente del hipervisor:",
+    "options": [
+      {
+        "key": "a",
+        "text": "nativa"
+      },
+      {
+        "key": "b",
+        "text": "paravirtual"
+      },
+      {
+        "key": "c",
+        "text": "hosted"
+      },
+      {
+        "key": "d",
+        "text": "full"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 19,
+    "question": "¿Qué NO es función del hipervisor?",
+    "options": [
+      {
+        "key": "a",
+        "text": "controlar privilegios usuario"
+      },
+      {
+        "key": "b",
+        "text": "dispatch entre cores"
+      },
+      {
+        "key": "c",
+        "text": "interpretar instrucciones"
+      },
+      {
+        "key": "d",
+        "text": "asignar HW"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 20,
+    "question": "La correspondencia v:R→V es:",
+    "options": [
+      {
+        "key": "a",
+        "text": "isomorfismo"
+      },
+      {
+        "key": "b",
+        "text": "monomorfismo"
+      },
+      {
+        "key": "c",
+        "text": "automorfismo"
+      },
+      {
+        "key": "d",
+        "text": "polimorfismo"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 21,
+    "question": "Modo de CPU donde está VT-x:",
+    "options": [],
+    "answers": [
+      "VMX Root Mode"
+    ]
+  },
+  {
+    "id": 22,
+    "question": "Aislamiento de sistemas virtuales:",
+    "options": [
+      {
+        "key": "a",
+        "text": "sandbox"
+      },
+      {
+        "key": "b",
+        "text": "honeybox"
+      },
+      {
+        "key": "c",
+        "text": "virtualbox"
+      },
+      {
+        "key": "d",
+        "text": "honeypot"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 23,
+    "question": "Excepción al principio de equivalencia de Popek & Goldberg:",
+    "options": [],
+    "answers": [
+      "temporizaciones"
+    ]
+  },
+  {
+    "id": 24,
+    "question": "Activos de red en hipervisor tipo 1:",
+    "options": [
+      {
+        "key": "a",
+        "text": "ninguno"
+      },
+      {
+        "key": "b",
+        "text": "todo tipo"
+      },
+      {
+        "key": "c",
+        "text": "switches y routers"
+      },
+      {
+        "key": "d",
+        "text": "solo switches"
+      }
+    ],
+    "answers": [
+      "c"
+    ]
+  },
+  {
+    "id": 25,
+    "question": "Ejecutar hipervisor en ISA no estrictamente virtualizable:",
+    "options": [
+      {
+        "key": "a",
+        "text": "imposible"
+      },
+      {
+        "key": "b",
+        "text": "binary translation"
+      },
+      {
+        "key": "c",
+        "text": "otra CPU"
+      },
+      {
+        "key": "d",
+        "text": "trap & emulate"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 26,
+    "question": "PUSHF/POPF son:",
+    "options": [
+      {
+        "key": "a",
+        "text": "insensitive"
+      },
+      {
+        "key": "b",
+        "text": "behaviour sensitive"
+      },
+      {
+        "key": "c",
+        "text": "control sensitive"
+      },
+      {
+        "key": "d",
+        "text": "volatile"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 27,
+    "question": "Bridge virtual requiere:",
+    "options": [
+      {
+        "key": "a",
+        "text": "NIC con VLAN"
+      },
+      {
+        "key": "b",
+        "text": "NIC paravirtual"
+      },
+      {
+        "key": "c",
+        "text": "NIC NAT"
+      },
+      {
+        "key": "d",
+        "text": "NIC en modo promiscuo"
+      }
+    ],
+    "answers": [
+      "d"
+    ]
+  },
+  {
+    "id": 28,
+    "question": "Emparejar anillos: Ring 3 →",
+    "options": [],
+    "answers": [
+      "apps guest"
+    ]
+  },
+  {
+    "id": 29,
+    "question": "Soporte HW optimizado para trap & emulate:",
+    "options": [
+      {
+        "key": "a",
+        "text": "facilita modo kernel guest"
+      },
+      {
+        "key": "b",
+        "text": "no requiere dom0"
+      },
+      {
+        "key": "c",
+        "text": "IN/OUT inocuas"
+      },
+      {
+        "key": "d",
+        "text": "fast hypercalls"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 30,
+    "question": "¿Qué componente del hipervisor decide qué módulo manejará una interrupción?",
+    "options": [
+      {
+        "key": "a",
+        "text": "allocator"
+      },
+      {
+        "key": "b",
+        "text": "dispatcher"
+      },
+      {
+        "key": "c",
+        "text": "interpreter"
+      },
+      {
+        "key": "d",
+        "text": "scheduler"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 31,
+    "question": "¿Qué componente asigna recursos físicos a las MV?",
+    "options": [
+      {
+        "key": "a",
+        "text": "dispatcher"
+      },
+      {
+        "key": "b",
+        "text": "allocator"
+      },
+      {
+        "key": "c",
+        "text": "linker"
+      },
+      {
+        "key": "d",
+        "text": "mapper"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 32,
+    "question": "Popek & Goldberg: una instrucción privileged…",
+    "options": [
+      {
+        "key": "a",
+        "text": "siempre genera trap"
+      },
+      {
+        "key": "b",
+        "text": "nunca genera trap"
+      },
+      {
+        "key": "c",
+        "text": "sólo en ring 3"
+      },
+      {
+        "key": "d",
+        "text": "sólo en ring 0"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 33,
+    "question": "Una instrucción \"behaviour sensitive\" depende de…",
+    "options": [
+      {
+        "key": "a",
+        "text": "el tamaño del TLB"
+      },
+      {
+        "key": "b",
+        "text": "la configuración del sistema"
+      },
+      {
+        "key": "c",
+        "text": "el tiempo real"
+      },
+      {
+        "key": "d",
+        "text": "los registros flotantes"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 34,
+    "question": "Una máquina NO es estrictamente virtualizable cuando existen instrucciones…",
+    "options": [
+      {
+        "key": "a",
+        "text": "behaviour sensitive que no trap"
+      },
+      {
+        "key": "b",
+        "text": "privilegied que trap"
+      },
+      {
+        "key": "c",
+        "text": "innocuous"
+      },
+      {
+        "key": "d",
+        "text": "de coma flotante"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 35,
+    "question": "Virtualización recursiva requiere…",
+    "options": [
+      {
+        "key": "a",
+        "text": "que el guest no use TLB"
+      },
+      {
+        "key": "b",
+        "text": "un VMM sin dependencias temporales"
+      },
+      {
+        "key": "c",
+        "text": "que el guest sea 64 bits"
+      },
+      {
+        "key": "d",
+        "text": "que el host soporte VT-d"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 36,
+    "question": "En full virtualization el guest…",
+    "options": [
+      {
+        "key": "a",
+        "text": "se modifica"
+      },
+      {
+        "key": "b",
+        "text": "no es consciente del hipervisor"
+      },
+      {
+        "key": "c",
+        "text": "requiere hypercalls"
+      },
+      {
+        "key": "d",
+        "text": "actúa como dom0"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 37,
+    "question": "En paravirtualization el guest…",
+    "options": [
+      {
+        "key": "a",
+        "text": "no requiere modificaciones"
+      },
+      {
+        "key": "b",
+        "text": "requiere modificar el kernel"
+      },
+      {
+        "key": "c",
+        "text": "se ejecuta en ring −1"
+      },
+      {
+        "key": "d",
+        "text": "ignora instrucciones privilegiadas"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 38,
+    "question": "En hipervisor tipo 2:",
+    "options": [
+      {
+        "key": "a",
+        "text": "corre sobre hardware directo"
+      },
+      {
+        "key": "b",
+        "text": "corre como proceso del SO host"
+      },
+      {
+        "key": "c",
+        "text": "sólo usa drivers propios"
+      },
+      {
+        "key": "d",
+        "text": "requiere dom0"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 39,
+    "question": "Hipervisor native/bare-metal…",
+    "options": [
+      {
+        "key": "a",
+        "text": "depende totalmente del host"
+      },
+      {
+        "key": "b",
+        "text": "implementa drivers propios"
+      },
+      {
+        "key": "c",
+        "text": "sólo soporta guests modificados"
+      },
+      {
+        "key": "d",
+        "text": "no soporta E/S real"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 40,
+    "question": "En virtualización hibrida…",
+    "options": [
+      {
+        "key": "a",
+        "text": "se usa sólo trap & emulate"
+      },
+      {
+        "key": "b",
+        "text": "BT sustituye instrucciones sensibles"
+      },
+      {
+        "key": "c",
+        "text": "no se permite código kernel"
+      },
+      {
+        "key": "d",
+        "text": "no hay traducción binaria"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 41,
+    "question": "Un emulador CPU simula…",
+    "options": [
+      {
+        "key": "a",
+        "text": "sólo instrucciones sensibles"
+      },
+      {
+        "key": "b",
+        "text": "todas las instrucciones"
+      },
+      {
+        "key": "c",
+        "text": "sólo instrucciones privilegiadas"
+      },
+      {
+        "key": "d",
+        "text": "sólo llamadas al sistema"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 42,
+    "question": "Problema típico de traducción binaria:",
+    "options": [
+      {
+        "key": "a",
+        "text": "instrucciones largas"
+      },
+      {
+        "key": "b",
+        "text": "código auto-modificado"
+      },
+      {
+        "key": "c",
+        "text": "falta de registros"
+      },
+      {
+        "key": "d",
+        "text": "pipelines profundos"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 43,
+    "question": "Trap & emulate: modo de ejecución del guest",
+    "options": [
+      {
+        "key": "a",
+        "text": "ring 0"
+      },
+      {
+        "key": "b",
+        "text": "ring 2"
+      },
+      {
+        "key": "c",
+        "text": "ring 3"
+      },
+      {
+        "key": "d",
+        "text": "ring −1"
+      }
+    ],
+    "answers": [
+      "c"
+    ]
+  },
+  {
+    "id": 44,
+    "question": "E/S en trap & emulate…",
+    "options": [
+      {
+        "key": "a",
+        "text": "se ejecuta directamente"
+      },
+      {
+        "key": "b",
+        "text": "siempre provoca trap"
+      },
+      {
+        "key": "c",
+        "text": "se ignora"
+      },
+      {
+        "key": "d",
+        "text": "pasa al SMM"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 45,
+    "question": "Ventaja de virtualization hibrida sobre trap & emulate:",
+    "options": [
+      {
+        "key": "a",
+        "text": "no hay traps nunca"
+      },
+      {
+        "key": "b",
+        "text": "menos overhead en modo kernel"
+      },
+      {
+        "key": "c",
+        "text": "elimina shadow registers"
+      },
+      {
+        "key": "d",
+        "text": "elimina interrupciones"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 46,
+    "question": "Shadow page tables:",
+    "options": [
+      {
+        "key": "a",
+        "text": "son visibles al guest"
+      },
+      {
+        "key": "b",
+        "text": "sólo existen en non-root mode"
+      },
+      {
+        "key": "c",
+        "text": "mantienen un segundo juego de TPs"
+      },
+      {
+        "key": "d",
+        "text": "se guardan en el TLB"
+      }
+    ],
+    "answers": [
+      "c"
+    ]
+  },
+  {
+    "id": 47,
+    "question": "Un hidden page fault ocurre cuando…",
+    "options": [
+      {
+        "key": "a",
+        "text": "el guest marca página presente pero no está en RAM real"
+      },
+      {
+        "key": "b",
+        "text": "el TLB falla"
+      },
+      {
+        "key": "c",
+        "text": "hay overflow de heap"
+      },
+      {
+        "key": "d",
+        "text": "hay fallo de segmentación"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 48,
+    "question": "Nested paging añade…",
+    "options": [
+      {
+        "key": "a",
+        "text": "un único nivel adicional"
+      },
+      {
+        "key": "b",
+        "text": "dos niveles de traducción"
+      },
+      {
+        "key": "c",
+        "text": "eliminación de MMU"
+      },
+      {
+        "key": "d",
+        "text": "eliminación de TLB"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 49,
+    "question": "Ballooning permite…",
+    "options": [
+      {
+        "key": "a",
+        "text": "añadir dispositivos SCSI"
+      },
+      {
+        "key": "b",
+        "text": "reclamar memoria no usada por una MV"
+      },
+      {
+        "key": "c",
+        "text": "crear snapshots"
+      },
+      {
+        "key": "d",
+        "text": "acelerar la red"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 50,
+    "question": "Overcommitting significa…",
+    "options": [
+      {
+        "key": "a",
+        "text": "usar más memoria virtual que física"
+      },
+      {
+        "key": "b",
+        "text": "reducir número de MVs"
+      },
+      {
+        "key": "c",
+        "text": "bloquear RAM para una MV"
+      },
+      {
+        "key": "d",
+        "text": "evitar swap"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 51,
+    "question": "El working set de una MV representa…",
+    "options": [
+      {
+        "key": "a",
+        "text": "toda la RAM asignada"
+      },
+      {
+        "key": "b",
+        "text": "sólo las páginas activamente usadas"
+      },
+      {
+        "key": "c",
+        "text": "las páginas en swap"
+      },
+      {
+        "key": "d",
+        "text": "las páginas marcadas como shared"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 52,
+    "question": "¿Qué sucede cuando el hipervisor detecta poca RAM libre?",
+    "options": [
+      {
+        "key": "a",
+        "text": "elimina MVs"
+      },
+      {
+        "key": "b",
+        "text": "usa ballooning"
+      },
+      {
+        "key": "c",
+        "text": "desactiva nested paging"
+      },
+      {
+        "key": "d",
+        "text": "reinicia el scheduler"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 53,
+    "question": "En un disco \"thick eager-zeroed\"…",
+    "options": [
+      {
+        "key": "a",
+        "text": "se asigna espacio según demanda"
+      },
+      {
+        "key": "b",
+        "text": "todo el espacio se asigna y se pone a cero al crear"
+      },
+      {
+        "key": "c",
+        "text": "no existe fragmentación"
+      },
+      {
+        "key": "d",
+        "text": "sólo se escribe bajo snapshot"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 54,
+    "question": "En un disco \"thin\"…",
+    "options": [
+      {
+        "key": "a",
+        "text": "requiere escribir todo en cero al inicio"
+      },
+      {
+        "key": "b",
+        "text": "puede fragmentarse fácilmente"
+      },
+      {
+        "key": "c",
+        "text": "evita uso de swap"
+      },
+      {
+        "key": "d",
+        "text": "es más rápido que uno físico"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 55,
+    "question": "Un snapshot read-only…",
+    "options": [
+      {
+        "key": "a",
+        "text": "escribe siempre sobre el disco base"
+      },
+      {
+        "key": "b",
+        "text": "escribe en un volumen delta"
+      },
+      {
+        "key": "c",
+        "text": "no altera el rendimiento"
+      },
+      {
+        "key": "d",
+        "text": "se usa solo con dom0"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 56,
+    "question": "Un snapshot de MV guarda…",
+    "options": [
+      {
+        "key": "a",
+        "text": "solo el disco"
+      },
+      {
+        "key": "b",
+        "text": "solo la RAM"
+      },
+      {
+        "key": "c",
+        "text": "RAM + discos + configuración"
+      },
+      {
+        "key": "d",
+        "text": "solo estado de CPU"
+      }
+    ],
+    "answers": [
+      "c"
+    ]
+  },
+  {
+    "id": 57,
+    "question": "En rollback de snapshot…",
+    "options": [
+      {
+        "key": "a",
+        "text": "se mantienen los cambios"
+      },
+      {
+        "key": "b",
+        "text": "se elimina estado RAM guardado"
+      },
+      {
+        "key": "c",
+        "text": "se vuelca la RAM del snapshot"
+      },
+      {
+        "key": "d",
+        "text": "se consolidan los cambios sobre el disco base"
+      }
+    ],
+    "answers": [
+      "c"
+    ]
+  },
+  {
+    "id": 58,
+    "question": "En commit de snapshot…",
+    "options": [
+      {
+        "key": "a",
+        "text": "se pierden los cambios"
+      },
+      {
+        "key": "b",
+        "text": "se fusionan los bloques modificados con el disco base"
+      },
+      {
+        "key": "c",
+        "text": "se vuelve al estado anterior"
+      },
+      {
+        "key": "d",
+        "text": "no se toca la RAM"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 59,
+    "question": "Los linked clones…",
+    "options": [
+      {
+        "key": "a",
+        "text": "copian todo el disco original"
+      },
+      {
+        "key": "b",
+        "text": "dependen de una plantilla y snapshots"
+      },
+      {
+        "key": "c",
+        "text": "no ahorran espacio"
+      },
+      {
+        "key": "d",
+        "text": "requieren hardware dedicado"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 60,
+    "question": "Ventaja de linked clone:",
+    "options": [
+      {
+        "key": "a",
+        "text": "rendimiento de escritura superior"
+      },
+      {
+        "key": "b",
+        "text": "creación instantánea"
+      },
+      {
+        "key": "c",
+        "text": "no hay dependencia de la plantilla"
+      },
+      {
+        "key": "d",
+        "text": "no requieren snapshots"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 61,
+    "question": "Desventaja de linked clone:",
+    "options": [
+      {
+        "key": "a",
+        "text": "ocupan demasiado"
+      },
+      {
+        "key": "b",
+        "text": "no se puede actualizar la plantilla"
+      },
+      {
+        "key": "c",
+        "text": "requieren disk passthrough"
+      },
+      {
+        "key": "d",
+        "text": "no permiten snapshot"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 62,
+    "question": "En LAN virtual tipo hosted, la opción NAT…",
+    "options": [
+      {
+        "key": "a",
+        "text": "conecta directamente MV↔LAN externa"
+      },
+      {
+        "key": "b",
+        "text": "actúa como router IP entre LAN virtual y externa"
+      },
+      {
+        "key": "c",
+        "text": "impide salida a Internet"
+      },
+      {
+        "key": "d",
+        "text": "usa bridges físicos exclusivamente"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 63,
+    "question": "Un vSwitch en hipervisor tipo 1…",
+    "options": [
+      {
+        "key": "a",
+        "text": "siempre se asocia a un NIC real"
+      },
+      {
+        "key": "b",
+        "text": "puede existir sin NIC real"
+      },
+      {
+        "key": "c",
+        "text": "no admite VLANs"
+      },
+      {
+        "key": "d",
+        "text": "obliga a NAT"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 64,
+    "question": "En vSwitch, modo \"aislado\" significa…",
+    "options": [
+      {
+        "key": "a",
+        "text": "MV solo puede comunicarse con el host"
+      },
+      {
+        "key": "b",
+        "text": "no tiene NICs reales asociados"
+      },
+      {
+        "key": "c",
+        "text": "usa IP fijas"
+      },
+      {
+        "key": "d",
+        "text": "obliga a usar VLAN"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 65,
+    "question": "Una MV con múltiples NIC virtuales puede…",
+    "options": [
+      {
+        "key": "a",
+        "text": "usar múltiples VLANs"
+      },
+      {
+        "key": "b",
+        "text": "usar sólo una VLAN"
+      },
+      {
+        "key": "c",
+        "text": "no comunicarse con el host"
+      },
+      {
+        "key": "d",
+        "text": "evitar uso de MAC"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 66,
+    "question": "El tráfico entre MVs del mismo vSwitch…",
+    "options": [
+      {
+        "key": "a",
+        "text": "pasa por NIC físico"
+      },
+      {
+        "key": "b",
+        "text": "viaja por buffers internos del hipervisor"
+      },
+      {
+        "key": "c",
+        "text": "se enruta por el host"
+      },
+      {
+        "key": "d",
+        "text": "requiere router virtual"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 67,
+    "question": "La recepción en NIC virtuales usa…",
+    "options": [
+      {
+        "key": "a",
+        "text": "modo non-promiscuous"
+      },
+      {
+        "key": "b",
+        "text": "modo promiscuo"
+      },
+      {
+        "key": "c",
+        "text": "polling"
+      },
+      {
+        "key": "d",
+        "text": "DMA directo"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 68,
+    "question": "En traducción binaria, los bloques traducidos…",
+    "options": [
+      {
+        "key": "a",
+        "text": "se descartan siempre"
+      },
+      {
+        "key": "b",
+        "text": "pueden reutilizarse"
+      },
+      {
+        "key": "c",
+        "text": "no se pueden cachear"
+      },
+      {
+        "key": "d",
+        "text": "deben ejecutarse sólo una vez"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 69,
+    "question": "Problema de trap & emulate:",
+    "options": [
+      {
+        "key": "a",
+        "text": "demasiada velocidad"
+      },
+      {
+        "key": "b",
+        "text": "overhead por muchas excepciones"
+      },
+      {
+        "key": "c",
+        "text": "requiere modificar el guest"
+      },
+      {
+        "key": "d",
+        "text": "no permite multitarea"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 70,
+    "question": "El hipervisor mantiene \"shadow registers\" para…",
+    "options": [
+      {
+        "key": "a",
+        "text": "acelerar floating point"
+      },
+      {
+        "key": "b",
+        "text": "simular el estado privilegiado que el guest no puede ver"
+      },
+      {
+        "key": "c",
+        "text": "guardar parámetros de boot"
+      },
+      {
+        "key": "d",
+        "text": "almacenar VLAN tags"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 71,
+    "question": "Ejemplo de sensitive instruction que puede romper virtualización:",
+    "options": [
+      {
+        "key": "a",
+        "text": "MOV"
+      },
+      {
+        "key": "b",
+        "text": "POPF"
+      },
+      {
+        "key": "c",
+        "text": "ADD"
+      },
+      {
+        "key": "d",
+        "text": "SHL"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 72,
+    "question": "En virtualización nativa (hardware-assisted)…",
+    "options": [
+      {
+        "key": "a",
+        "text": "no existe VMX root mode"
+      },
+      {
+        "key": "b",
+        "text": "guest corre en VMX non-root"
+      },
+      {
+        "key": "c",
+        "text": "guest corre en ring −2"
+      },
+      {
+        "key": "d",
+        "text": "el VMM corre como un proceso más"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 73,
+    "question": "Una instrucción sensitive redesigada por Intel para virtualización generará…",
+    "options": [
+      {
+        "key": "a",
+        "text": "un fallo de segmentación"
+      },
+      {
+        "key": "b",
+        "text": "un trap hacia VMX root"
+      },
+      {
+        "key": "c",
+        "text": "un fallo de TLB"
+      },
+      {
+        "key": "d",
+        "text": "no generará nada"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 74,
+    "question": "En VMX Root Mode corre…",
+    "options": [
+      {
+        "key": "a",
+        "text": "el SSOO guest"
+      },
+      {
+        "key": "b",
+        "text": "el hipervisor"
+      },
+      {
+        "key": "c",
+        "text": "aplicaciones usuario"
+      },
+      {
+        "key": "d",
+        "text": "BIOS"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 75,
+    "question": "En VMX Non-root Mode corre…",
+    "options": [
+      {
+        "key": "a",
+        "text": "el hipervisor"
+      },
+      {
+        "key": "b",
+        "text": "dom0"
+      },
+      {
+        "key": "c",
+        "text": "el SSOO guest"
+      },
+      {
+        "key": "d",
+        "text": "drivers físicos"
+      }
+    ],
+    "answers": [
+      "c"
+    ]
+  },
+  {
+    "id": 76,
+    "question": "Una ventaja de hardware-assisted virtualization es…",
+    "options": [
+      {
+        "key": "a",
+        "text": "elimina la MMU"
+      },
+      {
+        "key": "b",
+        "text": "evita emulación de modo kernel"
+      },
+      {
+        "key": "c",
+        "text": "no usa TLB"
+      },
+      {
+        "key": "d",
+        "text": "no usa VMCB"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 77,
+    "question": "El VMCB contiene…",
+    "options": [
+      {
+        "key": "a",
+        "text": "estado de la VM + datos de control"
+      },
+      {
+        "key": "b",
+        "text": "sólo la RAM"
+      },
+      {
+        "key": "c",
+        "text": "sólo registros del TLB"
+      },
+      {
+        "key": "d",
+        "text": "sólo PC y SP"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 78,
+    "question": "La instrucción vmrun…",
+    "options": [
+      {
+        "key": "a",
+        "text": "carga el hipervisor"
+      },
+      {
+        "key": "b",
+        "text": "cambia a modo guest usando VMCB"
+      },
+      {
+        "key": "c",
+        "text": "destruye la VM"
+      },
+      {
+        "key": "d",
+        "text": "inicializa la MMU"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 79,
+    "question": "El cambio de contexto guest↔host…",
+    "options": [
+      {
+        "key": "a",
+        "text": "nunca se produce"
+      },
+      {
+        "key": "b",
+        "text": "se gestiona por hardware en VMX"
+      },
+      {
+        "key": "c",
+        "text": "requiere siempre BT"
+      },
+      {
+        "key": "d",
+        "text": "siempre produce fallo de página"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 80,
+    "question": "En un sistema sin soporte HW, trap & emulate…",
+    "options": [
+      {
+        "key": "a",
+        "text": "es imposible"
+      },
+      {
+        "key": "b",
+        "text": "debe emular modo kernel guest en software"
+      },
+      {
+        "key": "c",
+        "text": "elimina sensitive instructions"
+      },
+      {
+        "key": "d",
+        "text": "evita usar TLB"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 81,
+    "question": "Ventaja de emulación completa (software):",
+    "options": [
+      {
+        "key": "a",
+        "text": "máxima velocidad"
+      },
+      {
+        "key": "b",
+        "text": "máxima compatibilidad con cualquier CPU"
+      },
+      {
+        "key": "c",
+        "text": "no requiere interpretar instrucciones"
+      },
+      {
+        "key": "d",
+        "text": "usa registros reales"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 82,
+    "question": "Desventaja de la emulación completa:",
+    "options": [
+      {
+        "key": "a",
+        "text": "compatibilidad limitada"
+      },
+      {
+        "key": "b",
+        "text": "muy lenta"
+      },
+      {
+        "key": "c",
+        "text": "requiere soporte hardware"
+      },
+      {
+        "key": "d",
+        "text": "no permite snapshots"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 83,
+    "question": "CPU multiplexing:",
+    "options": [
+      {
+        "key": "a",
+        "text": "las MVs tienen CPU dedicadas"
+      },
+      {
+        "key": "b",
+        "text": "se divide CPU real entre MVs"
+      },
+      {
+        "key": "c",
+        "text": "sólo el guest más antiguo recibe CPU"
+      },
+      {
+        "key": "d",
+        "text": "siempre usa EDF scheduling"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 84,
+    "question": "Razón de timeouts \"inexplicables\" en MV:",
+    "options": [
+      {
+        "key": "a",
+        "text": "errores del guest"
+      },
+      {
+        "key": "b",
+        "text": "hipervisor desprograma temporalmente la MV"
+      },
+      {
+        "key": "c",
+        "text": "fallo de alimentación"
+      },
+      {
+        "key": "d",
+        "text": "modo SMM"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 85,
+    "question": "En virtualización de memoria, cada MV necesita…",
+    "options": [
+      {
+        "key": "a",
+        "text": "su propia MMU virtual"
+      },
+      {
+        "key": "b",
+        "text": "acceso directo a MMU real"
+      },
+      {
+        "key": "c",
+        "text": "su propia TLB física"
+      },
+      {
+        "key": "d",
+        "text": "segmentación exclusiva"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 86,
+    "question": "Traducción ELV→EFV→EFR ocurre en…",
+    "options": [
+      {
+        "key": "a",
+        "text": "una CPU sin virtualización"
+      },
+      {
+        "key": "b",
+        "text": "nested paging"
+      },
+      {
+        "key": "c",
+        "text": "discos virtuales"
+      },
+      {
+        "key": "d",
+        "text": "trap & emulate"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 87,
+    "question": "La TLB en nested paging…",
+    "options": [
+      {
+        "key": "a",
+        "text": "guarda sólo ELV→EFV"
+      },
+      {
+        "key": "b",
+        "text": "guarda traducción final ELV→EFR"
+      },
+      {
+        "key": "c",
+        "text": "no se usa"
+      },
+      {
+        "key": "d",
+        "text": "se comparte entre MVs siempre"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 88,
+    "question": "Un true page fault ocurre cuando…",
+    "options": [
+      {
+        "key": "a",
+        "text": "la página existe en real pero no en guest"
+      },
+      {
+        "key": "b",
+        "text": "no está en real ni en guest"
+      },
+      {
+        "key": "c",
+        "text": "guest dice \"presente\""
+      },
+      {
+        "key": "d",
+        "text": "TLB falla pero existe en RAM"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 89,
+    "question": "Shadow page tables requieren…",
+    "options": [
+      {
+        "key": "a",
+        "text": "coherencia manual"
+      },
+      {
+        "key": "b",
+        "text": "detección de cambios en TPs del guest"
+      },
+      {
+        "key": "c",
+        "text": "desactivar TLB"
+      },
+      {
+        "key": "d",
+        "text": "eliminar nested paging"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 90,
+    "question": "Las NIC virtuales tienen…",
+    "options": [
+      {
+        "key": "a",
+        "text": "MAC única"
+      },
+      {
+        "key": "b",
+        "text": "MAC duplicada del host"
+      },
+      {
+        "key": "c",
+        "text": "misma MAC todas"
+      },
+      {
+        "key": "d",
+        "text": "no usan MAC"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 91,
+    "question": "En LAN hosted modo Host-Only…",
+    "options": [
+      {
+        "key": "a",
+        "text": "no hay comunicación con el host"
+      },
+      {
+        "key": "b",
+        "text": "sólo MVs pueden comunicarse entre sí y con host"
+      },
+      {
+        "key": "c",
+        "text": "salida libre a Internet"
+      },
+      {
+        "key": "d",
+        "text": "requiere VLAN 802.1q"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 92,
+    "question": "En bridged networking…",
+    "options": [
+      {
+        "key": "a",
+        "text": "la MV aparece en la red física como dispositivo más"
+      },
+      {
+        "key": "b",
+        "text": "requiere NAT"
+      },
+      {
+        "key": "c",
+        "text": "sólo permite IPv6"
+      },
+      {
+        "key": "d",
+        "text": "sólo funciona en bare-metal"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 93,
+    "question": "En red virtual, la velocidad MV↔MV suele ser…",
+    "options": [
+      {
+        "key": "a",
+        "text": "extremadamente baja"
+      },
+      {
+        "key": "b",
+        "text": "muy alta, por buffers internos"
+      },
+      {
+        "key": "c",
+        "text": "igual que WiFi"
+      },
+      {
+        "key": "d",
+        "text": "limitada por switch físico"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 94,
+    "question": "Un motivo de virtualizar:",
+    "options": [
+      {
+        "key": "a",
+        "text": "complicar el sistema"
+      },
+      {
+        "key": "b",
+        "text": "ejecutar software antiguo"
+      },
+      {
+        "key": "c",
+        "text": "eliminar multitarea"
+      },
+      {
+        "key": "d",
+        "text": "evitar aislamiento"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 95,
+    "question": "El aislamiento entre MVs permite…",
+    "options": [
+      {
+        "key": "a",
+        "text": "compartir RAM sin control"
+      },
+      {
+        "key": "b",
+        "text": "mejorar la seguridad"
+      },
+      {
+        "key": "c",
+        "text": "compartir drivers kernel"
+      },
+      {
+        "key": "d",
+        "text": "acelerar CPU"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 96,
+    "question": "Green computing mediante virtualización permite…",
+    "options": [
+      {
+        "key": "a",
+        "text": "aumentar consumo energético"
+      },
+      {
+        "key": "b",
+        "text": "consolidar máquinas físicas"
+      },
+      {
+        "key": "c",
+        "text": "usar sólo HDD"
+      },
+      {
+        "key": "d",
+        "text": "desactivar suspensión"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 97,
+    "question": "Tipo de hipervisor donde el guest usa drivers del host:",
+    "options": [
+      {
+        "key": "a",
+        "text": "native"
+      },
+      {
+        "key": "b",
+        "text": "hosted"
+      },
+      {
+        "key": "c",
+        "text": "bare metal"
+      },
+      {
+        "key": "d",
+        "text": "paravirtual"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 98,
+    "question": "El hipervisor tipo native suele…",
+    "options": [
+      {
+        "key": "a",
+        "text": "ejecutar sobre host Linux"
+      },
+      {
+        "key": "b",
+        "text": "incorporar drivers propios"
+      },
+      {
+        "key": "c",
+        "text": "usar siempre NAT"
+      },
+      {
+        "key": "d",
+        "text": "no soportar redes virtuales"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 99,
+    "question": "Paravirtualización requiere…",
+    "options": [
+      {
+        "key": "a",
+        "text": "modificar kernel del guest"
+      },
+      {
+        "key": "b",
+        "text": "soportar modo SMM"
+      },
+      {
+        "key": "c",
+        "text": "VMX root mode"
+      },
+      {
+        "key": "d",
+        "text": "discos thick"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 100,
+    "question": "Full virtualization requiere…",
+    "options": [
+      {
+        "key": "a",
+        "text": "guest modificado"
+      },
+      {
+        "key": "b",
+        "text": "guest NO modificado"
+      },
+      {
+        "key": "c",
+        "text": "hypercalls obligatorias"
+      },
+      {
+        "key": "d",
+        "text": "soporte VT-d exclusivamente"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  }
+]

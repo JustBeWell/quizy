@@ -1,0 +1,255 @@
+{
+  "name": "Cinemática: Movimiento Rectilíneo",
+  "questions": [
+    {
+      "id": 1,
+      "question": "En un MRU, la velocidad es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Constante"
+        },
+        {
+          "key": "b",
+          "text": "Variable"
+        },
+        {
+          "key": "c",
+          "text": "Nula"
+        },
+        {
+          "key": "d",
+          "text": "Creciente"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "La ecuación del MRUA es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "x = v·t"
+        },
+        {
+          "key": "b",
+          "text": "x = x₀ + v₀·t + ½a·t²"
+        },
+        {
+          "key": "c",
+          "text": "v = a·t"
+        },
+        {
+          "key": "d",
+          "text": "F = m·a"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "La aceleración en un MRU es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Positiva"
+        },
+        {
+          "key": "b",
+          "text": "Negativa"
+        },
+        {
+          "key": "c",
+          "text": "Cero"
+        },
+        {
+          "key": "d",
+          "text": "Variable"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Un objeto cae libremente con aceleración:",
+      "options": [
+        {
+          "key": "a",
+          "text": "0 m/s²"
+        },
+        {
+          "key": "b",
+          "text": "9.8 m/s²"
+        },
+        {
+          "key": "c",
+          "text": "1 m/s²"
+        },
+        {
+          "key": "d",
+          "text": "10 km/s²"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "La pendiente en una gráfica x-t representa:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Aceleración"
+        },
+        {
+          "key": "b",
+          "text": "Velocidad"
+        },
+        {
+          "key": "c",
+          "text": "Posición"
+        },
+        {
+          "key": "d",
+          "text": "Tiempo"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "En un MRUA, si v₀ = 0 y a = 2 m/s², ¿qué velocidad tiene tras 5 s?",
+      "options": [
+        {
+          "key": "a",
+          "text": "2 m/s"
+        },
+        {
+          "key": "b",
+          "text": "5 m/s"
+        },
+        {
+          "key": "c",
+          "text": "7 m/s"
+        },
+        {
+          "key": "d",
+          "text": "10 m/s"
+        }
+      ],
+      "answers": [
+        "d"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Un coche frena con a = -3 m/s². Si v₀ = 30 m/s, ¿cuánto tarda en parar?",
+      "options": [
+        {
+          "key": "a",
+          "text": "5 s"
+        },
+        {
+          "key": "b",
+          "text": "10 s"
+        },
+        {
+          "key": "c",
+          "text": "15 s"
+        },
+        {
+          "key": "d",
+          "text": "20 s"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "La posición en función del tiempo en MRU es una función:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Constante"
+        },
+        {
+          "key": "b",
+          "text": "Lineal"
+        },
+        {
+          "key": "c",
+          "text": "Cuadrática"
+        },
+        {
+          "key": "d",
+          "text": "Exponencial"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Si lanzamos un objeto verticalmente hacia arriba, en el punto más alto:",
+      "options": [
+        {
+          "key": "a",
+          "text": "v = 0, a = 0"
+        },
+        {
+          "key": "b",
+          "text": "v = 0, a = g"
+        },
+        {
+          "key": "c",
+          "text": "v = g, a = 0"
+        },
+        {
+          "key": "d",
+          "text": "v = g, a = g"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "La distancia recorrida en un MRU durante 10 s a 5 m/s es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "5 m"
+        },
+        {
+          "key": "b",
+          "text": "10 m"
+        },
+        {
+          "key": "c",
+          "text": "15 m"
+        },
+        {
+          "key": "d",
+          "text": "50 m"
+        }
+      ],
+      "answers": [
+        "d"
+      ]
+    }
+  ]
+}

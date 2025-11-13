@@ -1,0 +1,130 @@
+{
+  "name": "La Célula",
+  "questions": [
+    {
+      "id": 1,
+      "question": "¿Cuál es la función principal de las mitocondrias?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Síntesis de proteínas"
+        },
+        {
+          "key": "b",
+          "text": "Producción de energía (ATP)"
+        },
+        {
+          "key": "c",
+          "text": "Fotosíntesis"
+        },
+        {
+          "key": "d",
+          "text": "División celular"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "¿Qué orgánulo contiene el material genético en células eucariotas?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Ribosomas"
+        },
+        {
+          "key": "b",
+          "text": "Mitocondrias"
+        },
+        {
+          "key": "c",
+          "text": "Núcleo"
+        },
+        {
+          "key": "d",
+          "text": "Retículo endoplasmático"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "La pared celular está presente en:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Todas las células"
+        },
+        {
+          "key": "b",
+          "text": "Solo células animales"
+        },
+        {
+          "key": "c",
+          "text": "Solo células vegetales"
+        },
+        {
+          "key": "d",
+          "text": "Solo células procariotas"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "¿Qué proceso permite a las células vegetales producir su propio alimento?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Respiración celular"
+        },
+        {
+          "key": "b",
+          "text": "Fotosíntesis"
+        },
+        {
+          "key": "c",
+          "text": "Fermentación"
+        },
+        {
+          "key": "d",
+          "text": "Digestión"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Los ribosomas son responsables de:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Síntesis de lípidos"
+        },
+        {
+          "key": "b",
+          "text": "Síntesis de proteínas"
+        },
+        {
+          "key": "c",
+          "text": "Respiración celular"
+        },
+        {
+          "key": "d",
+          "text": "Reproducción celular"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

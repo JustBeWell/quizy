@@ -1,0 +1,255 @@
+{
+  "name": "Grammar: Past Tenses",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Yesterday, I ___ to the cinema.",
+      "options": [
+        {
+          "key": "a",
+          "text": "go"
+        },
+        {
+          "key": "b",
+          "text": "goes"
+        },
+        {
+          "key": "c",
+          "text": "went"
+        },
+        {
+          "key": "d",
+          "text": "have gone"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "When I arrived, they ___ dinner.",
+      "options": [
+        {
+          "key": "a",
+          "text": "had"
+        },
+        {
+          "key": "b",
+          "text": "were having"
+        },
+        {
+          "key": "c",
+          "text": "have"
+        },
+        {
+          "key": "d",
+          "text": "are having"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "She ___ the book before the movie came out.",
+      "options": [
+        {
+          "key": "a",
+          "text": "read"
+        },
+        {
+          "key": "b",
+          "text": "was reading"
+        },
+        {
+          "key": "c",
+          "text": "has read"
+        },
+        {
+          "key": "d",
+          "text": "had read"
+        }
+      ],
+      "answers": [
+        "d"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Last week, we ___ to Paris.",
+      "options": [
+        {
+          "key": "a",
+          "text": "travel"
+        },
+        {
+          "key": "b",
+          "text": "travelled"
+        },
+        {
+          "key": "c",
+          "text": "have travelled"
+        },
+        {
+          "key": "d",
+          "text": "had travelled"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "While I ___, the phone rang.",
+      "options": [
+        {
+          "key": "a",
+          "text": "study"
+        },
+        {
+          "key": "b",
+          "text": "studied"
+        },
+        {
+          "key": "c",
+          "text": "was studying"
+        },
+        {
+          "key": "d",
+          "text": "have studied"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "They ___ in London for five years before moving.",
+      "options": [
+        {
+          "key": "a",
+          "text": "lived"
+        },
+        {
+          "key": "b",
+          "text": "were living"
+        },
+        {
+          "key": "c",
+          "text": "have lived"
+        },
+        {
+          "key": "d",
+          "text": "had lived"
+        }
+      ],
+      "answers": [
+        "d"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Did you ___ your homework?",
+      "options": [
+        {
+          "key": "a",
+          "text": "finish"
+        },
+        {
+          "key": "b",
+          "text": "finished"
+        },
+        {
+          "key": "c",
+          "text": "finishing"
+        },
+        {
+          "key": "d",
+          "text": "finishes"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "He ___ when I called him.",
+      "options": [
+        {
+          "key": "a",
+          "text": "sleeps"
+        },
+        {
+          "key": "b",
+          "text": "slept"
+        },
+        {
+          "key": "c",
+          "text": "was sleeping"
+        },
+        {
+          "key": "d",
+          "text": "has slept"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "I ___ never ___ sushi before that day.",
+      "options": [
+        {
+          "key": "a",
+          "text": "have - eaten"
+        },
+        {
+          "key": "b",
+          "text": "had - eaten"
+        },
+        {
+          "key": "c",
+          "text": "was - eating"
+        },
+        {
+          "key": "d",
+          "text": "did - eat"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "The train ___ when we arrived at the station.",
+      "options": [
+        {
+          "key": "a",
+          "text": "left"
+        },
+        {
+          "key": "b",
+          "text": "was leaving"
+        },
+        {
+          "key": "c",
+          "text": "has left"
+        },
+        {
+          "key": "d",
+          "text": "had left"
+        }
+      ],
+      "answers": [
+        "d"
+      ]
+    }
+  ]
+}

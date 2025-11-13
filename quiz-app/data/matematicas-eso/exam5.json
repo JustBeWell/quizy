@@ -1,0 +1,255 @@
+{
+  "name": "Geometría: Perímetros y Áreas",
+  "questions": [
+    {
+      "id": 1,
+      "question": "¿Cuál es el perímetro de un cuadrado de lado 7 cm?",
+      "options": [
+        {
+          "key": "a",
+          "text": "14 cm"
+        },
+        {
+          "key": "b",
+          "text": "21 cm"
+        },
+        {
+          "key": "c",
+          "text": "28 cm"
+        },
+        {
+          "key": "d",
+          "text": "49 cm"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "El área de un rectángulo de 8 cm de base y 5 cm de altura es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "13 cm²"
+        },
+        {
+          "key": "b",
+          "text": "26 cm²"
+        },
+        {
+          "key": "c",
+          "text": "40 cm²"
+        },
+        {
+          "key": "d",
+          "text": "80 cm²"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "El perímetro de un círculo de radio 7 cm es (π ≈ 3.14):",
+      "options": [
+        {
+          "key": "a",
+          "text": "21.98 cm"
+        },
+        {
+          "key": "b",
+          "text": "43.96 cm"
+        },
+        {
+          "key": "c",
+          "text": "153.86 cm"
+        },
+        {
+          "key": "d",
+          "text": "615.44 cm"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "¿Cuál es el área de un triángulo de base 10 cm y altura 6 cm?",
+      "options": [
+        {
+          "key": "a",
+          "text": "16 cm²"
+        },
+        {
+          "key": "b",
+          "text": "30 cm²"
+        },
+        {
+          "key": "c",
+          "text": "60 cm²"
+        },
+        {
+          "key": "d",
+          "text": "120 cm²"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Un cuadrado tiene área de 64 cm². ¿Cuánto mide su lado?",
+      "options": [
+        {
+          "key": "a",
+          "text": "4 cm"
+        },
+        {
+          "key": "b",
+          "text": "8 cm"
+        },
+        {
+          "key": "c",
+          "text": "16 cm"
+        },
+        {
+          "key": "d",
+          "text": "32 cm"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "El área de un círculo de radio 5 cm es (π ≈ 3.14):",
+      "options": [
+        {
+          "key": "a",
+          "text": "15.7 cm²"
+        },
+        {
+          "key": "b",
+          "text": "31.4 cm²"
+        },
+        {
+          "key": "c",
+          "text": "78.5 cm²"
+        },
+        {
+          "key": "d",
+          "text": "157 cm²"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "¿Cuál es el perímetro de un rectángulo de 12 cm × 5 cm?",
+      "options": [
+        {
+          "key": "a",
+          "text": "17 cm"
+        },
+        {
+          "key": "b",
+          "text": "24 cm"
+        },
+        {
+          "key": "c",
+          "text": "34 cm"
+        },
+        {
+          "key": "d",
+          "text": "60 cm"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "La diagonal de un cuadrado de lado 10 cm mide aproximadamente:",
+      "options": [
+        {
+          "key": "a",
+          "text": "10 cm"
+        },
+        {
+          "key": "b",
+          "text": "14.14 cm"
+        },
+        {
+          "key": "c",
+          "text": "20 cm"
+        },
+        {
+          "key": "d",
+          "text": "28.28 cm"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "¿Cuál es el área de un paralelogramo de base 9 cm y altura 4 cm?",
+      "options": [
+        {
+          "key": "a",
+          "text": "13 cm²"
+        },
+        {
+          "key": "b",
+          "text": "18 cm²"
+        },
+        {
+          "key": "c",
+          "text": "36 cm²"
+        },
+        {
+          "key": "d",
+          "text": "72 cm²"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Un rectángulo tiene área de 48 cm² y base de 8 cm. Su altura es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "4 cm"
+        },
+        {
+          "key": "b",
+          "text": "6 cm"
+        },
+        {
+          "key": "c",
+          "text": "8 cm"
+        },
+        {
+          "key": "d",
+          "text": "12 cm"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

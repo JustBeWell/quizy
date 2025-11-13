@@ -1,0 +1,661 @@
+[
+  {
+    "id": 1,
+    "question": "¿En qué modo x86 está disponible VT-x?",
+    "options": [],
+    "answers": [
+      "VMX Root mode"
+    ]
+  },
+  {
+    "id": 2,
+    "question": "Snapshot con N escrituras: orden del commit:",
+    "options": [
+      {
+        "key": "a",
+        "text": "O(1)"
+      },
+      {
+        "key": "b",
+        "text": "O(log₂N)"
+      },
+      {
+        "key": "c",
+        "text": "O(N)"
+      },
+      {
+        "key": "d",
+        "text": "O(N×N)"
+      }
+    ],
+    "answers": [
+      "c"
+    ]
+  },
+  {
+    "id": 3,
+    "question": "Por VMM se entiende:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Guest"
+      },
+      {
+        "key": "b",
+        "text": "Host"
+      },
+      {
+        "key": "c",
+        "text": "Hipervisor"
+      },
+      {
+        "key": "d",
+        "text": "Módulo de BT"
+      }
+    ],
+    "answers": [
+      "c"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "SO que corre sobre MV:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Monitor de sistema"
+      },
+      {
+        "key": "b",
+        "text": "Host"
+      },
+      {
+        "key": "c",
+        "text": "Guest"
+      },
+      {
+        "key": "d",
+        "text": "VMM"
+      }
+    ],
+    "answers": [
+      "c"
+    ]
+  },
+  {
+    "id": 5,
+    "question": "Revertir snapshot:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Callback"
+      },
+      {
+        "key": "b",
+        "text": "Rollback"
+      },
+      {
+        "key": "c",
+        "text": "Fallback"
+      },
+      {
+        "key": "d",
+        "text": "Playback"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 6,
+    "question": "Modo usuario ejecuta instrucción privilegiada →",
+    "options": [
+      {
+        "key": "a",
+        "text": "Fallo TLB"
+      },
+      {
+        "key": "b",
+        "text": "Div/0"
+      },
+      {
+        "key": "c",
+        "text": "Fallo de página"
+      },
+      {
+        "key": "d",
+        "text": "Trap"
+      }
+    ],
+    "answers": [
+      "d"
+    ]
+  },
+  {
+    "id": 7,
+    "question": "Criterios Popek & Goldberg:",
+    "options": [],
+    "answers": [
+      "Equivalencia; Control de recursos; Eficiencia"
+    ]
+  },
+  {
+    "id": 8,
+    "question": "¿Qué aplica a “trap & emulate”?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Traducción run-time inocua"
+      },
+      {
+        "key": "b",
+        "text": "IN/OUT → excepciones del hipervisor"
+      },
+      {
+        "key": "c",
+        "text": "Guest en modo no privilegiado"
+      },
+      {
+        "key": "d",
+        "text": "Privilegiada → trap → hipervisor"
+      }
+    ],
+    "answers": [
+      "b",
+      "c",
+      "d"
+    ]
+  },
+  {
+    "id": 9,
+    "question": "Dos MMU (guest y real) al virtualizar RAM:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Falso"
+      },
+      {
+        "key": "b",
+        "text": "Verdadero"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 10,
+    "question": "Término para “isolation”:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Sandbox"
+      },
+      {
+        "key": "b",
+        "text": "Honeybox"
+      },
+      {
+        "key": "c",
+        "text": "Virtualbox"
+      },
+      {
+        "key": "d",
+        "text": "Honeypot"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 11,
+    "question": "¿En qué esquema el SO guest es consciente del hipervisor?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Paravirtualización"
+      },
+      {
+        "key": "b",
+        "text": "Hosted"
+      },
+      {
+        "key": "c",
+        "text": "Full"
+      },
+      {
+        "key": "d",
+        "text": "Nativa"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 12,
+    "question": "Hosted hypervisor: `ps` de procesos de una MV:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Desde cualquier MV"
+      },
+      {
+        "key": "b",
+        "text": "Sólo en la MV a la que pertenece"
+      },
+      {
+        "key": "c",
+        "text": "Sólo desde el hipervisor"
+      },
+      {
+        "key": "d",
+        "text": "Desde el host"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 13,
+    "question": "KVM (módulo Linux) proporciona virtualización…",
+    "options": [
+      {
+        "key": "a",
+        "text": "bare-metal"
+      },
+      {
+        "key": "b",
+        "text": "native"
+      },
+      {
+        "key": "c",
+        "text": "paravirtualized"
+      },
+      {
+        "key": "d",
+        "text": "hosted"
+      }
+    ],
+    "answers": [
+      "d"
+    ]
+  },
+  {
+    "id": 14,
+    "question": "Snapshot A={0:∅,1:∅,2:K,3:M,4:N}, Δ={1:X,2:Y}. Tras commit, R=",
+    "options": [
+      {
+        "key": "a",
+        "text": "{0:∅,1:∅,2:K,3:M,4:N}"
+      },
+      {
+        "key": "b",
+        "text": "{0:∅,1:∅,2:∅,3:∅,4:∅}"
+      },
+      {
+        "key": "c",
+        "text": "{0:∅,1:X,2:Y,3:M,4:N}"
+      },
+      {
+        "key": "d",
+        "text": "{0:∅,1:X,2:Y,3:∅,4:∅}"
+      }
+    ],
+    "answers": [
+      "c"
+    ]
+  },
+  {
+    "id": 15,
+    "question": "¿Cuál NO es funcionalidad clave de un hipervisor?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Controlar privilegios de usuario en las MVs"
+      },
+      {
+        "key": "b",
+        "text": "Asignar recursos HW"
+      },
+      {
+        "key": "c",
+        "text": "Interpretar críticas/privilegiadas"
+      },
+      {
+        "key": "d",
+        "text": "Despachar MVs entre cores"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 16,
+    "question": "Revertir snapshot (otra formulación):",
+    "options": [
+      {
+        "key": "a",
+        "text": "Se descartan completamente los cambios de Δ"
+      },
+      {
+        "key": "b",
+        "text": "Se consolidan los cambios de Δ"
+      },
+      {
+        "key": "c",
+        "text": "Intersección base/Δ"
+      },
+      {
+        "key": "d",
+        "text": "Se descarta base y queda Δ"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 17,
+    "question": "Excepción al principio de equivalencia de P&G:",
+    "options": [],
+    "answers": [
+      "Temporizaciones"
+    ]
+  },
+  {
+    "id": 18,
+    "question": "En un virtualizador tipo 1, routers que suele proporcionar el hipervisor:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Routers estándar y otros activos"
+      },
+      {
+        "key": "b",
+        "text": "NAT preconfigurado"
+      },
+      {
+        "key": "c",
+        "text": "Ninguno, se construyen con MVs"
+      },
+      {
+        "key": "d",
+        "text": "Ninguno, añadir capa 3 a vSwitches"
+      }
+    ],
+    "answers": [
+      "c"
+    ]
+  },
+  {
+    "id": 19,
+    "question": "Técnica pionera de VMware:",
+    "options": [],
+    "answers": [
+      "traducción binaria"
+    ]
+  },
+  {
+    "id": 20,
+    "question": "En un tipo 1, activos de red que suele proporcionar el desarrollador:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Ninguno, con MVs"
+      },
+      {
+        "key": "b",
+        "text": "Todos (hubs, bridges, routers…)"
+      },
+      {
+        "key": "c",
+        "text": "Switches y routers virtuales"
+      },
+      {
+        "key": "d",
+        "text": "Sólo switches virtuales"
+      }
+    ],
+    "answers": [
+      "c"
+    ]
+  },
+  {
+    "id": 21,
+    "question": "“Trap & emulate” implica de-privileging del kernel guest:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Sólo si la CPU no es virtualizable"
+      },
+      {
+        "key": "b",
+        "text": "Sí"
+      },
+      {
+        "key": "c",
+        "text": "No (ej. multicore)"
+      },
+      {
+        "key": "d",
+        "text": "Sólo si no hay VT-x"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 22,
+    "question": "¿Qué NO es cierta sobre disco virtual como fichero imagen?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Reubicar sin modificar MV"
+      },
+      {
+        "key": "b",
+        "text": "Más portabilidad/flexibilidad"
+      },
+      {
+        "key": "c",
+        "text": "Acceso mucho más rápido que en partición nativa"
+      },
+      {
+        "key": "d",
+        "text": "Thin provisioning posible"
+      }
+    ],
+    "answers": [
+      "c"
+    ]
+  },
+  {
+    "id": 23,
+    "question": "v:R→V entre máquina real y virtual es:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Monomorfismo"
+      },
+      {
+        "key": "b",
+        "text": "Polimorfismo"
+      },
+      {
+        "key": "c",
+        "text": "Isomorfismo"
+      },
+      {
+        "key": "d",
+        "text": "Automorfismo"
+      }
+    ],
+    "answers": [
+      "c"
+    ]
+  },
+  {
+    "id": 24,
+    "question": "CPU virtual con ISA no estrictamente virtualizable dentro de HW-virt: ejecutar hipervisor en esa MV:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Imposible"
+      },
+      {
+        "key": "b",
+        "text": "Mediante binary translation"
+      },
+      {
+        "key": "c",
+        "text": "Con CPUs sin restricciones x86"
+      },
+      {
+        "key": "d",
+        "text": "Con trap & emulate"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 25,
+    "question": "PUSHF/POPF en IA-32 según P&G:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Insensitive"
+      },
+      {
+        "key": "b",
+        "text": "Behaviour sensitive"
+      },
+      {
+        "key": "c",
+        "text": "Control sensitive"
+      },
+      {
+        "key": "d",
+        "text": "Volatile"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 26,
+    "question": "vSwitch con bridge requiere NICs reales…",
+    "options": [
+      {
+        "key": "a",
+        "text": "Soporte VLAN"
+      },
+      {
+        "key": "b",
+        "text": "Paravirtualizados"
+      },
+      {
+        "key": "c",
+        "text": "NAT"
+      },
+      {
+        "key": "d",
+        "text": "Modo promiscuo"
+      }
+    ],
+    "answers": [
+      "d"
+    ]
+  },
+  {
+    "id": 27,
+    "question": "Intérprete de CPU software debe emular:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Todas las instrucciones + interrupciones y traps"
+      },
+      {
+        "key": "b",
+        "text": "Sólo sensitive"
+      },
+      {
+        "key": "c",
+        "text": "Privilegiadas + interrupciones"
+      },
+      {
+        "key": "d",
+        "text": "Sólo privilegiadas"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  },
+  {
+    "id": 28,
+    "question": "Emparejar anillos x86:",
+    "options": [],
+    "answers": [
+      "Aplicaciones (guest) → Ring 3; Hipervisor → Ring −1; SMM → Ring −2; SO host → Ring 0"
+    ]
+  },
+  {
+    "id": 29,
+    "question": "Rendimiento de binary translation en run-time:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Mejor que trap&emulate"
+      },
+      {
+        "key": "b",
+        "text": "Se optimiza con cachés y reuso"
+      },
+      {
+        "key": "c",
+        "text": "Siempre extremadamente malo"
+      },
+      {
+        "key": "d",
+        "text": "Muy malo con muchas instrucciones inocuas"
+      }
+    ],
+    "answers": [
+      "b"
+    ]
+  },
+  {
+    "id": 30,
+    "question": "Soporte HW optimizado para trap & emulate permite…",
+    "options": [
+      {
+        "key": "a",
+        "text": "Simplifica el paso a modo kernel del guest mediante modo pseudo-privilegiado"
+      },
+      {
+        "key": "b",
+        "text": "No requiere dom0"
+      },
+      {
+        "key": "c",
+        "text": "Convierte IN/OUT en inocuas"
+      },
+      {
+        "key": "d",
+        "text": "Proporciona fast hypercalls"
+      }
+    ],
+    "answers": [
+      "a"
+    ]
+  }
+]

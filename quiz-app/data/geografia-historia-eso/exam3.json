@@ -1,0 +1,255 @@
+{
+  "name": "Edad Media: Feudalismo y Al-Ándalus",
+  "questions": [
+    {
+      "id": 1,
+      "question": "El feudalismo se caracteriza por:",
+      "options": [
+        {
+          "key": "a",
+          "text": "La democracia"
+        },
+        {
+          "key": "b",
+          "text": "Las relaciones de vasallaje"
+        },
+        {
+          "key": "c",
+          "text": "El capitalismo"
+        },
+        {
+          "key": "d",
+          "text": "La industrialización"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Los musulmanes entraron en la Península Ibérica en:",
+      "options": [
+        {
+          "key": "a",
+          "text": "711"
+        },
+        {
+          "key": "b",
+          "text": "1492"
+        },
+        {
+          "key": "c",
+          "text": "800"
+        },
+        {
+          "key": "d",
+          "text": "1000"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "La capital del Califato de Córdoba fue:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Toledo"
+        },
+        {
+          "key": "b",
+          "text": "Sevilla"
+        },
+        {
+          "key": "c",
+          "text": "Córdoba"
+        },
+        {
+          "key": "d",
+          "text": "Granada"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "La Reconquista finalizó en:",
+      "options": [
+        {
+          "key": "a",
+          "text": "1212"
+        },
+        {
+          "key": "b",
+          "text": "1492"
+        },
+        {
+          "key": "c",
+          "text": "1500"
+        },
+        {
+          "key": "d",
+          "text": "1469"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "¿Qué reino cristiano fue el más extenso?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Navarra"
+        },
+        {
+          "key": "b",
+          "text": "Aragón"
+        },
+        {
+          "key": "c",
+          "text": "Castilla"
+        },
+        {
+          "key": "d",
+          "text": "León"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Los siervos trabajaban en:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Las ciudades"
+        },
+        {
+          "key": "b",
+          "text": "Los castillos"
+        },
+        {
+          "key": "c",
+          "text": "Las tierras del señor feudal"
+        },
+        {
+          "key": "d",
+          "text": "Los monasterios"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "La Alhambra de Granada fue construida por:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Los visigodos"
+        },
+        {
+          "key": "b",
+          "text": "Los romanos"
+        },
+        {
+          "key": "c",
+          "text": "Los musulmanes"
+        },
+        {
+          "key": "d",
+          "text": "Los cristianos"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Las Cruzadas fueron guerras:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Entre musulmanes"
+        },
+        {
+          "key": "b",
+          "text": "Religiosas cristianas"
+        },
+        {
+          "key": "c",
+          "text": "Civiles"
+        },
+        {
+          "key": "d",
+          "text": "Comerciales"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "El Camino de Santiago se popularizó en:",
+      "options": [
+        {
+          "key": "a",
+          "text": "La Edad Antigua"
+        },
+        {
+          "key": "b",
+          "text": "La Edad Media"
+        },
+        {
+          "key": "c",
+          "text": "La Edad Moderna"
+        },
+        {
+          "key": "d",
+          "text": "La Edad Contemporánea"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Los Reyes Católicos fueron:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Carlos I y Juana"
+        },
+        {
+          "key": "b",
+          "text": "Fernando e Isabel"
+        },
+        {
+          "key": "c",
+          "text": "Felipe II y María"
+        },
+        {
+          "key": "d",
+          "text": "Alfonso X y Beatriz"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

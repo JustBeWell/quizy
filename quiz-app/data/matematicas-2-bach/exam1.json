@@ -1,0 +1,255 @@
+{
+  "name": "Cálculo Diferencial: Derivadas",
+  "questions": [
+    {
+      "id": 1,
+      "question": "La derivada de x² es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "x"
+        },
+        {
+          "key": "b",
+          "text": "2x"
+        },
+        {
+          "key": "c",
+          "text": "x²"
+        },
+        {
+          "key": "d",
+          "text": "2"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "La derivada de una constante es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "La constante"
+        },
+        {
+          "key": "b",
+          "text": "0"
+        },
+        {
+          "key": "c",
+          "text": "1"
+        },
+        {
+          "key": "d",
+          "text": "Infinito"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "La derivada de sen(x) es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "cos(x)"
+        },
+        {
+          "key": "b",
+          "text": "-cos(x)"
+        },
+        {
+          "key": "c",
+          "text": "-sen(x)"
+        },
+        {
+          "key": "d",
+          "text": "tan(x)"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "La derivada de eˣ es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "x·eˣ"
+        },
+        {
+          "key": "b",
+          "text": "eˣ"
+        },
+        {
+          "key": "c",
+          "text": "eˣ⁻¹"
+        },
+        {
+          "key": "d",
+          "text": "ln(x)"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "La derivada de ln(x) es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "1"
+        },
+        {
+          "key": "b",
+          "text": "x"
+        },
+        {
+          "key": "c",
+          "text": "1/x"
+        },
+        {
+          "key": "d",
+          "text": "ln(x-1)"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Si f(x) = x³, entonces f'(2) es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "6"
+        },
+        {
+          "key": "b",
+          "text": "8"
+        },
+        {
+          "key": "c",
+          "text": "12"
+        },
+        {
+          "key": "d",
+          "text": "3"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "La regla de la cadena se usa para derivar:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Funciones simples"
+        },
+        {
+          "key": "b",
+          "text": "Funciones compuestas"
+        },
+        {
+          "key": "c",
+          "text": "Constantes"
+        },
+        {
+          "key": "d",
+          "text": "Polinomios"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "La derivada de cos(x) es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "sen(x)"
+        },
+        {
+          "key": "b",
+          "text": "-sen(x)"
+        },
+        {
+          "key": "c",
+          "text": "-cos(x)"
+        },
+        {
+          "key": "d",
+          "text": "tan(x)"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Un máximo relativo se da cuando:",
+      "options": [
+        {
+          "key": "a",
+          "text": "f'(x) = 0 y f''(x) < 0"
+        },
+        {
+          "key": "b",
+          "text": "f'(x) = 0 y f''(x) > 0"
+        },
+        {
+          "key": "c",
+          "text": "f(x) = 0"
+        },
+        {
+          "key": "d",
+          "text": "f''(x) = 0"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "La derivada de 3x⁴ es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "12x³"
+        },
+        {
+          "key": "b",
+          "text": "4x³"
+        },
+        {
+          "key": "c",
+          "text": "3x³"
+        },
+        {
+          "key": "d",
+          "text": "12x⁴"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "name": "Álgebra: Ecuaciones de Primer Grado",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Resuelve: 3x + 7 = 22",
+      "options": [
+        {
+          "key": "a",
+          "text": "x = 3"
+        },
+        {
+          "key": "b",
+          "text": "x = 5"
+        },
+        {
+          "key": "c",
+          "text": "x = 7"
+        },
+        {
+          "key": "d",
+          "text": "x = 15"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Si 2x - 5 = 13, entonces x =",
+      "options": [
+        {
+          "key": "a",
+          "text": "4"
+        },
+        {
+          "key": "b",
+          "text": "8"
+        },
+        {
+          "key": "c",
+          "text": "9"
+        },
+        {
+          "key": "d",
+          "text": "18"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Resuelve: 5x = 35",
+      "options": [
+        {
+          "key": "a",
+          "text": "x = 5"
+        },
+        {
+          "key": "b",
+          "text": "x = 7"
+        },
+        {
+          "key": "c",
+          "text": "x = 30"
+        },
+        {
+          "key": "d",
+          "text": "x = 40"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Si x/4 = 8, ¿cuánto vale x?",
+      "options": [
+        {
+          "key": "a",
+          "text": "2"
+        },
+        {
+          "key": "b",
+          "text": "4"
+        },
+        {
+          "key": "c",
+          "text": "12"
+        },
+        {
+          "key": "d",
+          "text": "32"
+        }
+      ],
+      "answers": [
+        "d"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Resuelve: 2(x + 3) = 14",
+      "options": [
+        {
+          "key": "a",
+          "text": "x = 2"
+        },
+        {
+          "key": "b",
+          "text": "x = 4"
+        },
+        {
+          "key": "c",
+          "text": "x = 5"
+        },
+        {
+          "key": "d",
+          "text": "x = 7"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Si 3x + 2 = 2x + 7, entonces x =",
+      "options": [
+        {
+          "key": "a",
+          "text": "3"
+        },
+        {
+          "key": "b",
+          "text": "5"
+        },
+        {
+          "key": "c",
+          "text": "7"
+        },
+        {
+          "key": "d",
+          "text": "9"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "El doble de un número más 5 es 21. El número es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "6"
+        },
+        {
+          "key": "b",
+          "text": "8"
+        },
+        {
+          "key": "c",
+          "text": "10"
+        },
+        {
+          "key": "d",
+          "text": "13"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Resuelve: x - 9 = -3",
+      "options": [
+        {
+          "key": "a",
+          "text": "x = -12"
+        },
+        {
+          "key": "b",
+          "text": "x = -6"
+        },
+        {
+          "key": "c",
+          "text": "x = 6"
+        },
+        {
+          "key": "d",
+          "text": "x = 12"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Si 4x - 3 = 2x + 9, entonces x =",
+      "options": [
+        {
+          "key": "a",
+          "text": "3"
+        },
+        {
+          "key": "b",
+          "text": "4"
+        },
+        {
+          "key": "c",
+          "text": "6"
+        },
+        {
+          "key": "d",
+          "text": "12"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Un número multiplicado por 3 menos 7 da 20. ¿Qué número es?",
+      "options": [
+        {
+          "key": "a",
+          "text": "7"
+        },
+        {
+          "key": "b",
+          "text": "9"
+        },
+        {
+          "key": "c",
+          "text": "11"
+        },
+        {
+          "key": "d",
+          "text": "13"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

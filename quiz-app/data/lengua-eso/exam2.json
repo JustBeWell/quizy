@@ -1,0 +1,130 @@
+{
+  "name": "Morfología: Clases de Palabras",
+  "questions": [
+    {
+      "id": 1,
+      "question": "¿Qué clase de palabra es \"rápidamente\"?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Adjetivo"
+        },
+        {
+          "key": "b",
+          "text": "Adverbio"
+        },
+        {
+          "key": "c",
+          "text": "Verbo"
+        },
+        {
+          "key": "d",
+          "text": "Sustantivo"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Identifica el verbo copulativo:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Correr"
+        },
+        {
+          "key": "b",
+          "text": "Parecer"
+        },
+        {
+          "key": "c",
+          "text": "Comer"
+        },
+        {
+          "key": "d",
+          "text": "Saltar"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "¿Cuál es el género del sustantivo \"análisis\"?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Masculino"
+        },
+        {
+          "key": "b",
+          "text": "Femenino"
+        },
+        {
+          "key": "c",
+          "text": "Neutro"
+        },
+        {
+          "key": "d",
+          "text": "Ambiguo"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "El plural de \"carácter\" es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "caracteres"
+        },
+        {
+          "key": "b",
+          "text": "caractereses"
+        },
+        {
+          "key": "c",
+          "text": "carácteres"
+        },
+        {
+          "key": "d",
+          "text": "caractéres"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "¿Qué tipo de determinante es \"algún\"?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Artículo"
+        },
+        {
+          "key": "b",
+          "text": "Demostrativo"
+        },
+        {
+          "key": "c",
+          "text": "Indefinido"
+        },
+        {
+          "key": "d",
+          "text": "Posesivo"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    }
+  ]
+}

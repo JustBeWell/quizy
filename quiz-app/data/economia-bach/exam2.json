@@ -1,0 +1,255 @@
+{
+  "name": "Empresa y Producción",
+  "questions": [
+    {
+      "id": 1,
+      "question": "El objetivo principal de una empresa es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Maximizar beneficios"
+        },
+        {
+          "key": "b",
+          "text": "Contratar empleados"
+        },
+        {
+          "key": "c",
+          "text": "Pagar impuestos"
+        },
+        {
+          "key": "d",
+          "text": "Perder dinero"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Los costes fijos:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Varían con la producción"
+        },
+        {
+          "key": "b",
+          "text": "No varían con la producción"
+        },
+        {
+          "key": "c",
+          "text": "No existen"
+        },
+        {
+          "key": "d",
+          "text": "Son siempre cero"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "El punto muerto es cuando:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Ingresos = Costes"
+        },
+        {
+          "key": "b",
+          "text": "Ingresos > Costes"
+        },
+        {
+          "key": "c",
+          "text": "Ingresos < Costes"
+        },
+        {
+          "key": "d",
+          "text": "No hay producción"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Una S.A. (Sociedad Anónima) se caracteriza por:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Responsabilidad ilimitada"
+        },
+        {
+          "key": "b",
+          "text": "Capital dividido en acciones"
+        },
+        {
+          "key": "c",
+          "text": "Un solo propietario"
+        },
+        {
+          "key": "d",
+          "text": "No tener personalidad jurídica"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "La productividad es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "El número de trabajadores"
+        },
+        {
+          "key": "b",
+          "text": "La relación entre producción y factores empleados"
+        },
+        {
+          "key": "c",
+          "text": "El beneficio"
+        },
+        {
+          "key": "d",
+          "text": "El precio"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "El marketing se ocupa de:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Solo la publicidad"
+        },
+        {
+          "key": "b",
+          "text": "Identificar y satisfacer necesidades"
+        },
+        {
+          "key": "c",
+          "text": "Solo las ventas"
+        },
+        {
+          "key": "d",
+          "text": "La contabilidad"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "El balance de situación muestra:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Solo beneficios"
+        },
+        {
+          "key": "b",
+          "text": "Activo, pasivo y patrimonio neto"
+        },
+        {
+          "key": "c",
+          "text": "Solo deudas"
+        },
+        {
+          "key": "d",
+          "text": "Los empleados"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "La amortización es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Un ingreso"
+        },
+        {
+          "key": "b",
+          "text": "La pérdida de valor de activos fijos"
+        },
+        {
+          "key": "c",
+          "text": "Un beneficio"
+        },
+        {
+          "key": "d",
+          "text": "Un impuesto"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "El capital social de una empresa es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "El dinero en caja"
+        },
+        {
+          "key": "b",
+          "text": "Las aportaciones de los socios"
+        },
+        {
+          "key": "c",
+          "text": "Las deudas"
+        },
+        {
+          "key": "d",
+          "text": "Los beneficios"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "La cuenta de pérdidas y ganancias refleja:",
+      "options": [
+        {
+          "key": "a",
+          "text": "El patrimonio"
+        },
+        {
+          "key": "b",
+          "text": "El resultado del ejercicio"
+        },
+        {
+          "key": "c",
+          "text": "Solo activos"
+        },
+        {
+          "key": "d",
+          "text": "Solo pasivos"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "name": "Fundamentos de Economía",
+  "questions": [
+    {
+      "id": 1,
+      "question": "La economía estudia:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Solo el dinero"
+        },
+        {
+          "key": "b",
+          "text": "La gestión de recursos escasos"
+        },
+        {
+          "key": "c",
+          "text": "Solo las empresas"
+        },
+        {
+          "key": "d",
+          "text": "Solo el gobierno"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "El coste de oportunidad es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "El precio de un bien"
+        },
+        {
+          "key": "b",
+          "text": "Lo que renunciamos al elegir"
+        },
+        {
+          "key": "c",
+          "text": "El beneficio obtenido"
+        },
+        {
+          "key": "d",
+          "text": "El ahorro"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "En una economía de mercado, los precios se determinan por:",
+      "options": [
+        {
+          "key": "a",
+          "text": "El gobierno"
+        },
+        {
+          "key": "b",
+          "text": "La oferta y la demanda"
+        },
+        {
+          "key": "c",
+          "text": "Las empresas"
+        },
+        {
+          "key": "d",
+          "text": "Los trabajadores"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Si aumenta la demanda y la oferta permanece constante:",
+      "options": [
+        {
+          "key": "a",
+          "text": "El precio baja"
+        },
+        {
+          "key": "b",
+          "text": "El precio sube"
+        },
+        {
+          "key": "c",
+          "text": "El precio no cambia"
+        },
+        {
+          "key": "d",
+          "text": "Desaparece el mercado"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Los factores de producción son:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Tierra, trabajo, capital"
+        },
+        {
+          "key": "b",
+          "text": "Solo dinero"
+        },
+        {
+          "key": "c",
+          "text": "Solo tecnología"
+        },
+        {
+          "key": "d",
+          "text": "Solo recursos naturales"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "El PIB mide:",
+      "options": [
+        {
+          "key": "a",
+          "text": "La población"
+        },
+        {
+          "key": "b",
+          "text": "El valor de bienes y servicios producidos"
+        },
+        {
+          "key": "c",
+          "text": "Solo las exportaciones"
+        },
+        {
+          "key": "d",
+          "text": "La inflación"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "La inflación es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "La caída de precios"
+        },
+        {
+          "key": "b",
+          "text": "El aumento generalizado de precios"
+        },
+        {
+          "key": "c",
+          "text": "El desempleo"
+        },
+        {
+          "key": "d",
+          "text": "El crecimiento económico"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "El desempleo friccional es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Permanente"
+        },
+        {
+          "key": "b",
+          "text": "Temporal entre trabajos"
+        },
+        {
+          "key": "c",
+          "text": "Por falta de cualificación"
+        },
+        {
+          "key": "d",
+          "text": "Por crisis económica"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Un bien inferior es aquel:",
+      "options": [
+        {
+          "key": "a",
+          "text": "De mala calidad"
+        },
+        {
+          "key": "b",
+          "text": "Cuya demanda baja al aumentar la renta"
+        },
+        {
+          "key": "c",
+          "text": "Muy caro"
+        },
+        {
+          "key": "d",
+          "text": "Sin demanda"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "La elasticidad precio de la demanda mide:",
+      "options": [
+        {
+          "key": "a",
+          "text": "El cambio en la demanda ante cambios en el precio"
+        },
+        {
+          "key": "b",
+          "text": "Solo el precio"
+        },
+        {
+          "key": "c",
+          "text": "Solo la cantidad"
+        },
+        {
+          "key": "d",
+          "text": "La inflación"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    }
+  ]
+}

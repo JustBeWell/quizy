@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+	--brand-500:#0b63ff;
+	--bg-gradient: linear-gradient(180deg,#f6f8fb,#ffffff);
+}
+
+/* Dark mode variables - VS Code style */
+.dark {
+	--bg-gradient: linear-gradient(180deg,#1e1e1e,#252526);
+	--bg-primary: #1e1e1e;
+	--bg-secondary: #252526;
+	--bg-tertiary: #2d2d30;
+	--border-color: #3e3e42;
+	--text-primary: #d4d4d4;
+	--text-secondary: #9d9d9d;
+	--accent-blue: #4fc3f7;
+	--accent-green: #4ec9b0;
+	--accent-purple: #c586c0;
+	--accent-orange: #ce9178;
+}
+
+.html,body,#__next{height:100%;margin:0;padding:0}
+body{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;color:#0f1724;background:var(--bg-gradient);font-size:18px;line-height:1.7;overflow:auto;margin:0;padding:0}
+
+/* Dark mode body */
+.dark body{color:var(--text-primary);background:var(--bg-gradient)}
+
+/* app root scaling - scales the app to fit viewport so no vertical scroll is required */
+#app-root{width:100%;display:flex;justify-content:center;align-items:flex-start;}
+#app-content{width:100%;max-width:1200px}
+/* main container: center content and occupy full height */
+.container{max-width:1200px;margin:20px auto;padding:20px;}
+
+/* make cards more legible */
+.card{background:white;padding:24px;border-radius:14px;position:relative;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.dark .card{background:var(--bg-secondary);color:var(--text-primary);border:1px solid var(--border-color);box-shadow:0 2px 8px rgba(0,0,0,0.3)}
+.card-compact{padding:14px}
+
+/* Larger buttons */
+.btn-large{padding:.75rem 1rem;border-radius:.6rem;font-weight:600}
+
+/* header container fix */
+.header-container{padding-top:38px}
+@media (min-width:768px){
+	.header-container{padding-top:46px}
+}
+
+/* ensure header inner container doesn't add extra top margin */
+.header-container{margin:0 auto}
+
+/* site-header styles */
+.site-header{background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.8));backdrop-filter:blur(6px);box-shadow:0 6px 18px rgba(11,63,120,0.06);border-bottom:1px solid rgba(15,23,36,0.04)}
+.dark .site-header{background:var(--bg-secondary);backdrop-filter:blur(6px);box-shadow:0 2px 4px rgba(0,0,0,0.4);border-bottom:1px solid var(--border-color)}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;padding-left:20px;padding-right:20px}
+.site-header .logo .w-10{flex-shrink:0}
+.nav-link{color:var(--text-color,#0f1724);padding:.5rem .6rem;border-radius:.5rem;font-weight:600;transition:all 0.2s ease}
+.nav-link:hover{background:rgba(11,99,255,0.06);color:var(--brand-500)}
+.dark .nav-link{color:var(--text-primary)}
+.dark .nav-link:hover{background:var(--bg-tertiary);color:var(--accent-blue)}
+
+/* improve container spacing */
+.container{max-width:1200px;margin:18px auto;padding:0 20px}
+
+/* make header compact on small screens */
+@media (max-width:767px){
+	.site-header .container{padding-left:14px;padding-right:14px}
+	.site-header .logo .text-xs{display:none}
+}
+
+.card-shadow{box-shadow:0 14px 36px rgba(10,12,30,0.08)}
+.dark .card-shadow{box-shadow:0 14px 36px rgba(0,0,0,0.5)}
+
+.btn-primary{background:var(--brand-500);color:white;padding:.5rem .75rem;border-radius:.5rem;transition:all 0.2s ease;font-weight:600}
+.btn-primary:hover{background:#0a49d6;transform:translateY(-1px)}
+.dark .btn-primary{background:var(--accent-blue);color:#1e1e1e}
+.dark .btn-primary:hover{background:#3fb4e8}
+
+/* Button variants - better contrast in light mode */
+.btn-brand{background:var(--brand-500);color:white;font-weight:600}
+.btn-brand:hover{background:#0a49d6}
+
+.btn-blue{background:#1e40af;color:white;font-weight:600}
+.btn-blue:hover{background:#1e3a8a}
+.dark .btn-blue{background:#3b82f6;color:white}
+.dark .btn-blue:hover{background:#2563eb}
+
+.btn-green{background:#15803d;color:white;font-weight:600}
+.btn-green:hover{background:#166534}
+.dark .btn-green{background:#22c55e;color:white}
+.dark .btn-green:hover{background:#16a34a}
+
+.btn-red{background:#b91c1c;color:white;font-weight:600}
+.btn-red:hover{background:#991b1b}
+.dark .btn-red{background:#ef4444;color:white}
+.dark .btn-red:hover{background:#dc2626}
+
+.btn-ghost{background:transparent;border:1px solid rgba(11,99,255,0.15);color:var(--brand-500);padding:.4rem .7rem;border-radius:.45rem;transition:all 0.2s ease}
+.dark .btn-ghost{border:1px solid var(--border-color);color:var(--accent-blue)}
+.dark .btn-ghost:hover{background:var(--bg-tertiary);border-color:var(--accent-blue)}
+
+/* Typography */
+h1,h2,h3{line-height:1.1}
+.text-muted{color:#6b7280}
+.dark .text-muted{color:var(--text-secondary)}
+.dark h1, .dark h2, .dark h3{color:var(--text-primary)}
+
+/* improve spacing for readable lists */
+ul.space-y-2 > li{line-height:1.5}
+
+/* subtle focus styles */
+button:focus, textarea:focus, input:focus{outline:2px solid rgba(11,99,255,0.12);outline-offset:2px}
+.dark button:focus, .dark textarea:focus, .dark input:focus{outline:2px solid var(--accent-blue);outline-offset:2px}
+
+/* Input fields dark mode */
+.dark input[type="text"], 
+.dark input[type="password"], 
+.dark input[type="email"], 
+.dark textarea, 
+.dark select {
+	background:var(--bg-tertiary);
+	border-color:var(--border-color);
+	color:var(--text-primary);
+}
+
+.dark input[type="text"]:focus, 
+.dark input[type="password"]:focus, 
+.dark input[type="email"]:focus, 
+.dark textarea:focus, 
+.dark select:focus {
+	background:var(--bg-secondary);
+	border-color:var(--accent-blue);
+}
+
+/* progress bar */
+.progress-outer{height:10px;background:linear-gradient(90deg,#eef2ff,#f1f5f9);border-radius:999px;overflow:hidden}
+.progress-inner{height:100%;background:linear-gradient(90deg,var(--brand-500),#7c5cff);border-radius:999px;width:0%}
+.dark .progress-outer{background:var(--bg-tertiary)}
+.dark .progress-inner{background:linear-gradient(90deg,var(--accent-blue),var(--accent-purple))}
+
+/* Theme toggle switch animations */
+.theme-toggle-switch {
+	position: relative;
+	cursor: pointer;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle-switch:hover {
+	transform: scale(1.05);
+}
+
+.theme-toggle-switch:active {
+	transform: scale(0.95);
+}
+
+/* small transition helper */
+.smooth{transition:all .22s cubic-bezier(.2,.8,.2,1)}
+
+.export-box{background:white;padding:18px;border-radius:12px}
+.dark .export-box{background:var(--bg-secondary);border:1px solid var(--border-color)}
+
+/* small UI helpers */
+.chip{display:inline-block;padding:4px 8px;border-radius:999px;font-size:.75rem;background:#f1f5f9}
+.dark .chip{background:var(--bg-tertiary);color:var(--text-primary)}
+
+.muted{color:#6b7280}
+.dark .muted{color:var(--text-secondary)}

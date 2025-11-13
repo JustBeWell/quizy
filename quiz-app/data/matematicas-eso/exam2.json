@@ -1,0 +1,255 @@
+{
+  "name": "Fracciones y Números Racionales",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Simplifica la fracción 24/36:",
+      "options": [
+        {
+          "key": "a",
+          "text": "2/3"
+        },
+        {
+          "key": "b",
+          "text": "3/4"
+        },
+        {
+          "key": "c",
+          "text": "4/6"
+        },
+        {
+          "key": "d",
+          "text": "12/18"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Suma: 1/2 + 1/3",
+      "options": [
+        {
+          "key": "a",
+          "text": "2/5"
+        },
+        {
+          "key": "b",
+          "text": "2/6"
+        },
+        {
+          "key": "c",
+          "text": "5/6"
+        },
+        {
+          "key": "d",
+          "text": "3/5"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Multiplica: (2/5) × (3/4)",
+      "options": [
+        {
+          "key": "a",
+          "text": "5/9"
+        },
+        {
+          "key": "b",
+          "text": "6/20"
+        },
+        {
+          "key": "c",
+          "text": "3/10"
+        },
+        {
+          "key": "d",
+          "text": "5/20"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Divide: (3/4) ÷ (2/3)",
+      "options": [
+        {
+          "key": "a",
+          "text": "6/12"
+        },
+        {
+          "key": "b",
+          "text": "9/8"
+        },
+        {
+          "key": "c",
+          "text": "1/2"
+        },
+        {
+          "key": "d",
+          "text": "2"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "¿Qué fracción representa 0.75?",
+      "options": [
+        {
+          "key": "a",
+          "text": "7/5"
+        },
+        {
+          "key": "b",
+          "text": "75/100"
+        },
+        {
+          "key": "c",
+          "text": "3/4"
+        },
+        {
+          "key": "d",
+          "text": "1/4"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "El número decimal 0.333... es equivalente a:",
+      "options": [
+        {
+          "key": "a",
+          "text": "1/4"
+        },
+        {
+          "key": "b",
+          "text": "1/3"
+        },
+        {
+          "key": "c",
+          "text": "3/10"
+        },
+        {
+          "key": "d",
+          "text": "1/2"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Ordena de menor a mayor: 1/2, 2/3, 3/4",
+      "options": [
+        {
+          "key": "a",
+          "text": "1/2, 2/3, 3/4"
+        },
+        {
+          "key": "b",
+          "text": "3/4, 2/3, 1/2"
+        },
+        {
+          "key": "c",
+          "text": "2/3, 1/2, 3/4"
+        },
+        {
+          "key": "d",
+          "text": "1/2, 3/4, 2/3"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "¿Cuál es el m.c.m. de 12 y 18?",
+      "options": [
+        {
+          "key": "a",
+          "text": "6"
+        },
+        {
+          "key": "b",
+          "text": "36"
+        },
+        {
+          "key": "c",
+          "text": "54"
+        },
+        {
+          "key": "d",
+          "text": "216"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "El m.c.d. de 24 y 36 es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "4"
+        },
+        {
+          "key": "b",
+          "text": "6"
+        },
+        {
+          "key": "c",
+          "text": "12"
+        },
+        {
+          "key": "d",
+          "text": "72"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Resta: 5/6 - 1/4",
+      "options": [
+        {
+          "key": "a",
+          "text": "4/2"
+        },
+        {
+          "key": "b",
+          "text": "7/12"
+        },
+        {
+          "key": "c",
+          "text": "4/10"
+        },
+        {
+          "key": "d",
+          "text": "1/2"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

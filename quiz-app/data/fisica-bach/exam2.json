@@ -1,0 +1,255 @@
+{
+  "name": "Dinámica: Leyes de Newton",
+  "questions": [
+    {
+      "id": 1,
+      "question": "La Primera Ley de Newton también se llama:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Ley de la inercia"
+        },
+        {
+          "key": "b",
+          "text": "Ley de la fuerza"
+        },
+        {
+          "key": "c",
+          "text": "Ley de acción-reacción"
+        },
+        {
+          "key": "d",
+          "text": "Ley de la gravedad"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "F = m·a corresponde a:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Primera Ley"
+        },
+        {
+          "key": "b",
+          "text": "Segunda Ley"
+        },
+        {
+          "key": "c",
+          "text": "Tercera Ley"
+        },
+        {
+          "key": "d",
+          "text": "Ley de la gravitación"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Si duplicamos la masa y mantenemos la fuerza, la aceleración:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Se duplica"
+        },
+        {
+          "key": "b",
+          "text": "Se reduce a la mitad"
+        },
+        {
+          "key": "c",
+          "text": "Se cuadruplica"
+        },
+        {
+          "key": "d",
+          "text": "No cambia"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "La Tercera Ley establece que:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Todo cuerpo permanece en reposo"
+        },
+        {
+          "key": "b",
+          "text": "F = m·a"
+        },
+        {
+          "key": "c",
+          "text": "A toda acción hay una reacción igual y opuesta"
+        },
+        {
+          "key": "d",
+          "text": "La velocidad es constante"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "El peso de un objeto es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Su masa"
+        },
+        {
+          "key": "b",
+          "text": "La fuerza gravitatoria sobre él"
+        },
+        {
+          "key": "c",
+          "text": "Su volumen"
+        },
+        {
+          "key": "d",
+          "text": "Su densidad"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Un objeto de 5 kg sobre el que actúa F = 20 N tiene aceleración:",
+      "options": [
+        {
+          "key": "a",
+          "text": "2 m/s²"
+        },
+        {
+          "key": "b",
+          "text": "4 m/s²"
+        },
+        {
+          "key": "c",
+          "text": "10 m/s²"
+        },
+        {
+          "key": "d",
+          "text": "25 m/s²"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "La fuerza normal es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Siempre vertical"
+        },
+        {
+          "key": "b",
+          "text": "Perpendicular a la superficie de contacto"
+        },
+        {
+          "key": "c",
+          "text": "Igual al peso"
+        },
+        {
+          "key": "d",
+          "text": "Una fuerza de rozamiento"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "En ausencia de fuerzas externas, un objeto:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Se detiene"
+        },
+        {
+          "key": "b",
+          "text": "Mantiene su velocidad constante"
+        },
+        {
+          "key": "c",
+          "text": "Acelera"
+        },
+        {
+          "key": "d",
+          "text": "Cae"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "La fuerza de rozamiento:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Facilita el movimiento"
+        },
+        {
+          "key": "b",
+          "text": "Se opone al movimiento"
+        },
+        {
+          "key": "c",
+          "text": "Es perpendicular al movimiento"
+        },
+        {
+          "key": "d",
+          "text": "Es igual a la normal"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "El peso de un objeto de 10 kg en la Tierra (g = 10 m/s²) es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "1 N"
+        },
+        {
+          "key": "b",
+          "text": "10 N"
+        },
+        {
+          "key": "c",
+          "text": "20 N"
+        },
+        {
+          "key": "d",
+          "text": "100 N"
+        }
+      ],
+      "answers": [
+        "d"
+      ]
+    }
+  ]
+}

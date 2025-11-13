@@ -1,0 +1,255 @@
+{
+  "name": "Enlaces Químicos",
+  "questions": [
+    {
+      "id": 1,
+      "question": "El enlace iónico se forma entre:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Dos metales"
+        },
+        {
+          "key": "b",
+          "text": "Dos no metales"
+        },
+        {
+          "key": "c",
+          "text": "Un metal y un no metal"
+        },
+        {
+          "key": "d",
+          "text": "Gases nobles"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "El enlace covalente implica:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Transferencia de electrones"
+        },
+        {
+          "key": "b",
+          "text": "Compartir electrones"
+        },
+        {
+          "key": "c",
+          "text": "Perder electrones"
+        },
+        {
+          "key": "d",
+          "text": "Ganar protones"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "NaCl es un ejemplo de enlace:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Covalente"
+        },
+        {
+          "key": "b",
+          "text": "Iónico"
+        },
+        {
+          "key": "c",
+          "text": "Metálico"
+        },
+        {
+          "key": "d",
+          "text": "De hidrógeno"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "El H₂O forma enlaces:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Iónicos"
+        },
+        {
+          "key": "b",
+          "text": "Metálicos"
+        },
+        {
+          "key": "c",
+          "text": "Covalentes polares"
+        },
+        {
+          "key": "d",
+          "text": "Covalentes apolares"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Los enlaces de hidrógeno se dan en:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Moléculas con H unido a O, N o F"
+        },
+        {
+          "key": "b",
+          "text": "Todos los compuestos"
+        },
+        {
+          "key": "c",
+          "text": "Solo en gases"
+        },
+        {
+          "key": "d",
+          "text": "Metales"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "La molécula de O₂ tiene enlace:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Simple"
+        },
+        {
+          "key": "b",
+          "text": "Doble"
+        },
+        {
+          "key": "c",
+          "text": "Triple"
+        },
+        {
+          "key": "d",
+          "text": "Iónico"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "El enlace metálico se caracteriza por:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Electrones localizados"
+        },
+        {
+          "key": "b",
+          "text": "Electrones des localizados"
+        },
+        {
+          "key": "c",
+          "text": "Ausencia de electrones"
+        },
+        {
+          "key": "d",
+          "text": "Transferencia completa"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Un enlace covalente apolar se da entre:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Átomos muy distintos"
+        },
+        {
+          "key": "b",
+          "text": "Átomos iguales o similar electronegatividad"
+        },
+        {
+          "key": "c",
+          "text": "Metal y no metal"
+        },
+        {
+          "key": "d",
+          "text": "Gases nobles"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "La molécula de N₂ tiene enlace:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Simple"
+        },
+        {
+          "key": "b",
+          "text": "Doble"
+        },
+        {
+          "key": "c",
+          "text": "Triple"
+        },
+        {
+          "key": "d",
+          "text": "Iónico"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "El CO₂ es una molécula:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Lineal"
+        },
+        {
+          "key": "b",
+          "text": "Angular"
+        },
+        {
+          "key": "c",
+          "text": "Tetraédrica"
+        },
+        {
+          "key": "d",
+          "text": "Trigonal"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    }
+  ]
+}

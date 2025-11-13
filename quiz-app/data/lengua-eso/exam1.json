@@ -1,0 +1,130 @@
+{
+  "name": "Sintaxis: Análisis de Oraciones",
+  "questions": [
+    {
+      "id": 1,
+      "question": "En la oración \"María estudia matemáticas\", ¿cuál es el sujeto?",
+      "options": [
+        {
+          "key": "a",
+          "text": "María"
+        },
+        {
+          "key": "b",
+          "text": "estudia"
+        },
+        {
+          "key": "c",
+          "text": "matemáticas"
+        },
+        {
+          "key": "d",
+          "text": "estudia matemáticas"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "¿Qué función sintáctica tiene \"a mi hermano\" en \"Le presté el libro a mi hermano\"?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Sujeto"
+        },
+        {
+          "key": "b",
+          "text": "Complemento directo"
+        },
+        {
+          "key": "c",
+          "text": "Complemento indirecto"
+        },
+        {
+          "key": "d",
+          "text": "Complemento circunstancial"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Identifica el predicado nominal: ",
+      "options": [
+        {
+          "key": "a",
+          "text": "Los niños juegan en el parque"
+        },
+        {
+          "key": "b",
+          "text": "Mi hermana es profesora"
+        },
+        {
+          "key": "c",
+          "text": "Compramos fruta en el mercado"
+        },
+        {
+          "key": "d",
+          "text": "Corrieron toda la tarde"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "¿Cuál de estas oraciones tiene un complemento circunstancial de tiempo?",
+      "options": [
+        {
+          "key": "a",
+          "text": "El libro está sobre la mesa"
+        },
+        {
+          "key": "b",
+          "text": "Llegamos ayer por la tarde"
+        },
+        {
+          "key": "c",
+          "text": "Vive cerca de la escuela"
+        },
+        {
+          "key": "d",
+          "text": "Lo hice con mucha alegría"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "En \"Me gusta el chocolate\", el sujeto es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Me"
+        },
+        {
+          "key": "b",
+          "text": "gusta"
+        },
+        {
+          "key": "c",
+          "text": "el chocolate"
+        },
+        {
+          "key": "d",
+          "text": "No tiene sujeto"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    }
+  ]
+}

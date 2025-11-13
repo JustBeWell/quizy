@@ -1,0 +1,255 @@
+{
+  "name": "Potencias y Raíces",
+  "questions": [
+    {
+      "id": 1,
+      "question": "¿Cuánto es 2⁵?",
+      "options": [
+        {
+          "key": "a",
+          "text": "10"
+        },
+        {
+          "key": "b",
+          "text": "16"
+        },
+        {
+          "key": "c",
+          "text": "25"
+        },
+        {
+          "key": "d",
+          "text": "32"
+        }
+      ],
+      "answers": [
+        "d"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Calcula: 10³",
+      "options": [
+        {
+          "key": "a",
+          "text": "30"
+        },
+        {
+          "key": "b",
+          "text": "100"
+        },
+        {
+          "key": "c",
+          "text": "1000"
+        },
+        {
+          "key": "d",
+          "text": "10000"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "¿Cuál es el resultado de √144?",
+      "options": [
+        {
+          "key": "a",
+          "text": "11"
+        },
+        {
+          "key": "b",
+          "text": "12"
+        },
+        {
+          "key": "c",
+          "text": "13"
+        },
+        {
+          "key": "d",
+          "text": "14"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Simplifica: 2³ × 2⁴",
+      "options": [
+        {
+          "key": "a",
+          "text": "2⁷"
+        },
+        {
+          "key": "b",
+          "text": "2¹²"
+        },
+        {
+          "key": "c",
+          "text": "4⁷"
+        },
+        {
+          "key": "d",
+          "text": "128"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "¿Cuánto es √81 + √16?",
+      "options": [
+        {
+          "key": "a",
+          "text": "9"
+        },
+        {
+          "key": "b",
+          "text": "11"
+        },
+        {
+          "key": "c",
+          "text": "13"
+        },
+        {
+          "key": "d",
+          "text": "15"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Calcula: (2³)²",
+      "options": [
+        {
+          "key": "a",
+          "text": "2⁵"
+        },
+        {
+          "key": "b",
+          "text": "2⁶"
+        },
+        {
+          "key": "c",
+          "text": "2⁹"
+        },
+        {
+          "key": "d",
+          "text": "64"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "¿Cuál es el valor de 5⁰?",
+      "options": [
+        {
+          "key": "a",
+          "text": "0"
+        },
+        {
+          "key": "b",
+          "text": "1"
+        },
+        {
+          "key": "c",
+          "text": "5"
+        },
+        {
+          "key": "d",
+          "text": "No definido"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Resuelve: 3² + 4²",
+      "options": [
+        {
+          "key": "a",
+          "text": "7"
+        },
+        {
+          "key": "b",
+          "text": "24"
+        },
+        {
+          "key": "c",
+          "text": "25"
+        },
+        {
+          "key": "d",
+          "text": "49"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "√(25 × 4) es igual a:",
+      "options": [
+        {
+          "key": "a",
+          "text": "10"
+        },
+        {
+          "key": "b",
+          "text": "20"
+        },
+        {
+          "key": "c",
+          "text": "50"
+        },
+        {
+          "key": "d",
+          "text": "100"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Si 2ⁿ = 64, ¿cuánto vale n?",
+      "options": [
+        {
+          "key": "a",
+          "text": "4"
+        },
+        {
+          "key": "b",
+          "text": "5"
+        },
+        {
+          "key": "c",
+          "text": "6"
+        },
+        {
+          "key": "d",
+          "text": "7"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    }
+  ]
+}

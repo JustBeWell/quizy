@@ -1,0 +1,130 @@
+{
+  "name": "La Guerra Civil Española (1936-1939)",
+  "questions": [
+    {
+      "id": 1,
+      "question": "¿En qué año comenzó la Guerra Civil Española?",
+      "options": [
+        {
+          "key": "a",
+          "text": "1934"
+        },
+        {
+          "key": "b",
+          "text": "1936"
+        },
+        {
+          "key": "c",
+          "text": "1938"
+        },
+        {
+          "key": "d",
+          "text": "1939"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "¿Quién lideró el bando sublevado durante la Guerra Civil?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Manuel Azaña"
+        },
+        {
+          "key": "b",
+          "text": "Francisco Largo Caballero"
+        },
+        {
+          "key": "c",
+          "text": "Francisco Franco"
+        },
+        {
+          "key": "d",
+          "text": "José Antonio Primo de Rivera"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "La Batalla del Ebro (1938) fue:",
+      "options": [
+        {
+          "key": "a",
+          "text": "La primera batalla de la guerra"
+        },
+        {
+          "key": "b",
+          "text": "Una de las batallas más largas y sangrientas"
+        },
+        {
+          "key": "c",
+          "text": "Una victoria decisiva del bando republicano"
+        },
+        {
+          "key": "d",
+          "text": "El fin de la guerra"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "¿Qué potencias extranjeras apoyaron al bando franquista?",
+      "options": [
+        {
+          "key": "a",
+          "text": "Francia y Reino Unido"
+        },
+        {
+          "key": "b",
+          "text": "Estados Unidos y Canadá"
+        },
+        {
+          "key": "c",
+          "text": "Alemania nazi e Italia fascista"
+        },
+        {
+          "key": "d",
+          "text": "Unión Soviética"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "El bombardeo de Guernica (1937) fue perpetrado por:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Aviación italiana"
+        },
+        {
+          "key": "b",
+          "text": "Legión Cóndor alemana"
+        },
+        {
+          "key": "c",
+          "text": "Aviación francesa"
+        },
+        {
+          "key": "d",
+          "text": "Aviación republicana"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

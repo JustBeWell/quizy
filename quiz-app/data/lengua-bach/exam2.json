@@ -1,0 +1,255 @@
+{
+  "name": "Literatura Contemporánea: Generación del 27",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Federico García Lorca escribió:",
+      "options": [
+        {
+          "key": "a",
+          "text": "La casa de Bernarda Alba"
+        },
+        {
+          "key": "b",
+          "text": "Don Quijote"
+        },
+        {
+          "key": "c",
+          "text": "El Lazarillo"
+        },
+        {
+          "key": "d",
+          "text": "Fuenteovejuna"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "La Generación del 27 se caracteriza por:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Rechazar la tradición"
+        },
+        {
+          "key": "b",
+          "text": "Fusionar tradición y vanguardia"
+        },
+        {
+          "key": "c",
+          "text": "Solo escribir prosa"
+        },
+        {
+          "key": "d",
+          "text": "Ser realistas"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Rafael Alberti fue:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Novelista"
+        },
+        {
+          "key": "b",
+          "text": "Poeta"
+        },
+        {
+          "key": "c",
+          "text": "Dramaturgo exclusivamente"
+        },
+        {
+          "key": "d",
+          "text": "Ensayista"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "\"Poeta en Nueva York\" es de:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Rafael Alberti"
+        },
+        {
+          "key": "b",
+          "text": "Federico García Lorca"
+        },
+        {
+          "key": "c",
+          "text": "Pedro Salinas"
+        },
+        {
+          "key": "d",
+          "text": "Jorge Guillén"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Luis Cernuda pertenece a:",
+      "options": [
+        {
+          "key": "a",
+          "text": "La Generación del 98"
+        },
+        {
+          "key": "b",
+          "text": "La Generación del 27"
+        },
+        {
+          "key": "c",
+          "text": "El Romanticismo"
+        },
+        {
+          "key": "d",
+          "text": "El Realismo"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Vicente Aleixandre ganó:",
+      "options": [
+        {
+          "key": "a",
+          "text": "El Premio Cervantes"
+        },
+        {
+          "key": "b",
+          "text": "El Premio Nobel de Literatura"
+        },
+        {
+          "key": "c",
+          "text": "El Premio Príncipe de Asturias"
+        },
+        {
+          "key": "d",
+          "text": "Ningún premio"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "El surrealismo influyó en:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Todos los autores del 27"
+        },
+        {
+          "key": "b",
+          "text": "Solo García Lorca"
+        },
+        {
+          "key": "c",
+          "text": "Ningún autor español"
+        },
+        {
+          "key": "d",
+          "text": "Solo poetas extranjeros"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "La Guerra Civil afectó a la Generación del 27:",
+      "options": [
+        {
+          "key": "a",
+          "text": "No les afectó"
+        },
+        {
+          "key": "b",
+          "text": "Provocó exilio y represión"
+        },
+        {
+          "key": "c",
+          "text": "Les benefició"
+        },
+        {
+          "key": "d",
+          "text": "No existían entonces"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Pedro Salinas es conocido por su poesía:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Épica"
+        },
+        {
+          "key": "b",
+          "text": "Amorosa"
+        },
+        {
+          "key": "c",
+          "text": "Religiosa"
+        },
+        {
+          "key": "d",
+          "text": "Satírica"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Dámaso Alonso fue:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Solo poeta"
+        },
+        {
+          "key": "b",
+          "text": "Poeta y crítico literario"
+        },
+        {
+          "key": "c",
+          "text": "Novelista"
+        },
+        {
+          "key": "d",
+          "text": "Dramaturgo"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    }
+  ]
+}

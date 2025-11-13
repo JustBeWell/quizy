@@ -1,0 +1,255 @@
+{
+  "name": "Análisis de Textos y Comentario",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Un texto narrativo se caracteriza por:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Contar hechos"
+        },
+        {
+          "key": "b",
+          "text": "Expresar sentimientos"
+        },
+        {
+          "key": "c",
+          "text": "Argumentar ideas"
+        },
+        {
+          "key": "d",
+          "text": "Dar órdenes"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "El narrador omnisciente:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Es un personaje"
+        },
+        {
+          "key": "b",
+          "text": "Lo sabe todo"
+        },
+        {
+          "key": "c",
+          "text": "Solo cuenta lo que ve"
+        },
+        {
+          "key": "d",
+          "text": "No existe"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Una metáfora es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Una comparación explícita"
+        },
+        {
+          "key": "b",
+          "text": "Una identificación implícita"
+        },
+        {
+          "key": "c",
+          "text": "Una exageración"
+        },
+        {
+          "key": "d",
+          "text": "Una personificación"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "El símil usa:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Identificación directa"
+        },
+        {
+          "key": "b",
+          "text": "Comparación con \"como\" o \"cual\""
+        },
+        {
+          "key": "c",
+          "text": "Exageración"
+        },
+        {
+          "key": "d",
+          "text": "Ironía"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "La hipérbole consiste en:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Comparar"
+        },
+        {
+          "key": "b",
+          "text": "Exagerar"
+        },
+        {
+          "key": "c",
+          "text": "Personificar"
+        },
+        {
+          "key": "d",
+          "text": "Repetir"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Un texto argumentativo busca:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Narrar hechos"
+        },
+        {
+          "key": "b",
+          "text": "Describir"
+        },
+        {
+          "key": "c",
+          "text": "Convencer"
+        },
+        {
+          "key": "d",
+          "text": "Informar objetivamente"
+        }
+      ],
+      "answers": [
+        "c"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "La personificación atribuye:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Cualidades humanas a seres inanimados"
+        },
+        {
+          "key": "b",
+          "text": "Cualidades animales a humanos"
+        },
+        {
+          "key": "c",
+          "text": "Exageración"
+        },
+        {
+          "key": "d",
+          "text": "Comparación"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "El clímax de una narración es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "La introducción"
+        },
+        {
+          "key": "b",
+          "text": "El momento de mayor tensión"
+        },
+        {
+          "key": "c",
+          "text": "El desenlace"
+        },
+        {
+          "key": "d",
+          "text": "La presentación de personajes"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Un texto expositivo tiene como objetivo:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Convencer"
+        },
+        {
+          "key": "b",
+          "text": "Informar objetivamente"
+        },
+        {
+          "key": "c",
+          "text": "Expresar emociones"
+        },
+        {
+          "key": "d",
+          "text": "Narrar hechos ficticios"
+        }
+      ],
+      "answers": [
+        "b"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "La anáfora es:",
+      "options": [
+        {
+          "key": "a",
+          "text": "Repetición al inicio de versos"
+        },
+        {
+          "key": "b",
+          "text": "Una comparación"
+        },
+        {
+          "key": "c",
+          "text": "Una exageración"
+        },
+        {
+          "key": "d",
+          "text": "Un tipo de rima"
+        }
+      ],
+      "answers": [
+        "a"
+      ]
+    }
+  ]
+}
