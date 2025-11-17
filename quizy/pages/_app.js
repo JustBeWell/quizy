@@ -8,11 +8,14 @@ import { useEffect, useState } from 'react'
 import { ThemeProvider } from '../contexts/ThemeContext'
 
 const UserMenu = dynamic(()=>import('../components/UserMenu'), { ssr:false })
+const StreakDisplay = dynamic(()=>import('../components/StreakDisplay'), { ssr:false })
 
 export default function MyApp({ Component, pageProps }) {
   const router = useRouter()
   const [isAuthPage, setIsAuthPage] = useState(false)
   const [isLandingPage, setIsLandingPage] = useState(false)
+  const [showStreak, setShowStreak] = useState(false)
+  const [userName, setUserName] = useState(null)
 
   useEffect(() => {
     // Páginas de autenticación donde NO debe mostrarse el Header
@@ -37,6 +40,48 @@ export default function MyApp({ Component, pageProps }) {
     }
   }, [router.pathname])
 
+  // Check if user is logged in and show streak
+  useEffect(() => {
+    if (typeof window !== 'undefined' && !isAuthPage && !isLandingPage) {
+      const token = localStorage.getItem('quiz_token')
+      
+      // Solo mostrar en la página principal (levels) o subjects
+      const shouldShowStreak = router.pathname === '/levels' || router.pathname === '/subjects'
+      
+      if (token && shouldShowStreak) {
+        try {
+          // Decode JWT to get username (basic decode, not verification)
+          const payload = JSON.parse(atob(token.split('.')[1]))
+          const username = payload.name || payload.username
+          setUserName(username)
+          
+          // Check if we should show streak (once per day per user)
+          const today = new Date().toISOString().split('T')[0]
+          const storageKey = `streak_shown_${username}_${today}`
+          const alreadyShown = localStorage.getItem(storageKey)
+          
+          console.log('Streak check:', { username, today, alreadyShown, pathname: router.pathname })
+          
+          if (!alreadyShown) {
+            // Show streak after a short delay for better UX
+            setTimeout(() => {
+              console.log('Showing streak display')
+              setShowStreak(true)
+              localStorage.setItem(storageKey, 'true')
+              
+              // Auto-hide after 10 seconds
+              setTimeout(() => {
+                setShowStreak(false)
+              }, 10000)
+            }, 1500)
+          }
+        } catch (error) {
+          console.error('Error parsing JWT:', error)
+        }
+      }
+    }
+  }, [router.pathname, isAuthPage, isLandingPage])
+
   return (
     <ThemeProvider>
       <Head>
@@ -55,6 +100,14 @@ export default function MyApp({ Component, pageProps }) {
       <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-[#1e1e1e] transition-colors duration-200" style={isLandingPage ? { margin: 0, padding: 0 } : {}}>
         {/* Ocultar Header en la landing page y páginas de autenticación */}
         {!isLandingPage && !isAuthPage && <Header />}
+
+        {/* Streak Display */}
+        {showStreak && userName && (
+          <StreakDisplay 
+            userName={userName} 
+            onClose={() => setShowStreak(false)} 
+          />
+        )}
 
         <main className={isLandingPage ? "flex-1" : "flex-1 app-main"} style={isLandingPage ? { margin: 0, padding: 0 } : {}}>
           <AnimatePresence mode="wait" initial={false} exitBeforeEnter={false}>

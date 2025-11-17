@@ -30,6 +30,11 @@ export default function Profile() {
   // Estados para favoritos
   const [favorites, setFavorites] = useState([])
   const [favoritesLoading, setFavoritesLoading] = useState(true)
+  
+  // Estados para racha
+  const [streakData, setStreakData] = useState(null)
+  const [streakRanking, setStreakRanking] = useState([])
+  const [loadingStreak, setLoadingStreak] = useState(true)
 
   useEffect(() => {
     // Cargar usuario actual
@@ -94,6 +99,9 @@ export default function Profile() {
         // Detectar intentos activos desde localStorage (esperar a que termine)
         await detectActiveAttempts(subjectsData.subjects || [])
         
+        // Cargar datos de racha
+        await loadStreakData(token)
+        
         setLoading(false)
       } catch(e) {
         console.error('Error:', e)
@@ -103,6 +111,38 @@ export default function Profile() {
     
     loadProfile()
   }, [])
+
+  // Función para cargar datos de racha
+  const loadStreakData = async (token) => {
+    try {
+      if (!token) {
+        setLoadingStreak(false)
+        return
+      }
+      
+      // Cargar racha del usuario
+      const streakRes = await fetch('/api/streak', {
+        headers: { 'Authorization': `Bearer ${token}` }
+      })
+      
+      if (streakRes.ok) {
+        const data = await streakRes.json()
+        setStreakData(data)
+      }
+      
+      // Cargar ranking de rachas
+      const rankingRes = await fetch('/api/streak-ranking')
+      if (rankingRes.ok) {
+        const rankingData = await rankingRes.json()
+        setStreakRanking(rankingData.ranking || [])
+      }
+      
+      setLoadingStreak(false)
+    } catch (error) {
+      console.error('Error loading streak data:', error)
+      setLoadingStreak(false)
+    }
+  }
 
   // Cargar favoritos
   useEffect(() => {
@@ -550,7 +590,7 @@ export default function Profile() {
           <h2 className="text-3xl font-semibold">👤 Mi Perfil</h2>
           <p className="text-gray-600 text-sm mt-1">Consulta tus estadísticas y gestiona tu cuenta</p>
         </div>
-        <Link href="/subjects" className="btn-ghost">← Volver a Asignaturas</Link>
+        <Link href="/levels" className="btn-ghost">← Volver al Inicio</Link>
       </div>
 
       {/* Navegación móvil - Breadcrumb tabs */}
@@ -574,19 +614,81 @@ export default function Profile() {
         </div>
       </div>
 
-      {/* Información del usuario */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
-        <div className="flex items-start gap-4">
-          <div className="w-20 h-20 rounded-full bg-brand-700 dark:bg-brand-500 text-white flex items-center justify-center text-3xl font-semibold shadow-lg">
-            {user.name.charAt(0).toUpperCase()}
-          </div>
-          <div className="flex-1">
-            <h3 className="text-2xl font-semibold text-gray-900">{user.name}</h3>
-            <p className="text-sm text-gray-500 mt-1">
-              🎓 Miembro activo desde {formatDateOnly(user.createdAt)}
-            </p>
+      {/* Información del usuario y Racha - Layout horizontal */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        {/* Información del usuario */}
+        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+          <div className="flex items-start gap-4">
+            <div className="w-20 h-20 rounded-full bg-brand-700 dark:bg-brand-500 text-white flex items-center justify-center text-3xl font-semibold shadow-lg">
+              {user.name.charAt(0).toUpperCase()}
+            </div>
+            <div className="flex-1">
+              <h3 className="text-2xl font-semibold text-gray-900">{user.name}</h3>
+              <p className="text-sm text-gray-500 mt-1">
+                🎓 Miembro activo desde {formatDateOnly(user.createdAt)}
+              </p>
+            </div>
           </div>
         </div>
+
+        {/* Racha de días */}
+        {!loadingStreak && streakData && (
+          <div className="bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-xl shadow-sm border border-orange-200 dark:border-orange-800 p-4">
+            <div className="flex items-center justify-between mb-3">
+              <h4 className="text-base font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+                🔥 Tu Racha
+              </h4>
+              <div className="text-right">
+                <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">
+                  {streakData.currentStreak}
+                </div>
+                <div className="text-[10px] text-gray-600 dark:text-gray-400">
+                  día{streakData.currentStreak !== 1 ? 's' : ''}
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex justify-center gap-2 mb-3">
+              {streakData.last7Days.map((day, index) => (
+                <div key={index} className="flex flex-col items-center">
+                  <div className="text-[10px] text-gray-500 dark:text-gray-400 mb-1 font-medium">
+                    {['L', 'M', 'X', 'J', 'V', 'S', 'D'][day.dayOfWeek]}
+                  </div>
+                  <div
+                    className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold text-xs transition-all ${
+                      day.completed
+                        ? 'bg-gradient-to-br from-green-400 to-green-600 text-white shadow-md'
+                        : day.isToday
+                        ? 'bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300 border-2 border-orange-400 dark:border-orange-600'
+                        : 'bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-500'
+                    }`}
+                  >
+                    {day.completed ? (
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    ) : (
+                      day.dayNumber
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <div className="flex items-center justify-between text-xs">
+              <div className="text-gray-700 dark:text-gray-300">
+                🏆 Récord: <span className="font-bold text-orange-600 dark:text-orange-400">{streakData.longestStreak}</span>
+              </div>
+              <div className="text-gray-600 dark:text-gray-400">
+                {streakData.currentStreak === 0 && "¡Empieza!"}
+                {streakData.currentStreak === 1 && "¡Sigue!"}
+                {streakData.currentStreak >= 2 && streakData.currentStreak < 7 && "💪"}
+                {streakData.currentStreak >= 7 && streakData.currentStreak < 30 && "🌟"}
+                {streakData.currentStreak >= 30 && "🚀"}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Gestión de Email */}

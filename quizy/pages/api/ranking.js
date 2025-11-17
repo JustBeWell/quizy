@@ -49,6 +49,7 @@ export default async function handler(req,res){
               )
               WHERE a.subject_id = $1 
                 AND a.user_name IS NOT NULL
+                AND a.user_name != 'admin'
                 AND (qb.is_published = true OR a.bank NOT LIKE 'db_%')
               GROUP BY a.user_name, a.bank, a.bank_name, s.name, s.slug
               ORDER BY score DESC
@@ -76,6 +77,7 @@ export default async function handler(req,res){
                 END
               )
               WHERE a.user_name IS NOT NULL
+                AND a.user_name != 'admin'
                 AND (qb.is_published = true OR a.bank NOT LIKE 'db_%')
               GROUP BY a.user_name, a.bank, a.bank_name, s.name, s.slug
               ORDER BY score DESC

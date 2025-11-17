@@ -22,6 +22,16 @@ function FadeInWhenVisible({ children, delay = 0 }) {
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
+  const [mounted, setMounted] = useState(false)
+
+  // Activar animaciones después del montaje
+  useEffect(() => {
+    // Pequeño delay para asegurar que el DOM esté listo
+    const timer = setTimeout(() => {
+      setMounted(true)
+    }, 100)
+    return () => clearTimeout(timer)
+  }, [])
 
   const testimonials = [
     {
@@ -40,6 +50,30 @@ export default function Home() {
       name: "Laura M.",
       role: "Estudiante de 4º ESO",
       text: "Antes odiaba estudiar, ahora es como un juego. Compito con mis amigos y todos hemos mejorado.",
+      rating: 5
+    },
+    {
+      name: "David P.",
+      role: "Estudiante de Ingeniería",
+      text: "Perfecta para repasar antes de los parciales. Me ayudó a aprobar Arquitectura de Computadores a la primera.",
+      rating: 5
+    },
+    {
+      name: "Ana S.",
+      role: "Estudiante de Gestión de Software",
+      text: "Las preguntas están muy bien hechas. Parece que las han sacado de exámenes reales. 100% recomendado.",
+      rating: 5
+    },
+    {
+      name: "Jorge M.",
+      role: "Estudiante de Ingeniería Web",
+      text: "Uso Quizy todos los días. Es adictivo y además aprendes. Ya llevo 3 exámenes aprobados este curso.",
+      rating: 5
+    },
+    {
+      name: "Patricia L.",
+      role: "Estudiante Universitaria",
+      text: "Me encanta que puedas practicar por niveles. Empiezas con lo fácil y vas subiendo. Muy motivador.",
       rating: 5
     }
   ]
@@ -87,7 +121,7 @@ export default function Home() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative overflow-hidden w-full h-[450px] md:h-[550px] lg:h-[600px]"
+        className="relative overflow-hidden w-full h-[500px] md:h-[600px] lg:h-[650px]"
         style={{ margin: 0, padding: 0, display: 'block' }}
       >
         {/* Imagen de fondo - Aula escolar */}
@@ -106,8 +140,8 @@ export default function Home() {
         <div className="relative h-full flex flex-col items-center justify-center px-8 z-10">
           <motion.h1
             initial={{ y: -30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            animate={mounted ? { y: 0, opacity: 1 } : { y: -30, opacity: 0 }}
+            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
             className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white text-center mb-6"
             style={{ textShadow: '0 4px 12px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.6)' }}
           >
@@ -116,8 +150,8 @@ export default function Home() {
           
           <motion.p
             initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            animate={mounted ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
+            transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
             className="text-2xl md:text-3xl text-white text-center max-w-4xl font-semibold mb-4"
             style={{ textShadow: '0 4px 12px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.6)' }}
           >
@@ -126,13 +160,69 @@ export default function Home() {
 
           <motion.p
             initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="text-lg md:text-xl text-white/90 text-center max-w-3xl"
+            animate={mounted ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
+            transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+            className="text-lg md:text-xl text-white/90 text-center max-w-3xl mb-8"
             style={{ textShadow: '0 4px 12px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.6)' }}
           >
             Más de 1000 preguntas verificadas • Compite en rankings • Practica cuando quieras
           </motion.p>
+
+          {/* CTA Button en el Hero */}
+          <motion.button
+            initial={{ y: 30, opacity: 0, scale: 0.8 }}
+            animate={mounted ? { y: 0, opacity: 1, scale: 1 } : { y: 30, opacity: 0, scale: 0.8 }}
+            transition={{ duration: 1, delay: 1.1, type: 'spring', stiffness: 100, damping: 15 }}
+            whileHover={{ scale: 1.08, boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleEnter}
+            className="group relative px-12 py-5 bg-white text-brand-700 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden"
+          >
+            {/* Animated background gradient */}
+            <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-white to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            
+            {/* Button content */}
+            <span className="relative flex items-center gap-3">
+              <span>🚀 Empezar Ahora Gratis</span>
+              <motion.svg 
+                className="w-6 h-6" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+                animate={{ x: [0, 5, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </motion.svg>
+            </span>
+          </motion.button>
+
+          {/* Trust indicators */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.1 }}
+            className="mt-6 flex flex-wrap items-center justify-center gap-6 text-white/80 text-sm"
+          >
+            <span className="flex items-center gap-2">
+              <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              Sin tarjeta de crédito
+            </span>
+            <span className="flex items-center gap-2">
+              <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              100% Gratis
+            </span>
+            <span className="flex items-center gap-2">
+              <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              Registro en 30 segundos
+            </span>
+          </motion.div>
         </div>
       </motion.div>
 
@@ -469,31 +559,106 @@ export default function Home() {
             </motion.div>
             </FadeInWhenVisible>
 
-            {/* CTA Section - Movida aquí */}
+            {/* CTA Section - Segunda llamada a la acción */}
             <FadeInWhenVisible delay={0}>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 1.8 }}
-              className="bg-gradient-to-r from-brand-600 to-blue-600 rounded-3xl p-12 text-center text-white shadow-2xl mb-16"
+              className="relative bg-gradient-to-br from-purple-600 via-brand-600 to-blue-600 rounded-3xl p-12 text-center text-white shadow-2xl mb-16 overflow-hidden"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                ¿Preparado para aprobar con nota?
-              </h2>
-              <p className="text-xl mb-8 opacity-90">
-                Únete gratis y empieza a practicar tus exámenes ahora mismo
-              </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={handleEnter}
-                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-brand-700 rounded-xl hover:bg-gray-100 transition-colors font-semibold text-lg shadow-lg"
-              >
-                <span>Empezar Gratis</span>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </motion.button>
+              {/* Animated background elements */}
+              <div className="absolute inset-0 overflow-hidden">
+                <motion.div
+                  animate={{
+                    scale: [1, 1.2, 1],
+                    rotate: [0, 90, 0],
+                    opacity: [0.1, 0.2, 0.1],
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                  }}
+                  className="absolute -top-1/2 -left-1/2 w-full h-full bg-white rounded-full blur-3xl"
+                />
+                <motion.div
+                  animate={{
+                    scale: [1, 1.3, 1],
+                    rotate: [0, -90, 0],
+                    opacity: [0.1, 0.2, 0.1],
+                  }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                  }}
+                  className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-white rounded-full blur-3xl"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="relative z-10">
+                <motion.div
+                  animate={{
+                    rotate: [0, 10, -10, 0],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                  }}
+                  className="text-6xl mb-6"
+                >
+                  🎓
+                </motion.div>
+                
+                <h2 className="text-3xl md:text-5xl font-bold mb-4">
+                  Miles de estudiantes ya están mejorando sus notas
+                </h2>
+                <p className="text-xl md:text-2xl mb-4 opacity-90 max-w-3xl mx-auto">
+                  ¿A qué esperas? Tu próximo sobresaliente comienza aquí
+                </p>
+                <p className="text-lg mb-8 opacity-80 max-w-2xl mx-auto">
+                  Únete a la comunidad y descubre por qué Quizy es la plataforma favorita de los estudiantes
+                </p>
+                
+                <div className="flex justify-center">
+                  <motion.button
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={handleEnter}
+                    className="group px-12 py-5 bg-white text-brand-700 rounded-xl font-bold text-xl shadow-xl hover:shadow-2xl transition-all relative overflow-hidden"
+                  >
+                    <span className="relative z-10 flex items-center gap-2">
+                      Crear mi cuenta gratis
+                      <motion.svg 
+                        className="w-6 h-6"
+                        animate={{ x: [0, 3, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </motion.svg>
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-yellow-300 to-yellow-100 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </motion.button>
+                </div>
+
+                {/* Feature pills */}
+                <div className="mt-8 flex flex-wrap justify-center gap-3">
+                  {['✨ Sin publicidad', '📱 Móvil y PC', '⚡ Resultados al instante', '🏆 Rankings semanales'].map((feature, index) => (
+                    <motion.span
+                      key={index}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 1.9 + index * 0.1 }}
+                      className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium"
+                    >
+                      {feature}
+                    </motion.span>
+                  ))}
+                </div>
+              </div>
             </motion.div>
             </FadeInWhenVisible>
 

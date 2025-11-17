@@ -87,6 +87,23 @@ export default function Results(){
               })
             })
             
+            // Si se guardó correctamente, limpiar localStorage
+            if(response.ok){
+              console.log('✅ Intento guardado en BD, limpiando localStorage...')
+              try{
+                localStorage.removeItem(`quiz_${bank}_answers`)
+                localStorage.removeItem(`quiz_${bank}_flags`)
+                localStorage.removeItem(`quiz_${bank}_checked`)
+                localStorage.removeItem(`quiz_${bank}_time`)
+                localStorage.removeItem(`quiz_${bank}_completed`)
+                console.log('✅ localStorage limpiado para bank:', bank)
+              }catch(e){
+                console.error('Error limpiando localStorage:', e)
+              }
+            } else {
+              console.warn('⚠️ No se pudo guardar en BD, manteniendo datos en localStorage')
+            }
+            
             // Verificar si el usuario fue eliminado
             if(!response.ok){
               const errorData = await response.json().catch(() => ({}))
