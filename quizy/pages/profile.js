@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { getToken } from '../lib/auth-client'
@@ -10,6 +10,10 @@ export default function Profile() {
   const [loading, setLoading] = useState(true)
   const [activeAttempts, setActiveAttempts] = useState([])
   const [subjects, setSubjects] = useState([])
+  
+  // Refs para prevenir múltiples llamadas
+  const loadingProfileRef = useRef(false)
+  const banksCache = useRef({})
   const [showEmailForm, setShowEmailForm] = useState(false)
   const [newEmail, setNewEmail] = useState('')
   const [emailLoading, setEmailLoading] = useState(false)
@@ -50,11 +54,16 @@ export default function Profile() {
   useEffect(() => {
     // Cargar usuario actual
     const loadProfile = async () => {
+      // Guard para prevenir múltiples llamadas
+      if (loadingProfileRef.current) return
+      loadingProfileRef.current = true
+      
       try {
         // Primero verificar que haya un token válido
         const token = getToken()
         if (!token) {
           console.log('[Profile] No hay token válido, redirigiendo a auth')
+          loadingProfileRef.current = false
           router.replace('/auth')
           return
         }
@@ -142,6 +151,8 @@ export default function Profile() {
       } catch(e) {
         console.error('Error:', e)
         setLoading(false)
+      } finally {
+        loadingProfileRef.current = false
       }
     }
     
@@ -231,19 +242,50 @@ export default function Profile() {
     
     const active = []
     
-    // Primero, cargar todos los bancos de todas las asignaturas
+    // Primero, identificar qué banks necesitamos cargar
+    const banksNeeded = new Set()
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i)
+      if (key && key.startsWith('quiz_') && key.endsWith('_answers')) {
+        const bankId = key.replace('quiz_', '').replace('_answers', '')
+        const isCompleted = localStorage.getItem(`quiz_${bankId}_completed`) === 'true'
+        if (!isCompleted) {
+          const answersStr = localStorage.getItem(key)
+          const answers = JSON.parse(answersStr || '{}')
+          if (Object.keys(answers).length > 0) {
+            banksNeeded.add(bankId)
+          }
+        }
+      }
+    }
+    
+    console.log('📦 Banks necesarios:', Array.from(banksNeeded))
+    
+    // Solo cargar banks si hay intentos activos
     const allBanks = []
-    for (const subject of subjectsList) {
-      try {
-        const banksRes = await fetch(`/api/banks?subject=${encodeURIComponent(subject.slug)}`)
-        if (banksRes.ok) {
-          const banksData = await banksRes.json()
-          banksData.forEach(bank => {
+    if (banksNeeded.size > 0) {
+      for (const subject of subjectsList) {
+        // Usar cache si ya tenemos los banks de esta asignatura
+        if (banksCache.current[subject.slug]) {
+          console.log(`✅ Usando cache para ${subject.slug}`)
+          banksCache.current[subject.slug].forEach(bank => {
             allBanks.push({ ...bank, subject })
           })
+        } else {
+          try {
+            const banksRes = await fetch(`/api/banks?subject=${encodeURIComponent(subject.slug)}`)
+            if (banksRes.ok) {
+              const banksData = await banksRes.json()
+              // Guardar en cache
+              banksCache.current[subject.slug] = banksData
+              banksData.forEach(bank => {
+                allBanks.push({ ...bank, subject })
+              })
+            }
+          } catch (e) {
+            console.error('Error loading banks for subject:', subject.name, e)
+          }
         }
-      } catch (e) {
-        console.error('Error loading banks for subject:', subject.name, e)
       }
     }
     
