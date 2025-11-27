@@ -42,12 +42,13 @@ export function verifyToken(token) {
     
     // Compatibilidad con tokens antiguos que usaban userId en lugar de id
     if (decoded.userId && !decoded.id) {
+      console.log('[JWT] Converting old token format: userId -> id')
       decoded.id = decoded.userId;
     }
     
     // Validar que el token tenga los campos requeridos
     if (!decoded.id || !decoded.name) {
-      console.error('Token inválido: faltan campos requeridos');
+      console.error('[JWT] Token inválido: faltan campos requeridos. Campos presentes:', Object.keys(decoded));
       return null;
     }
     
@@ -55,9 +56,9 @@ export function verifyToken(token) {
   } catch (error) {
     // No loguear el error completo para evitar exponer información
     if (error.name === 'TokenExpiredError') {
-      console.warn('Token expirado');
+      console.warn('[JWT] Token expirado');
     } else if (error.name === 'JsonWebTokenError') {
-      console.warn('Token JWT malformado');
+      console.warn('[JWT] Token JWT malformado:', error.message);
     }
     return null;
   }

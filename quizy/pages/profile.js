@@ -89,6 +89,14 @@ export default function Profile() {
               if (userInfo.notification_preferences) {
                 setNotificationPreferences(userInfo.notification_preferences)
               }
+            } else if (userInfoRes.status === 401) {
+              // Token inválido o expirado - forzar re-login
+              console.warn('Token inválido, redirigiendo a login')
+              localStorage.removeItem('quiz_token')
+              localStorage.removeItem('quiz_user')
+              localStorage.removeItem('quiz_user_data')
+              router.replace('/auth')
+              return
             } else {
               // Si falla la API, usar datos de localStorage
               setUser({ name: userName, ...userData })
@@ -147,6 +155,9 @@ export default function Profile() {
       if (streakRes.ok) {
         const data = await streakRes.json()
         setStreakData(data)
+      } else if (streakRes.status === 401) {
+        console.warn('Token inválido al cargar racha')
+        // No hacer nada, el manejo ya se hizo arriba
       }
       
       // Cargar ranking de rachas

@@ -9,6 +9,7 @@ export default async function handler(req, res) {
   const authHeader = req.headers.authorization
   
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    console.log('[user-info] No authorization header')
     return res.status(401).json({ error: 'No autorizado' })
   }
 
@@ -16,8 +17,11 @@ export default async function handler(req, res) {
   const decoded = verifyToken(token)
   
   if (!decoded) {
+    console.log('[user-info] Token verification failed')
     return res.status(401).json({ error: 'Token inválido' })
   }
+  
+  console.log('[user-info] Token decoded successfully, user ID:', decoded.id)
 
   try {
     const result = await query(
@@ -26,13 +30,16 @@ export default async function handler(req, res) {
     )
 
     if (result.rows.length === 0) {
+      console.log('[user-info] User not found in database:', decoded.id)
       return res.status(404).json({ error: 'Usuario no encontrado' })
     }
+    
+    console.log('[user-info] User found:', result.rows[0].name)
 
     return res.status(200).json(result.rows[0])
 
   } catch (error) {
-    console.error('Error getting user info:', error)
+    console.error('[user-info] Database error:', error)
     return res.status(500).json({ error: 'Error al obtener información del usuario' })
   }
 }
