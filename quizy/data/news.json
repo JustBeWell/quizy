@@ -33,32 +33,32 @@
   "hotfixes": [
     {
       "version": "1.2.0",
-      "title": "Fix: Llamadas infinitas a API de soporte",
-      "description": "Solucionado bucle infinito que causaba cientos de peticiones al endpoint de tickets de soporte.",
+      "title": "La página de soporte ya no se congela",
+      "description": "Arreglado un problema que hacía que la página se quedara cargando infinitamente.",
       "date": "2025-11-27"
     },
     {
       "version": "1.2.0",
-      "title": "Fix: Cache de banks en perfil",
-      "description": "Optimización que reduce de 20+ a 0 llamadas innecesarias a /api/banks al cargar el perfil.",
+      "title": "Tu perfil ahora carga mucho más rápido",
+      "description": "Optimizamos la carga inicial, especialmente si tienes muchas asignaturas favoritas.",
       "date": "2025-11-27"
     },
     {
       "version": "1.1.5",
-      "title": "Fix: Tickets de soporte no visibles",
-      "description": "Corregido problema con paginación y auto-expansión de meses en tickets de soporte.",
+      "title": "Tus tickets de soporte ahora se ven correctamente",
+      "description": "Solucionado un error que impedía ver tus consultas enviadas en la sección de soporte.",
       "date": "2025-11-26"
     },
     {
       "version": "1.1.2",
-      "title": "Fix: Error SQL en conteo de tickets",
-      "description": "Solucionado error GROUP BY en query de tickets de soporte que impedía la carga.",
+      "title": "Problema con tickets resuelto",
+      "description": "Ya no aparece el mensaje de error al intentar ver tus tickets de soporte.",
       "date": "2025-11-26"
     },
     {
       "version": "1.1.0",
-      "title": "Fix: Compatibilidad con tokens antiguos",
-      "description": "Añadida retrocompatibilidad para usuarios con tokens JWT del formato anterior.",
+      "title": "No necesitas volver a iniciar sesión",
+      "description": "Tu sesión ahora se mantiene activa correctamente después de las actualizaciones.",
       "date": "2025-11-26"
     }
   ]
