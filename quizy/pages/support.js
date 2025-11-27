@@ -37,7 +37,8 @@ export default function Support() {
 
       if (response.ok) {
         const data = await response.json()
-        setTickets(data)
+        // Manejar respuesta con paginación o sin ella (compatibilidad)
+        setTickets(data.tickets || data)
       } else {
         const error = await response.json()
         

@@ -40,7 +40,8 @@ export default function AdminSupport() {
 
       if (response.ok) {
         const data = await response.json()
-        setTickets(data)
+        // Manejar respuesta con paginación o sin ella (compatibilidad)
+        setTickets(data.tickets || data)
       }
     } catch (error) {
       console.error('Error loading tickets:', error)
