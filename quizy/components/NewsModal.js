@@ -43,13 +43,13 @@ export default function NewsModal({ isOpen, onClose, news }) {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-w-3xl max-h-[85vh] bg-gradient-to-br from-amber-50 to-orange-100 dark:from-amber-900 dark:to-orange-900 rounded-xl shadow-2xl overflow-hidden my-auto"
+            className="relative w-full max-w-3xl max-h-[90vh] bg-gradient-to-br from-amber-50 to-orange-100 dark:from-amber-900 dark:to-orange-900 rounded-xl shadow-2xl overflow-hidden flex flex-col"
             style={{
               boxShadow: '0 20px 60px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.3)'
             }}
           >
           {/* Header con estilo corcho */}
-          <div className="relative bg-gradient-to-br from-amber-600 to-orange-700 dark:from-amber-800 dark:to-orange-800 text-white p-8 shadow-lg">
+          <div className="relative bg-gradient-to-br from-amber-600 to-orange-700 dark:from-amber-800 dark:to-orange-800 text-white p-8 shadow-lg flex-shrink-0">
             {/* Textura de corcho */}
             <div className="absolute inset-0 opacity-10" style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
@@ -106,9 +106,9 @@ export default function NewsModal({ isOpen, onClose, news }) {
           </div>
 
           {/* Content - Estilo panel de corcho */}
-          <div className="overflow-y-auto p-8 space-y-6 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-gray-800 dark:to-gray-850" style={{ maxHeight: 'calc(85vh - 240px)' }}>
+          <div className="overflow-y-auto flex-1 p-8 space-y-6 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-gray-800 dark:to-gray-850">
             {activeTab === 'updates' && (
-              <div className="space-y-5">
+              <div className="space-y-5 py-4">
                 {updates.length === 0 ? (
                   <div className="text-center py-12 text-gray-500 dark:text-gray-400">
                     <p className="text-lg">📭 No hay actualizaciones recientes</p>
@@ -168,7 +168,7 @@ export default function NewsModal({ isOpen, onClose, news }) {
             )}
 
             {activeTab === 'hotfixes' && (
-              <div className="space-y-4">
+              <div className="space-y-4 py-4">
                 {hotfixes.length === 0 ? (
                   <div className="text-center py-12 text-gray-500 dark:text-gray-400">
                     <p className="text-lg">✅ No hay arreglos recientes</p>
@@ -223,7 +223,7 @@ export default function NewsModal({ isOpen, onClose, news }) {
           </div>
 
           {/* Footer */}
-          <div className="sticky bottom-0 bg-gradient-to-br from-amber-100 to-orange-200 dark:from-amber-900 dark:to-orange-900 border-t-4 border-amber-600 dark:border-amber-700 p-5 shadow-inner">
+          <div className="bg-gradient-to-br from-amber-100 to-orange-200 dark:from-amber-900 dark:to-orange-900 border-t-4 border-amber-600 dark:border-amber-700 p-5 shadow-inner flex-shrink-0">
             <button
               onClick={onClose}
               className="w-full py-3 px-6 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
