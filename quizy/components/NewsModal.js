@@ -27,26 +27,27 @@ export default function NewsModal({ isOpen, onClose, news }) {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-        {/* Backdrop */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-          onClick={onClose}
-        />
+      {isOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 overflow-hidden">
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            onClick={onClose}
+          />
 
-        {/* Modal */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.9, y: 20 }}
-          className="relative w-full max-w-3xl max-h-[85vh] bg-gradient-to-br from-amber-50 to-orange-100 dark:from-amber-900 dark:to-orange-900 rounded-xl shadow-2xl overflow-hidden"
-          style={{
-            boxShadow: '0 20px 60px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.3)'
-          }}
-        >
+          {/* Modal */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            className="relative w-full max-w-3xl max-h-[85vh] bg-gradient-to-br from-amber-50 to-orange-100 dark:from-amber-900 dark:to-orange-900 rounded-xl shadow-2xl overflow-hidden my-auto"
+            style={{
+              boxShadow: '0 20px 60px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.3)'
+            }}
+          >
           {/* Header con estilo corcho */}
           <div className="relative bg-gradient-to-br from-amber-600 to-orange-700 dark:from-amber-800 dark:to-orange-800 text-white p-8 shadow-lg">
             {/* Textura de corcho */}
@@ -232,6 +233,7 @@ export default function NewsModal({ isOpen, onClose, news }) {
           </div>
         </motion.div>
       </div>
+      )}
     </AnimatePresence>
   )
 }
