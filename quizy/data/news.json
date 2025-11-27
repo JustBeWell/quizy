@@ -3,15 +3,15 @@
   "updates": [
     {
       "version": "1.2.0",
-      "title": "Optimización de rendimiento",
-      "description": "Reducción drástica de llamadas a API. La app ahora carga mucho más rápido usando caché inteligente.",
+      "title": "La app ahora es mucho más rápida",
+      "description": "Hemos mejorado la velocidad de carga en todas las páginas. Notarás la diferencia especialmente al abrir tu perfil y navegar entre asignaturas.",
       "icon": "⚡",
       "date": "2025-11-27"
     },
     {
       "version": "1.1.0",
-      "title": "Sistema de seguridad mejorado",
-      "description": "Nueva autenticación JWT, validación de entrada reforzada y protección contra ataques DDoS.",
+      "title": "Tu cuenta está más protegida que nunca",
+      "description": "Hemos reforzado la seguridad de la plataforma para proteger mejor tu información personal y tus datos de estudio.",
       "icon": "🔒",
       "date": "2025-11-26"
     },
