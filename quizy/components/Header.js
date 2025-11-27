@@ -6,15 +6,63 @@ import { isAdmin as checkIsAdmin } from '../lib/auth-client'
 
 const UserMenu = dynamic(()=>import('./UserMenu'), { ssr: false })
 const NotificationBell = dynamic(()=>import('./NotificationBell'), { ssr: false })
+const NewsModal = dynamic(()=>import('./NewsModal'), { ssr: false })
 
 export default function Header(){
   const [isAdminUser, setIsAdminUser] = useState(false)
+  const [showNewsModal, setShowNewsModal] = useState(false)
+  const [news, setNews] = useState(null)
+  const [hasNewUpdates, setHasNewUpdates] = useState(false)
   const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
     // Verificar si el usuario es admin usando JWT
     setIsAdminUser(checkIsAdmin())
+    
+    // Cargar noticias y verificar si hay que mostrar automáticamente
+    loadNewsAndCheckFirstTime()
   }, [])
+
+  const loadNewsAndCheckFirstTime = async () => {
+    try {
+      const res = await fetch('/api/news')
+      const newsData = await res.json()
+      setNews(newsData)
+      
+      // Verificar si es la primera vez del día
+      const lastNewsCheck = localStorage.getItem('last_news_check')
+      const today = new Date().toDateString()
+      
+      if (lastNewsCheck !== today) {
+        // Primera vez del día - mostrar modal automáticamente
+        setShowNewsModal(true)
+        localStorage.setItem('last_news_check', today)
+      }
+      
+      // Verificar si hay actualizaciones nuevas no vistas
+      const lastSeenVersion = localStorage.getItem('last_seen_version')
+      if (lastSeenVersion !== newsData.currentVersion) {
+        setHasNewUpdates(true)
+      }
+    } catch (error) {
+      console.error('Error loading news:', error)
+    }
+  }
+
+  const handleOpenNews = () => {
+    setShowNewsModal(true)
+    setHasNewUpdates(false)
+    if (news?.currentVersion) {
+      localStorage.setItem('last_seen_version', news.currentVersion)
+    }
+  }
+
+  const handleCloseNews = () => {
+    setShowNewsModal(false)
+    if (news?.currentVersion) {
+      localStorage.setItem('last_seen_version', news.currentVersion)
+    }
+  }
 
   return (
     <header className="site-header sticky top-0 z-30 bg-white dark:bg-[#252526] transition-colors">
@@ -39,6 +87,21 @@ export default function Header(){
 
         <div className="flex items-center gap-3">
           <div className="hidden md:block text-sm text-gray-600 dark:text-[#9d9d9d]">Bienvenido</div>
+          
+          {/* Botón de Noticias */}
+          <button
+            onClick={handleOpenNews}
+            className="relative flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 rounded-lg hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800/40 dark:hover:to-purple-800/40 transition-all font-medium text-sm"
+            title="Ver novedades y changelog"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+            </svg>
+            <span className="hidden md:inline">Noticias</span>
+            {hasNewUpdates && (
+              <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse" />
+            )}
+          </button>
           
           {/* Notificaciones */}
           <NotificationBell />
@@ -98,6 +161,13 @@ export default function Header(){
           </button>
         </div>
       </div>
+      
+      {/* Modal de Noticias */}
+      <NewsModal 
+        isOpen={showNewsModal} 
+        onClose={handleCloseNews}
+        news={news}
+      />
     </header>
   )
 }

@@ -189,6 +189,18 @@ export default function AdminDashboard() {
             </motion.a>
           </Link>
 
+          <Link href="/admin/news">
+            <motion.a
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="block p-6 bg-white rounded-xl border-2 border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all cursor-pointer"
+            >
+              <div className="text-3xl mb-2">📰</div>
+              <h3 className="font-semibold text-lg mb-1">Noticias</h3>
+              <p className="text-sm text-gray-600">Gestionar changelog y actualizaciones</p>
+            </motion.a>
+          </Link>
+
           <Link href="/admin/support">
             <motion.a
               whileHover={{ scale: 1.03, y: -2 }}

@@ -1,0 +1,65 @@
+{
+  "currentVersion": "1.2.0",
+  "updates": [
+    {
+      "version": "1.2.0",
+      "title": "Optimización de rendimiento",
+      "description": "Reducción drástica de llamadas a API. La app ahora carga mucho más rápido usando caché inteligente.",
+      "icon": "⚡",
+      "date": "2025-11-27"
+    },
+    {
+      "version": "1.1.0",
+      "title": "Sistema de seguridad mejorado",
+      "description": "Nueva autenticación JWT, validación de entrada reforzada y protección contra ataques DDoS.",
+      "icon": "🔒",
+      "date": "2025-11-26"
+    },
+    {
+      "version": "1.0.5",
+      "title": "Sistema de rachas de estudio",
+      "description": "Mantén tu racha diaria estudiando y compite con otros usuarios en el ranking de rachas.",
+      "icon": "🔥",
+      "date": "2025-11-25"
+    },
+    {
+      "version": "1.0.0",
+      "title": "Lanzamiento de Quizy",
+      "description": "Plataforma completa de cuestionarios educativos con soporte para múltiples niveles académicos.",
+      "icon": "🎉",
+      "date": "2025-11-01"
+    }
+  ],
+  "hotfixes": [
+    {
+      "version": "1.2.0",
+      "title": "Fix: Llamadas infinitas a API de soporte",
+      "description": "Solucionado bucle infinito que causaba cientos de peticiones al endpoint de tickets de soporte.",
+      "date": "2025-11-27"
+    },
+    {
+      "version": "1.2.0",
+      "title": "Fix: Cache de banks en perfil",
+      "description": "Optimización que reduce de 20+ a 0 llamadas innecesarias a /api/banks al cargar el perfil.",
+      "date": "2025-11-27"
+    },
+    {
+      "version": "1.1.5",
+      "title": "Fix: Tickets de soporte no visibles",
+      "description": "Corregido problema con paginación y auto-expansión de meses en tickets de soporte.",
+      "date": "2025-11-26"
+    },
+    {
+      "version": "1.1.2",
+      "title": "Fix: Error SQL en conteo de tickets",
+      "description": "Solucionado error GROUP BY en query de tickets de soporte que impedía la carga.",
+      "date": "2025-11-26"
+    },
+    {
+      "version": "1.1.0",
+      "title": "Fix: Compatibilidad con tokens antiguos",
+      "description": "Añadida retrocompatibilidad para usuarios con tokens JWT del formato anterior.",
+      "date": "2025-11-26"
+    }
+  ]
+}
