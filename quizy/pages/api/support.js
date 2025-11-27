@@ -28,6 +28,7 @@ async function handleGet(req, res) {
   const authHeader = req.headers.authorization
   
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    console.log('[Support GET] No authorization header')
     return res.status(401).json({ error: 'No autorizado' })
   }
 
@@ -35,8 +36,11 @@ async function handleGet(req, res) {
   const decoded = verifyToken(token)
   
   if (!decoded) {
+    console.log('[Support GET] Token verification failed')
     return res.status(401).json({ error: 'Token inválido' })
   }
+  
+  console.log('[Support GET] User:', decoded.id, decoded.name, 'is_admin:', decoded.is_admin)
 
   const { status, user_email, page = 1, limit = 50 } = req.query
   const pageNum = parseInt(page) || 1
@@ -51,23 +55,29 @@ async function handleGet(req, res) {
   if (!decoded.is_admin) {
     // For old tokens without email, we can't filter properly
     if (!decoded.email) {
+      console.log('[Support GET] Old token without email detected')
       return res.status(401).json({ 
         error: 'token_outdated',
         message: 'Tu sesión es antigua. Por favor, cierra sesión y vuelve a iniciar sesión para continuar.' 
       })
     }
     
+    console.log('[Support GET] Filtering by user email:', decoded.email)
     sql += ` AND user_email = $${paramCount}`
     params.push(decoded.email)
     paramCount++
   } else if (user_email) {
     // Admin filtering by user email
+    console.log('[Support GET] Admin filtering by email:', user_email)
     sql += ` AND user_email = $${paramCount}`
     params.push(user_email)
     paramCount++
+  } else {
+    console.log('[Support GET] Admin viewing all tickets')
   }
 
   if (status) {
+    console.log('[Support GET] Filtering by status:', status)
     sql += ` AND status = $${paramCount}`
     params.push(status)
     paramCount++
@@ -75,16 +85,23 @@ async function handleGet(req, res) {
 
   sql += ' ORDER BY created_at DESC'
   
+  console.log('[Support GET] SQL:', sql)
+  console.log('[Support GET] Params:', params)
+  
   // Get total count
   const countSql = sql.replace('SELECT *', 'SELECT COUNT(*)')
   const countResult = await query(countSql, params)
   const total = parseInt(countResult.rows[0].count)
+  
+  console.log('[Support GET] Total tickets found:', total)
   
   // Add pagination
   sql += ` LIMIT $${paramCount} OFFSET $${paramCount + 1}`
   params.push(limitNum, offset)
 
   const result = await query(sql, params)
+  
+  console.log('[Support GET] Returning', result.rows.length, 'tickets')
   
   return res.status(200).json({
     tickets: result.rows,
