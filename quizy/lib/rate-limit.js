@@ -21,6 +21,18 @@ const RATE_LIMITS = {
     limit: 3,
     window: 60 * 60 * 1000 // 1 hora
   },
+  'change-password': {
+    limit: 5,
+    window: 15 * 60 * 1000 // 15 minutos
+  },
+  'reset-password': {
+    limit: 5,
+    window: 15 * 60 * 1000 // 15 minutos
+  },
+  'forgot-password': {
+    limit: 3,
+    window: 60 * 60 * 1000 // 1 hora
+  },
   quiz: {
     limit: 10,
     window: 60 * 60 * 1000 // 1 hora

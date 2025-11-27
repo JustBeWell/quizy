@@ -21,18 +21,34 @@ export default function AttemptsPage(){
       
       setUserName(user)
       
-      // Cargar intentos del usuario
-      const q = user ? `/api/attempts?user_name=${encodeURIComponent(user)}` : '/api/attempts'
-      const res = await fetch(q)
-      const json = await res.json()
-      setAttempts(json || [])
-      
-      // Cargar asignaturas para mostrar nombres
-      const subjRes = await fetch('/api/subjects')
-      const subjJson = await subjRes.json()
-      setSubjects(subjJson.subjects || [])
-      
-      setLoading(false)
+      try {
+        // Cargar intentos del usuario
+        const q = user ? `/api/attempts?user_name=${encodeURIComponent(user)}` : '/api/attempts'
+        const res = await fetch(q)
+        
+        if (!res.ok) {
+          throw new Error('Error al cargar intentos')
+        }
+        
+        const json = await res.json()
+        setAttempts(json || [])
+        
+        // Cargar asignaturas para mostrar nombres
+        const subjRes = await fetch('/api/subjects')
+        
+        if (!subjRes.ok) {
+          throw new Error('Error al cargar asignaturas')
+        }
+        
+        const subjJson = await subjRes.json()
+        setSubjects(subjJson.subjects || [])
+      } catch (error) {
+        console.error('Error loading attempts:', error)
+        setAttempts([])
+        setSubjects([])
+      } finally {
+        setLoading(false)
+      }
     }
     load()
   },[])

@@ -1,8 +1,16 @@
 import jwt from 'jsonwebtoken';
 import { query } from './db';
 
-// Secret key para firmar los JWT (en producción debería estar en variable de entorno)
-const JWT_SECRET = process.env.JWT_SECRET || 'quiz-app-secret-key-change-in-production';
+// Secret key para firmar los JWT - OBLIGATORIO en producción
+if (!process.env.JWT_SECRET) {
+  console.error('⚠️  ADVERTENCIA DE SEGURIDAD: JWT_SECRET no está configurado!');
+  console.error('⚠️  Esto es inseguro en producción. Configura JWT_SECRET en .env.local');
+  if (process.env.NODE_ENV === 'production') {
+    throw new Error('JWT_SECRET es obligatorio en producción');
+  }
+}
+
+const JWT_SECRET = process.env.JWT_SECRET || 'dev-secret-DO-NOT-USE-IN-PRODUCTION';
 const JWT_EXPIRES_IN = '7d'; // Token válido por 7 días
 
 /**
@@ -11,6 +19,8 @@ const JWT_EXPIRES_IN = '7d'; // Token válido por 7 días
  * @returns {string} JWT token
  */
 export function generateToken(user) {
+  // Incluir información necesaria en el token
+  // Email es necesario para sistema de soporte
   const payload = {
     id: user.id,
     name: user.name,
@@ -29,9 +39,19 @@ export function generateToken(user) {
 export function verifyToken(token) {
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
+    // Validar que el token tenga los campos requeridos
+    if (!decoded.id || !decoded.name) {
+      console.error('Token inválido: faltan campos requeridos');
+      return null;
+    }
     return decoded;
   } catch (error) {
-    console.error('Error verificando JWT:', error.message);
+    // No loguear el error completo para evitar exponer información
+    if (error.name === 'TokenExpiredError') {
+      console.warn('Token expirado');
+    } else if (error.name === 'JsonWebTokenError') {
+      console.warn('Token JWT malformado');
+    }
     return null;
   }
 }

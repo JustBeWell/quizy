@@ -1,4 +1,5 @@
 import { query } from '../../lib/db'
+import { verifyToken } from '../../lib/jwt'
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
@@ -34,32 +35,39 @@ export default async function handler(req, res) {
       return res.status(200).json({ subjects: result.rows })
     } catch (error) {
       console.error('Error fetching subjects:', error)
-      return res.status(500).json({ message: 'Error fetching subjects', error: error.message })
+      return res.status(500).json({ error: 'Error fetching subjects', details: error.message })
     }
   }
 
   if (req.method === 'POST') {
     // Create new subject (admin only)
     try {
-      const { name, slug, description, username } = req.body
+      const { name, slug, description } = req.body
 
       if (!name || !slug) {
-        return res.status(400).json({ message: 'Name and slug are required' })
+        return res.status(400).json({ error: 'Name and slug are required' })
       }
 
-      if (!username) {
-        return res.status(401).json({ message: 'Authentication required' })
+      // Verify JWT token
+      const token = req.headers.authorization?.replace('Bearer ', '')
+      if (!token) {
+        return res.status(401).json({ error: 'Authentication required' })
+      }
+
+      const decoded = verifyToken(token)
+      if (!decoded || !decoded.id) {
+        return res.status(401).json({ error: 'Invalid token' })
       }
 
       // Check if user is admin
-      const userResult = await query('SELECT id, is_admin FROM users WHERE name = $1', [username])
+      const userResult = await query('SELECT id, is_admin FROM users WHERE id = $1', [decoded.id])
       if (userResult.rows.length === 0) {
-        return res.status(401).json({ message: 'User not found' })
+        return res.status(401).json({ error: 'User not found' })
       }
 
       const user = userResult.rows[0]
       if (!user.is_admin) {
-        return res.status(403).json({ message: 'Admin access required' })
+        return res.status(403).json({ error: 'Admin access required' })
       }
 
       // Create subject
@@ -72,11 +80,11 @@ export default async function handler(req, res) {
     } catch (error) {
       console.error('Error creating subject:', error)
       if (error.code === '23505') { // Unique constraint violation
-        return res.status(400).json({ message: 'Subject with this slug already exists' })
+        return res.status(400).json({ error: 'Subject with this slug already exists' })
       }
-      return res.status(500).json({ message: 'Error creating subject', error: error.message })
+      return res.status(500).json({ error: 'Error creating subject', details: error.message })
     }
   }
 
-  return res.status(405).json({ message: 'Method not allowed' })
+  return res.status(405).json({ error: 'Method not allowed' })
 }

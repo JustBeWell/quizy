@@ -46,16 +46,25 @@ export default function Ranking(){
     try {
       // Cargar niveles académicos
       const levelsRes = await fetch('/api/levels')
+      if (!levelsRes.ok) {
+        throw new Error('Error al cargar niveles')
+      }
       const levelsData = await levelsRes.json()
       setLevels(levelsData.levels || [])
       
       // Cargar asignaturas para obtener level_id
       const subjectsRes = await fetch('/api/subjects')
+      if (!subjectsRes.ok) {
+        throw new Error('Error al cargar asignaturas')
+      }
       const subjectsData = await subjectsRes.json()
       const subjects = subjectsData.subjects || []
       
       // Cargar ranking global
       const rankingRes = await fetch('/api/ranking')
+      if (!rankingRes.ok) {
+        throw new Error('Error al cargar ranking')
+      }
       const rankingData = await rankingRes.json()
       
       // Agrupar por nivel académico -> asignatura -> test -> usuario

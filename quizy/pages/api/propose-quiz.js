@@ -325,6 +325,9 @@ export default async function handler(req, res) {
       return res.status(401).json({ error: 'Token inválido' })
     }
 
+    const userId = decoded.id
+    const userName = decoded.name
+
     // Parsear el form data con formidable
     // Usar /tmp que es escribible en Vercel
     const uploadDir = '/tmp/uploads'
@@ -388,22 +391,20 @@ export default async function handler(req, res) {
           uploadedFiles = Array.isArray(files.files) ? files.files : [files.files]
         }
 
-        // Obtener datos actualizados del usuario desde la base de datos
+        // Obtener email actualizado del usuario desde la base de datos
         const db = require('../../lib/db')
-        let userName = decoded.name
-        let userEmail = null
+        let userEmail = decoded.email // Usar email del token como fallback
         
         try {
           const userResult = await db.query(
-            'SELECT name, email FROM users WHERE id = $1',
-            [decoded.id]
+            'SELECT email FROM users WHERE id = $1',
+            [userId]
           )
-          if (userResult.rows.length > 0) {
-            userName = userResult.rows[0].name
+          if (userResult.rows.length > 0 && userResult.rows[0].email) {
             userEmail = userResult.rows[0].email
           }
         } catch (dbErr) {
-          console.error('Error obteniendo datos del usuario:', dbErr)
+          console.error('Error obteniendo email del usuario:', dbErr)
         }
 
         // Validar que el usuario tenga email configurado
@@ -442,7 +443,7 @@ export default async function handler(req, res) {
         if (userEmail) {
           await sendQuizProposalConfirmation(
             userEmail,
-            decoded.username,
+            userName,
             proposalData.subject
           )
         }

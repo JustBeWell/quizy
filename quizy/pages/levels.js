@@ -13,10 +13,16 @@ export default function Levels() {
   const fetchLevels = async () => {
     try {
       const res = await fetch('/api/levels')
+      
+      if (!res.ok) {
+        throw new Error('Error al cargar niveles')
+      }
+      
       const data = await res.json()
       setLevels(data.levels || [])
     } catch (error) {
       console.error('Error fetching levels:', error)
+      setLevels([])
     } finally {
       setLoading(false)
     }

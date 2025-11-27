@@ -37,8 +37,15 @@ export default function Auth(){
       return
     }
 
-    if(!password || password.length < 6){
-      setError('La contraseña debe tener al menos 6 caracteres')
+    if(!password || password.length < 8){
+      setError('La contraseña debe tener al menos 8 caracteres')
+      return
+    }
+
+    const hasNumber = /\d/.test(password)
+    const hasLetter = /[a-zA-Z]/.test(password)
+    if(!hasNumber || !hasLetter){
+      setError('La contraseña debe contener letras y números')
       return
     }
 
@@ -105,8 +112,15 @@ export default function Auth(){
   async function handleMigrate(e){
     e.preventDefault()
 
-    if(!password || password.length < 6){
-      setError('La contraseña debe tener al menos 6 caracteres')
+    if(!password || password.length < 8){
+      setError('La contraseña debe tener al menos 8 caracteres')
+      return
+    }
+
+    const hasNumber = /\d/.test(password)
+    const hasLetter = /[a-zA-Z]/.test(password)
+    if(!hasNumber || !hasLetter){
+      setError('La contraseña debe contener letras y números')
       return
     }
 
@@ -187,8 +201,15 @@ export default function Auth(){
       return
     }
 
-    if(!password || password.length < 6){
-      setError('La contraseña debe tener al menos 6 caracteres')
+    if(!password || password.length < 8){
+      setError('La contraseña debe tener al menos 8 caracteres')
+      return
+    }
+
+    const hasNumber = /\d/.test(password)
+    const hasLetter = /[a-zA-Z]/.test(password)
+    if(!hasNumber || !hasLetter){
+      setError('La contraseña debe contener letras y números')
       return
     }
 

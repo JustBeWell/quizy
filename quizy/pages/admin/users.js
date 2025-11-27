@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
-import { getUser, isAdmin } from '../../lib/auth-client'
+import { getUser, isAdmin, getToken } from '../../lib/auth-client'
 
 export default function AdminUsers() {
   const router = useRouter()
@@ -24,18 +24,31 @@ export default function AdminUsers() {
     }
 
     setUserName(user.name)
-    loadUsers(user.name)
+    loadUsers()
   }, [router])
 
-  async function loadUsers(adminUsername) {
+  async function loadUsers() {
     try {
-      const res = await fetch(`/api/admin/users?username=${encodeURIComponent(adminUsername)}`)
+      const token = getToken()
+      if (!token) {
+        router.push('/auth')
+        return
+      }
+
+      const res = await fetch('/api/admin/users', {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
       const data = await res.json()
       
       if (res.ok) {
-        setUsers(data)
+        setUsers(data.users || data) // Manejar ambos formatos por compatibilidad
       } else {
         console.error('Error loading users:', data)
+        if (res.status === 401) {
+          router.push('/auth')
+        }
       }
     } catch (error) {
       console.error('Error:', error)
@@ -50,17 +63,26 @@ export default function AdminUsers() {
     }
 
     try {
+      const token = getToken()
+      if (!token) {
+        router.push('/auth')
+        return
+      }
+
       const res = await fetch('/api/admin/users', {
         method: 'DELETE',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: userName, userId })
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({ userId })
       })
 
       const data = await res.json()
 
       if (res.ok) {
         alert('Usuario eliminado correctamente')
-        loadUsers(userName)
+        loadUsers()
       } else {
         alert(data.error || 'Error al eliminar usuario')
       }
@@ -97,8 +119,17 @@ export default function AdminUsers() {
     }
 
     try {
-      const res = await fetch(`/api/admin/attempts/${attemptId}?username=${encodeURIComponent(userName)}`, {
-        method: 'DELETE'
+      const token = getToken()
+      if (!token) {
+        router.push('/auth')
+        return
+      }
+
+      const res = await fetch(`/api/admin/attempts/${attemptId}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
       })
 
       const data = await res.json()

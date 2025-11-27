@@ -1,4 +1,5 @@
 import db from '../../../../lib/db'
+import { verifyToken } from '../../../../lib/jwt'
 
 export default async function handler(req, res) {
   const { attemptId } = req.query
@@ -8,15 +9,19 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Get username from query params or body
-    const username = req.query.username || req.body?.username
-
-    if (!username) {
+    // Verify JWT token
+    const token = req.headers.authorization?.replace('Bearer ', '')
+    if (!token) {
       return res.status(401).json({ error: 'Authentication required' })
     }
 
+    const decoded = verifyToken(token)
+    if (!decoded || !decoded.id) {
+      return res.status(401).json({ error: 'Invalid token' })
+    }
+
     // Check if user is admin
-    const userResult = await db.query('SELECT id, is_admin FROM users WHERE name = $1', [username])
+    const userResult = await db.query('SELECT id, is_admin FROM users WHERE id = $1', [decoded.id])
     if (userResult.rows.length === 0) {
       return res.status(401).json({ error: 'User not found' })
     }

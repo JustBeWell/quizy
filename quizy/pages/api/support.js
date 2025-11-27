@@ -38,7 +38,11 @@ async function handleGet(req, res) {
     return res.status(401).json({ error: 'Token inválido' })
   }
 
-  const { status, user_email } = req.query
+  const { status, user_email, page = 1, limit = 50 } = req.query
+  const pageNum = parseInt(page) || 1
+  const limitNum = Math.min(parseInt(limit) || 50, 100) // Max 100 por página
+  const offset = (pageNum - 1) * limitNum
+  
   let sql = 'SELECT * FROM support_tickets WHERE 1=1'
   const params = []
   let paramCount = 1
@@ -70,9 +74,27 @@ async function handleGet(req, res) {
   }
 
   sql += ' ORDER BY created_at DESC'
+  
+  // Get total count
+  const countSql = sql.replace('SELECT *', 'SELECT COUNT(*)')
+  const countResult = await query(countSql, params)
+  const total = parseInt(countResult.rows[0].count)
+  
+  // Add pagination
+  sql += ` LIMIT $${paramCount} OFFSET $${paramCount + 1}`
+  params.push(limitNum, offset)
 
   const result = await query(sql, params)
-  return res.status(200).json(result.rows)
+  
+  return res.status(200).json({
+    tickets: result.rows,
+    pagination: {
+      page: pageNum,
+      limit: limitNum,
+      total,
+      totalPages: Math.ceil(total / limitNum)
+    }
+  })
 }
 
 async function handlePost(req, res) {

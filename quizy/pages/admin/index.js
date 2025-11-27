@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { getUser, isAdmin as checkIsAdmin } from '../../lib/auth-client'
+import { getUser, isAdmin as checkIsAdmin, getToken } from '../../lib/auth-client'
 
 export default function AdminDashboard() {
   const router = useRouter()
@@ -27,18 +27,29 @@ export default function AdminDashboard() {
     
     setIsAdminUser(true)
 
-    async function loadStats(adminUsername) {
+    async function loadStats() {
       try {
+        const token = getToken()
+        if (!token) {
+          router.push('/auth')
+          return
+        }
+
         // Load statistics
         const [usersRes, attemptsRes, subjectsRes] = await Promise.all([
-          fetch(`/api/admin/users?username=${encodeURIComponent(adminUsername)}`),
+          fetch('/api/admin/users', {
+            headers: { 'Authorization': `Bearer ${token}` }
+          }),
           fetch('/api/attempts'),
           fetch('/api/subjects')
         ])
 
-        const users = await usersRes.json()
+        const usersData = await usersRes.json()
         const attempts = await attemptsRes.json()
         const subjects = await subjectsRes.json()
+
+        // Manejar respuesta con paginación
+        const users = usersData.users || usersData
 
         console.log('Admin dashboard stats loaded:', { 
           users: users.length, 
@@ -59,7 +70,7 @@ export default function AdminDashboard() {
       }
     }
     
-    loadStats(user)
+    loadStats()
   }, [])
 
   if (loading || !isAdminUser) {

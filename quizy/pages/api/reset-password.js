@@ -1,5 +1,6 @@
-import bcrypt from 'bcryptjs';
-import { query } from '../../lib/db';
+import bcrypt from 'bcryptjs'
+import { query } from '../../lib/db'
+import { validatePassword } from '../../lib/input-validation'
 import { applyRateLimit } from '../../lib/rate-limit';
 
 export default async function handler(req, res) {
@@ -18,9 +19,10 @@ export default async function handler(req, res) {
   }
 
   // Validar fortaleza de la contraseña
-  if (newPassword.length < 8) {
+  const passwordValidation = validatePassword(newPassword);
+  if (!passwordValidation.valid) {
     return res.status(400).json({ 
-      error: 'La contraseña debe tener al menos 8 caracteres' 
+      error: passwordValidation.errors[0] || 'Contraseña inválida'
     });
   }
 

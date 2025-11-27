@@ -2,6 +2,7 @@ import bcrypt from 'bcryptjs'
 import { query } from '../../lib/db'
 import { verifyToken } from '../../lib/jwt'
 import { applyRateLimit } from '../../lib/rate-limit'
+import { validatePassword, validateStringLength } from '../../lib/input-validation'
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -18,20 +19,16 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Contraseña actual y nueva son requeridas' })
   }
 
-  // Validar fortaleza de la nueva contraseña
-  if (newPassword.length < 8) {
-    return res.status(400).json({ 
-      error: 'La nueva contraseña debe tener al menos 8 caracteres' 
-    })
+  // Validar longitud de contraseña actual (prevenir ataques)
+  if (!validateStringLength(currentPassword, 1, 128)) {
+    return res.status(400).json({ error: 'Contraseña actual inválida' })
   }
 
-  // Validar que tenga letras y números
-  const hasNumber = /\d/.test(newPassword)
-  const hasLetter = /[a-zA-Z]/.test(newPassword)
-  
-  if (!hasNumber || !hasLetter) {
+  // Validar fortaleza de la nueva contraseña usando el validador
+  const passwordValidation = validatePassword(newPassword)
+  if (!passwordValidation.valid) {
     return res.status(400).json({ 
-      error: 'La contraseña debe contener letras y números' 
+      error: passwordValidation.errors[0] || 'Contraseña inválida'
     })
   }
 
@@ -45,11 +42,11 @@ export default async function handler(req, res) {
     const token = authHeader.substring(7)
     const decoded = verifyToken(token)
     
-    if (!decoded || !decoded.userId) {
+    if (!decoded || !decoded.id) {
       return res.status(401).json({ error: 'Token inválido' })
     }
 
-    const userId = decoded.userId
+    const userId = decoded.id
 
     // Buscar el usuario en la base de datos
     const userResult = await query(

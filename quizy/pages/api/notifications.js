@@ -1,5 +1,13 @@
 import { verifyToken } from '../../lib/jwt'
 import db from '../../lib/db'
+import { 
+  validateId, 
+  validateStringLength, 
+  validateNotificationType, 
+  validateJSON,
+  validateBoolean,
+  truncateString
+} from '../../lib/input-validation'
 
 export default async function handler(req, res) {
   // Verificar autenticación
@@ -16,19 +24,19 @@ export default async function handler(req, res) {
     return res.status(401).json({ error: 'Token inválido' })
   }
 
-  const username = decoded.username
-
-  // Obtener user_id
+  // Obtener user_id directamente del token
+  const userId = decoded.id
+  
+  // Obtener configuración de notificaciones
   const userResult = await db.query(
-    'SELECT id, notifications_enabled FROM users WHERE name = $1',
-    [username]
+    'SELECT id, notifications_enabled FROM users WHERE id = $1',
+    [userId]
   )
 
   if (userResult.rows.length === 0) {
     return res.status(404).json({ error: 'Usuario no encontrado' })
   }
 
-  const userId = userResult.rows[0].id
   const notificationsEnabled = userResult.rows[0].notifications_enabled
 
   if (req.method === 'GET') {
@@ -83,10 +91,32 @@ export default async function handler(req, res) {
   } else if (req.method === 'POST') {
     // Crear una notificación (solo para testing o uso interno)
     try {
-      const { type, title, message, link, metadata } = req.body
+      let { type, title, message, link, metadata } = req.body
 
+      // Validación de entrada
       if (!type || !title || !message) {
         return res.status(400).json({ error: 'Faltan campos requeridos' })
+      }
+
+      if (!validateNotificationType(type)) {
+        return res.status(400).json({ error: 'Tipo de notificación inválido' })
+      }
+
+      if (!validateStringLength(title, 1, 255)) {
+        return res.status(400).json({ error: 'El título debe tener entre 1 y 255 caracteres' })
+      }
+
+      if (!validateStringLength(message, 1, 5000)) {
+        return res.status(400).json({ error: 'El mensaje debe tener entre 1 y 5000 caracteres' })
+      }
+
+      // Truncar valores para seguridad
+      title = truncateString(title.trim(), 255)
+      message = truncateString(message.trim(), 5000)
+
+      // Validar metadata si existe
+      if (metadata && !validateJSON(metadata, 10000)) {
+        return res.status(400).json({ error: 'Metadata inválido o demasiado grande' })
       }
 
       const result = await db.query(
@@ -108,18 +138,44 @@ export default async function handler(req, res) {
     try {
       const { notifications_enabled, notification_preferences } = req.body
 
+      // Validar tipos
+      const validEnabled = validateBoolean(notifications_enabled);
+      if (notifications_enabled !== undefined && validEnabled === null) {
+        return res.status(400).json({ error: 'notifications_enabled debe ser un booleano' })
+      }
+
+      // Validar notification_preferences
+      if (notification_preferences) {
+        if (!validateJSON(notification_preferences, 5000)) {
+          return res.status(400).json({ error: 'notification_preferences inválido' })
+        }
+
+        // Validar estructura esperada
+        const allowedKeys = ['streak_reminders', 'ranking_updates', 'new_content', 'friend_activity', 'achievements'];
+        const keys = Object.keys(notification_preferences);
+        
+        if (!keys.every(key => allowedKeys.includes(key))) {
+          return res.status(400).json({ error: 'Preferencias de notificación inválidas' })
+        }
+
+        // Validar que todos los valores sean booleanos
+        if (!Object.values(notification_preferences).every(val => typeof val === 'boolean')) {
+          return res.status(400).json({ error: 'Todos los valores de preferencias deben ser booleanos' })
+        }
+      }
+
       let query = 'UPDATE users SET'
       let updates = []
       let params = []
       let paramCount = 1
 
-      if (typeof notifications_enabled === 'boolean') {
+      if (validEnabled !== null) {
         updates.push(` notifications_enabled = $${paramCount}`)
-        params.push(notifications_enabled)
+        params.push(validEnabled)
         paramCount++
         
         // Si activan notificaciones por primera vez, crear notificación de bienvenida
-        if (notifications_enabled && !notificationsEnabled) {
+        if (validEnabled && !notificationsEnabled) {
           await db.query(
             `INSERT INTO notifications (user_id, type, title, message, link)
              VALUES ($1, 'system', '🎉 ¡Notificaciones activadas!', 'Ahora recibirás notificaciones sobre tu progreso, nuevos contenidos y más. Puedes personalizar tus preferencias en tu perfil.', '/profile')`,
@@ -128,7 +184,7 @@ export default async function handler(req, res) {
         }
       }
 
-      if (notification_preferences && typeof notification_preferences === 'object') {
+      if (notification_preferences) {
         updates.push(` notification_preferences = $${paramCount}`)
         params.push(JSON.stringify(notification_preferences))
         paramCount++

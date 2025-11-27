@@ -151,8 +151,8 @@ export default async function handler(req,res){
         
         return res.status(201).json({ok:true, data: result.rows})
       }catch(e){
-        console.error('Postgres insert failed', e.message)
-        return res.status(500).json({error: 'Database error', details: e.message})
+        console.error('Database error in attempts POST:', e)
+        return res.status(500).json({error: 'Error guardando intento', details: e.message})
       }
     }
 
@@ -177,6 +177,7 @@ export default async function handler(req,res){
     fs.writeFileSync(attemptsFile, JSON.stringify(existing.slice(-500), null, 2))
     return res.status(201).json({ok:true})
   }catch(e){
-    return res.status(500).json({error: e.message})
+    console.error('Error in attempts API:', e)
+    return res.status(500).json({error: 'Error procesando solicitud de intentos'})
   }
 }

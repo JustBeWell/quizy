@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
-import { getUser, isAdmin } from '../../lib/auth-client'
+import { getUser, isAdmin, getToken } from '../../lib/auth-client'
 
 export default function AdminSubjectsPage() {
   const router = useRouter()
@@ -69,15 +69,23 @@ export default function AdminSubjectsPage() {
     setError('')
     setSuccess('')
 
-    const username = localStorage.getItem('quiz_user')
+    const token = getToken()
+    if (!token) {
+      router.push('/auth')
+      return
+    }
+
     const url = editingSubject ? `/api/subjects/${editingSubject.id}` : '/api/subjects'
     const method = editingSubject ? 'PUT' : 'POST'
 
     try {
       const res = await fetch(url, {
         method,
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, username })
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(formData)
       })
 
       const data = await res.json()
@@ -87,7 +95,7 @@ export default function AdminSubjectsPage() {
         loadSubjects()
         setTimeout(() => closeModal(), 1500)
       } else {
-        setError(data.message || 'Error al guardar')
+        setError(data.error || data.message || 'Error al guardar')
       }
     } catch (error) {
       setError('Error de conexión')
@@ -97,20 +105,26 @@ export default function AdminSubjectsPage() {
   async function handleDelete(id) {
     if (!confirm('¿Estás seguro de que quieres eliminar esta asignatura?')) return
 
-    const username = localStorage.getItem('quiz_user')
+    const token = getToken()
+    if (!token) {
+      router.push('/auth')
+      return
+    }
 
     try {
       const res = await fetch(`/api/subjects/${id}`, {
         method: 'DELETE',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username })
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        }
       })
 
       if (res.ok) {
         loadSubjects()
       } else {
         const data = await res.json()
-        alert('Error: ' + data.message)
+        alert('Error: ' + (data.error || data.message))
       }
     } catch (error) {
       alert('Error de conexión')

@@ -20,19 +20,18 @@ export default async function handler(req, res) {
     return res.status(401).json({ error: 'Token inválido' })
   }
 
-  const username = decoded.username
-
-  // Obtener user_id
+  // Obtener user_id directamente del token
+  const userId = decoded.id
+  
+  // Verificar que el usuario existe
   const userResult = await db.query(
-    'SELECT id FROM users WHERE name = $1',
-    [username]
+    'SELECT id FROM users WHERE id = $1',
+    [userId]
   )
 
   if (userResult.rows.length === 0) {
     return res.status(404).json({ error: 'Usuario no encontrado' })
   }
-
-  const userId = userResult.rows[0].id
 
   try {
     const { notification_id, mark_all } = req.body

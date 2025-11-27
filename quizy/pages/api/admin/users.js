@@ -1,4 +1,5 @@
 import { Pool } from 'pg'
+import { verifyToken } from '../../../lib/jwt'
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL || process.env.POSTGRES_URL,
@@ -11,31 +12,56 @@ async function query(text, params) {
 }
 
 export default async function handler(req, res) {
+  // Verify JWT token for all methods
+  const token = req.headers.authorization?.replace('Bearer ', '')
+  if (!token) {
+    return res.status(401).json({ error: 'No autorizado' })
+  }
+
+  const decoded = verifyToken(token)
+  if (!decoded || !decoded.id) {
+    return res.status(401).json({ error: 'Token inválido' })
+  }
+
+  // Check if user is admin
+  try {
+    const adminCheck = await query(
+      'SELECT is_admin FROM users WHERE id = $1',
+      [decoded.id]
+    )
+
+    if (!adminCheck.rows[0]?.is_admin) {
+      return res.status(403).json({ error: 'Acceso denegado. Solo administradores.' })
+    }
+  } catch (error) {
+    console.error('Error checking admin status:', error)
+    return res.status(500).json({ error: 'Error al verificar permisos' })
+  }
+
   if (req.method === 'GET') {
     try {
-      // Verify admin access
-      const { username } = req.query
-      
-      if (!username) {
-        return res.status(401).json({ error: 'No autorizado' })
-      }
+      // Get all users with pagination
+      const page = parseInt(req.query.page) || 1
+      const limit = parseInt(req.query.limit) || 50
+      const offset = (page - 1) * limit
 
-      // Check if user is admin
-      const adminCheck = await query(
-        'SELECT is_admin FROM users WHERE name = $1',
-        [username]
-      )
-
-      if (!adminCheck.rows[0]?.is_admin) {
-        return res.status(403).json({ error: 'Acceso denegado. Solo administradores.' })
-      }
-
-      // Get all users
       const result = await query(
-        'SELECT id, name, created_at, is_admin FROM users ORDER BY created_at DESC'
+        'SELECT id, name, email, created_at, is_admin FROM users ORDER BY created_at DESC LIMIT $1 OFFSET $2',
+        [limit, offset]
       )
 
-      return res.status(200).json(result.rows)
+      const countResult = await query('SELECT COUNT(*) FROM users')
+      const total = parseInt(countResult.rows[0].count)
+
+      return res.status(200).json({ 
+        users: result.rows,
+        pagination: {
+          page,
+          limit,
+          total,
+          totalPages: Math.ceil(total / limit)
+        }
+      })
     } catch (error) {
       console.error('Error fetching users:', error)
       return res.status(500).json({ error: 'Error al obtener usuarios' })
@@ -44,20 +70,10 @@ export default async function handler(req, res) {
 
   if (req.method === 'DELETE') {
     try {
-      const { username, userId } = req.body
+      const { userId } = req.body
 
-      if (!username || !userId) {
-        return res.status(400).json({ error: 'Faltan parámetros' })
-      }
-
-      // Check if user is admin
-      const adminCheck = await query(
-        'SELECT is_admin FROM users WHERE name = $1',
-        [username]
-      )
-
-      if (!adminCheck.rows[0]?.is_admin) {
-        return res.status(403).json({ error: 'Acceso denegado. Solo administradores.' })
+      if (!userId) {
+        return res.status(400).json({ error: 'userId es requerido' })
       }
 
       // Don't allow deleting admin user
@@ -85,20 +101,10 @@ export default async function handler(req, res) {
 
   if (req.method === 'PATCH') {
     try {
-      const { username, userId, is_admin } = req.body
+      const { userId, is_admin } = req.body
 
-      if (!username || !userId || is_admin === undefined) {
-        return res.status(400).json({ error: 'Faltan parámetros' })
-      }
-
-      // Check if user is admin
-      const adminCheck = await query(
-        'SELECT is_admin FROM users WHERE name = $1',
-        [username]
-      )
-
-      if (!adminCheck.rows[0]?.is_admin) {
-        return res.status(403).json({ error: 'Acceso denegado. Solo administradores.' })
+      if (!userId || is_admin === undefined) {
+        return res.status(400).json({ error: 'userId y is_admin son requeridos' })
       }
 
       // Update user role
@@ -113,20 +119,10 @@ export default async function handler(req, res) {
 
   if (req.method === 'PUT') {
     try {
-      const { username, userId, newName } = req.body
+      const { userId, newName } = req.body
 
-      if (!username || !userId || !newName) {
-        return res.status(400).json({ error: 'Faltan parámetros' })
-      }
-
-      // Check if user is admin
-      const adminCheck = await query(
-        'SELECT is_admin FROM users WHERE name = $1',
-        [username]
-      )
-
-      if (!adminCheck.rows[0]?.is_admin) {
-        return res.status(403).json({ error: 'Acceso denegado. Solo administradores.' })
+      if (!userId || !newName) {
+        return res.status(400).json({ error: 'userId y newName son requeridos' })
       }
 
       // Check if new name already exists

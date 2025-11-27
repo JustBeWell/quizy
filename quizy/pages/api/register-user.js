@@ -4,6 +4,7 @@ import { generateToken } from '../../lib/jwt';
 import { validateUsername } from '../../lib/profanity-filter';
 import { applyRateLimit } from '../../lib/rate-limit';
 import { sendWelcomeEmail } from '../../lib/email';
+import { validatePassword, validateEmail } from '../../lib/input-validation';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -32,14 +33,17 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'El email es requerido' });
   }
 
-  // Validar formato de email
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email.trim())) {
+  // Validar formato de email usando el módulo de validación
+  if (!validateEmail(email)) {
     return res.status(400).json({ error: 'Por favor ingresa un email válido' });
   }
 
-  if (!password || password.length < 6) {
-    return res.status(400).json({ error: 'La contraseña debe tener al menos 6 caracteres' });
+  // Validar contraseña usando el módulo de validación
+  const passwordValidation = validatePassword(password);
+  if (!passwordValidation.valid) {
+    return res.status(400).json({ 
+      error: passwordValidation.errors[0] || 'Contraseña inválida'
+    });
   }
 
   const userEmail = email.trim().toLowerCase();
