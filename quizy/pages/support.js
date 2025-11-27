@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { getUser, getToken } from '../lib/auth-client'
@@ -11,6 +11,7 @@ export default function Support() {
   const [tickets, setTickets] = useState([])
   const [showForm, setShowForm] = useState(true)
   const [expandedMonths, setExpandedMonths] = useState(new Set())
+  const loadingRef = useRef(false)
   const [formData, setFormData] = useState({
     subject: '',
     message: ''
@@ -27,6 +28,10 @@ export default function Support() {
   }, [router])
 
   async function loadTickets() {
+    // Prevenir llamadas duplicadas
+    if (loadingRef.current) return
+    loadingRef.current = true
+    
     try {
       const token = getToken()
       const response = await fetch('/api/support', {
@@ -65,6 +70,8 @@ export default function Support() {
       }
     } catch (error) {
       console.error('Error loading tickets:', error)
+    } finally {
+      loadingRef.current = false
     }
   }
 

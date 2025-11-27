@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/router'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
@@ -14,6 +14,7 @@ export default function AdminSupport() {
   const [response, setResponse] = useState('')
   const [newStatus, setNewStatus] = useState('')
   const [expandedMonths, setExpandedMonths] = useState(new Set())
+  const loadingRef = useRef(false)
 
   useEffect(() => {
     const user = getUser()
@@ -26,6 +27,10 @@ export default function AdminSupport() {
   }, [router])
 
   async function loadTickets() {
+    // Prevenir llamadas duplicadas
+    if (loadingRef.current) return
+    loadingRef.current = true
+    
     try {
       const token = getToken()
       const url = filterStatus === 'all' 
@@ -60,6 +65,7 @@ export default function AdminSupport() {
       console.error('Error loading tickets:', error)
     } finally {
       setLoading(false)
+      loadingRef.current = false
     }
   }
 
