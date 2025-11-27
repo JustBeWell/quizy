@@ -88,9 +88,31 @@ async function handleGet(req, res) {
   console.log('[Support GET] SQL:', sql)
   console.log('[Support GET] Params:', params)
   
-  // Get total count
-  const countSql = sql.replace('SELECT *', 'SELECT COUNT(*)')
-  const countResult = await query(countSql, params)
+  // Get total count - construct a separate clean query
+  let countSql = 'SELECT COUNT(*) FROM support_tickets WHERE 1=1'
+  const countParams = []
+  let countParamIndex = 1
+  
+  // Rebuild the same WHERE conditions for count
+  if (!decoded.is_admin) {
+    countSql += ` AND user_email = $${countParamIndex}`
+    countParams.push(decoded.email)
+    countParamIndex++
+  } else if (user_email) {
+    countSql += ` AND user_email = $${countParamIndex}`
+    countParams.push(user_email)
+    countParamIndex++
+  }
+  
+  if (status) {
+    countSql += ` AND status = $${countParamIndex}`
+    countParams.push(status)
+  }
+  
+  console.log('[Support GET] Count SQL:', countSql)
+  console.log('[Support GET] Count Params:', countParams)
+  
+  const countResult = await query(countSql, countParams)
   const total = parseInt(countResult.rows[0].count)
   
   console.log('[Support GET] Total tickets found:', total)
