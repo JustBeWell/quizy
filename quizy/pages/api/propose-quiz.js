@@ -51,6 +51,7 @@ async function sendQuizProposalEmail(proposalData, files, userName, userEmail) {
     const mailOptions = {
       from: `"Quizy - Propuestas" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
+      replyTo: userEmail, // Cuando respondas al correo, irá al email del usuario
       subject: `📝 Nueva propuesta de cuestionario: ${proposalData.subject}`,
       html: `
         <!DOCTYPE html>
@@ -151,7 +152,8 @@ async function sendQuizProposalEmail(proposalData, files, userName, userEmail) {
           <div class="container">
             <div class="header">
               <h1>📝 Nueva Propuesta de Cuestionario</h1>
-              <p style="margin: 10px 0 0 0; font-size: 16px;">Un usuario ha enviado una propuesta</p>
+              <p style="margin: 10px 0 0 0; font-size: 16px;">Propuesta enviada por: <strong>${userName}</strong></p>
+              <p style="margin: 5px 0 0 0; font-size: 14px; opacity: 0.9;">✉️ ${userEmail || 'Sin email'}</p>
             </div>
             <div class="content">
               <div style="text-align: center; margin-bottom: 20px;">
@@ -249,7 +251,18 @@ async function sendQuizProposalEmail(proposalData, files, userName, userEmail) {
                 </ol>
               </div>
 
-              <div style="text-align: center; margin-top: 30px;">
+              <div style="text-align: center; margin-top: 30px; padding: 20px; background: #f0fdf4; border-radius: 8px; border: 2px solid #10b981;">
+                <p style="color: #065f46; margin-bottom: 15px; font-size: 16px; font-weight: bold;">💬 Responder al usuario</p>
+                <p style="color: #047857; margin-bottom: 15px; font-size: 14px;">
+                  Puedes responder directamente a <strong>${userEmail || 'este usuario'}</strong> desde tu cliente de correo
+                </p>
+                <a href="mailto:${userEmail}?subject=Re: Propuesta de cuestionario - ${encodeURIComponent(proposalData.subject)}&body=Hola ${userName},%0D%0A%0D%0AGracias por tu propuesta de cuestionario sobre '${encodeURIComponent(proposalData.subject)}'.%0D%0A%0D%0A" 
+                   style="display: inline-block; padding: 12px 30px; background: #10b981; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 5px;">
+                  ✉️ Responder a ${userName}
+                </a>
+              </div>
+
+              <div style="text-align: center; margin-top: 20px;">
                 <p style="color: #6b7280; margin-bottom: 10px;">Gestiona esta propuesta desde el panel:</p>
                 <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://quizy.es'}/admin" class="action-button">
                   🔧 Ir al Panel de Administración
@@ -375,26 +388,47 @@ export default async function handler(req, res) {
           uploadedFiles = Array.isArray(files.files) ? files.files : [files.files]
         }
 
-        // Obtener email del usuario (si existe)
+        // Obtener datos actualizados del usuario desde la base de datos
         const db = require('../../lib/db')
+        let userName = decoded.name
         let userEmail = null
+        
         try {
           const userResult = await db.query(
-            'SELECT email FROM users WHERE name = $1',
-            [decoded.username]
+            'SELECT name, email FROM users WHERE id = $1',
+            [decoded.id]
           )
           if (userResult.rows.length > 0) {
+            userName = userResult.rows[0].name
             userEmail = userResult.rows[0].email
           }
         } catch (dbErr) {
-          console.error('Error obteniendo email del usuario:', dbErr)
+          console.error('Error obteniendo datos del usuario:', dbErr)
+        }
+
+        // Validar que el usuario tenga email configurado
+        if (!userEmail || userEmail.trim() === '') {
+          // Limpiar archivos temporales antes de retornar error
+          if (uploadedFiles.length > 0) {
+            uploadedFiles.forEach(file => {
+              try {
+                fs.unlinkSync(file.filepath)
+              } catch (err) {
+                console.error('Error eliminando archivo temporal:', err)
+              }
+            })
+          }
+          return res.status(400).json({ 
+            error: 'Debes tener un correo electrónico configurado en tu perfil para enviar propuestas. Por favor, añade tu email en la sección de perfil.',
+            requiresEmail: true
+          })
         }
 
         // Enviar email con la propuesta
         const emailSent = await sendQuizProposalEmail(
           proposalData,
           uploadedFiles,
-          decoded.username,
+          userName,
           userEmail
         )
 

@@ -14,7 +14,7 @@ export default async function handler(req, res) {
   const rateLimitResult = await applyRateLimit('register', req, res);
   if (rateLimitResult) return rateLimitResult;
 
-  const { name, password, email } = req.body;
+  const { name, password, email, enableNotifications } = req.body;
   
   if (!name || typeof name !== 'string' || name.trim().length < 2) {
     return res.status(400).json({ error: 'Nombre de usuario inválido' });
@@ -74,12 +74,13 @@ export default async function handler(req, res) {
     const saltRounds = 10;
     const passwordHash = await bcrypt.hash(password, saltRounds);
 
-    // Insertar usuario con contraseña
+    // Insertar usuario con contraseña y preferencias de notificación
+    const notificationsEnabled = enableNotifications === true;
     const result = await db.query(
-      `INSERT INTO users (name, email, password_hash, email_verified, created_at) 
-       VALUES ($1, $2, $3, false, NOW()) 
-       RETURNING id, name, email, is_admin, created_at`,
-      [username, userEmail, passwordHash]
+      `INSERT INTO users (name, email, password_hash, email_verified, notifications_enabled, created_at) 
+       VALUES ($1, $2, $3, false, $4, NOW()) 
+       RETURNING id, name, email, is_admin, notifications_enabled, created_at`,
+      [username, userEmail, passwordHash, notificationsEnabled]
     );
 
     const user = result.rows[0];
@@ -96,6 +97,19 @@ export default async function handler(req, res) {
     sendWelcomeEmail(user.email, user.name).catch(err => {
       console.error('Error enviando email de bienvenida:', err)
     })
+
+    // Si el usuario activó notificaciones, crear notificación de bienvenida
+    if (notificationsEnabled) {
+      try {
+        await db.query(
+          `INSERT INTO notifications (user_id, type, title, message, created_at)
+           VALUES ($1, 'system', '¡Bienvenido a Quizy!', 'Has activado las notificaciones. Te mantendremos informado sobre tu progreso y novedades.', NOW())`,
+          [user.id]
+        );
+      } catch (err) {
+        console.error('Error creando notificación de bienvenida:', err);
+      }
+    }
 
     return res.status(200).json({ 
       success: true, 

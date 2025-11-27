@@ -21,7 +21,7 @@ export default async function handler(req, res) {
 
   try {
     const result = await query(
-      'SELECT id, name, email, email_verified, is_admin, created_at FROM users WHERE id = $1',
+      'SELECT id, name, email, email_verified, is_admin, created_at, notifications_enabled, notification_preferences FROM users WHERE id = $1',
       [decoded.id]
     )
 

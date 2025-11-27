@@ -9,6 +9,7 @@ export default function Auth(){
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
+  const [enableNotifications, setEnableNotifications] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [migrationData, setMigrationData] = useState(null) // { userId, userName }
@@ -203,7 +204,12 @@ export default function Auth(){
       const response = await fetch('/api/register-user', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: trimmed, email: trimmedEmail, password })
+        body: JSON.stringify({ 
+          name: trimmed, 
+          email: trimmedEmail, 
+          password,
+          enableNotifications 
+        })
       })
       
       const data = await response.json()
@@ -416,6 +422,27 @@ export default function Auth(){
                 onChange={e => setConfirmPassword(e.target.value)}
                 disabled={loading}
               />
+            </div>
+          )}
+
+          {!isLogin && (
+            <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+              <label className="flex items-start gap-3 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={enableNotifications}
+                  onChange={(e) => setEnableNotifications(e.target.checked)}
+                  className="mt-1 h-4 w-4 rounded border-gray-300 text-brand-600 focus:ring-brand-500"
+                />
+                <div className="flex-1">
+                  <p className="text-sm font-medium text-gray-900">
+                    🔔 Activar notificaciones
+                  </p>
+                  <p className="text-xs text-gray-600 mt-1">
+                    Recibe alertas sobre tu racha de estudio, actualizaciones de ranking, nuevos contenidos y más. Puedes cambiar esto después desde tu perfil.
+                  </p>
+                </div>
+              </label>
             </div>
           )}
 

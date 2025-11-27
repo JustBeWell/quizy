@@ -135,7 +135,20 @@ export default function ProposeQuiz() {
         window.scrollTo({ top: 0, behavior: 'smooth' })
       } else {
         const data = await response.json()
-        setError(data.error || 'Error al enviar la propuesta')
+        
+        // Si el error es por falta de email, mostrar mensaje específico
+        if (data.requiresEmail) {
+          setError(
+            <span>
+              {data.error}{' '}
+              <a href="/profile" className="underline font-semibold text-brand-700 hover:text-brand-800">
+                Ir a mi perfil →
+              </a>
+            </span>
+          )
+        } else {
+          setError(data.error || 'Error al enviar la propuesta')
+        }
       }
     } catch (err) {
       console.error('Error:', err)
@@ -213,6 +226,26 @@ export default function ProposeQuiz() {
             </div>
           </motion.div>
         )}
+
+        {/* Alerta sobre requisito de email */}
+        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
+          <div className="flex items-start gap-3">
+            <span className="text-2xl">📧</span>
+            <div className="flex-1">
+              <p className="text-yellow-800 text-sm">
+                <strong>Importante:</strong> Para enviar propuestas necesitas tener un correo electrónico configurado en tu perfil. 
+                Esto nos permite responderte sobre el estado de tu propuesta.
+                {user && !user.email && (
+                  <span className="block mt-2">
+                    <a href="/profile" className="text-yellow-900 underline font-semibold hover:text-yellow-950">
+                      → Añadir email en mi perfil
+                    </a>
+                  </span>
+                )}
+              </p>
+            </div>
+          </div>
+        </div>
 
         {/* Información */}
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">

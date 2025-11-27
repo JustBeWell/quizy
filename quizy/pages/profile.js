@@ -35,6 +35,17 @@ export default function Profile() {
   const [streakData, setStreakData] = useState(null)
   const [streakRanking, setStreakRanking] = useState([])
   const [loadingStreak, setLoadingStreak] = useState(true)
+  
+  // Estados para notificaciones
+  const [notificationsEnabled, setNotificationsEnabled] = useState(false)
+  const [notificationPreferences, setNotificationPreferences] = useState({
+    streak_reminders: true,
+    ranking_updates: true,
+    new_content: true,
+    friend_activity: false,
+    achievements: true
+  })
+  const [notificationsLoading, setNotificationsLoading] = useState(false)
 
   useEffect(() => {
     // Cargar usuario actual
@@ -70,6 +81,14 @@ export default function Profile() {
               })
               setUserEmail(userInfo.email || null)
               setEmailVerified(userInfo.email_verified || false)
+              
+              // Cargar preferencias de notificaciones
+              if (userInfo.notifications_enabled !== undefined) {
+                setNotificationsEnabled(userInfo.notifications_enabled)
+              }
+              if (userInfo.notification_preferences) {
+                setNotificationPreferences(userInfo.notification_preferences)
+              }
             } else {
               // Si falla la API, usar datos de localStorage
               setUser({ name: userName, ...userData })
@@ -491,6 +510,72 @@ export default function Profile() {
     }
   }
 
+  // Función para activar/desactivar notificaciones
+  const handleToggleNotifications = async (enabled) => {
+    setNotificationsLoading(true)
+    try {
+      const token = getToken()
+      const response = await fetch('/api/notifications', {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ 
+          notifications_enabled: enabled
+        })
+      })
+
+      if (response.ok) {
+        setNotificationsEnabled(enabled)
+        // Recargar para obtener la notificación de bienvenida si activaron por primera vez
+        if (enabled) {
+          setTimeout(() => {
+            window.location.reload()
+          }, 1000)
+        }
+      } else {
+        const data = await response.json()
+        alert(data.error || 'Error al actualizar preferencias')
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      alert('Error al actualizar preferencias')
+    } finally {
+      setNotificationsLoading(false)
+    }
+  }
+
+  // Función para actualizar preferencias específicas de notificaciones
+  const handleUpdateNotificationPreferences = async (newPreferences) => {
+    setNotificationsLoading(true)
+    try {
+      const token = getToken()
+      const response = await fetch('/api/notifications', {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ 
+          notification_preferences: newPreferences
+        })
+      })
+
+      if (response.ok) {
+        setNotificationPreferences(newPreferences)
+      } else {
+        const data = await response.json()
+        alert(data.error || 'Error al actualizar preferencias')
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      alert('Error al actualizar preferencias')
+    } finally {
+      setNotificationsLoading(false)
+    }
+  }
+
   // Agrupar intentos activos por asignatura
   const groupedActiveAttempts = activeAttempts.reduce((acc, attempt) => {
     const subjectName = attempt.subject?.name || 'Sin asignatura'
@@ -792,6 +877,141 @@ export default function Profile() {
               </button>
             </div>
           </form>
+        )}
+      </div>
+
+      {/* Preferencias de Notificaciones */}
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-6 mb-6">
+        <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">🔔 Notificaciones</h4>
+        
+        <div className="flex items-center justify-between mb-4 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg">
+          <div>
+            <p className="font-medium text-gray-900 dark:text-white">Sistema de notificaciones</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+              Recibe alertas sobre rachas, rankings y más
+            </p>
+          </div>
+          <button
+            onClick={() => handleToggleNotifications(!notificationsEnabled)}
+            disabled={notificationsLoading}
+            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 disabled:opacity-50 ${
+              notificationsEnabled ? 'bg-brand-600' : 'bg-gray-300 dark:bg-gray-600'
+            }`}
+          >
+            <span
+              className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                notificationsEnabled ? 'translate-x-6' : 'translate-x-1'
+              }`}
+            />
+          </button>
+        </div>
+
+        {notificationsEnabled && (
+          <div className="space-y-3 border-t border-gray-200 dark:border-gray-700 pt-4">
+            <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
+              Personaliza qué notificaciones deseas recibir:
+            </p>
+            
+            <label className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-900 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+              <div className="flex items-center gap-3">
+                <span className="text-xl">🔥</span>
+                <div>
+                  <p className="text-sm font-medium text-gray-900 dark:text-white">Recordatorios de racha</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">Aviso si no has practicado hoy</p>
+                </div>
+              </div>
+              <input
+                type="checkbox"
+                checked={notificationPreferences.streak_reminders}
+                onChange={(e) => handleUpdateNotificationPreferences({
+                  ...notificationPreferences,
+                  streak_reminders: e.target.checked
+                })}
+                disabled={notificationsLoading}
+                className="h-4 w-4 rounded border-gray-300 text-brand-600 focus:ring-brand-500"
+              />
+            </label>
+
+            <label className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-900 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+              <div className="flex items-center gap-3">
+                <span className="text-xl">🏆</span>
+                <div>
+                  <p className="text-sm font-medium text-gray-900 dark:text-white">Actualizaciones de ranking</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">Cambios en tu posición</p>
+                </div>
+              </div>
+              <input
+                type="checkbox"
+                checked={notificationPreferences.ranking_updates}
+                onChange={(e) => handleUpdateNotificationPreferences({
+                  ...notificationPreferences,
+                  ranking_updates: e.target.checked
+                })}
+                disabled={notificationsLoading}
+                className="h-4 w-4 rounded border-gray-300 text-brand-600 focus:ring-brand-500"
+              />
+            </label>
+
+            <label className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-900 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+              <div className="flex items-center gap-3">
+                <span className="text-xl">📚</span>
+                <div>
+                  <p className="text-sm font-medium text-gray-900 dark:text-white">Nuevo contenido</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">Nuevos temas disponibles</p>
+                </div>
+              </div>
+              <input
+                type="checkbox"
+                checked={notificationPreferences.new_content}
+                onChange={(e) => handleUpdateNotificationPreferences({
+                  ...notificationPreferences,
+                  new_content: e.target.checked
+                })}
+                disabled={notificationsLoading}
+                className="h-4 w-4 rounded border-gray-300 text-brand-600 focus:ring-brand-500"
+              />
+            </label>
+
+            <label className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-900 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+              <div className="flex items-center gap-3">
+                <span className="text-xl">🎯</span>
+                <div>
+                  <p className="text-sm font-medium text-gray-900 dark:text-white">Logros</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">Cuando consigas un logro</p>
+                </div>
+              </div>
+              <input
+                type="checkbox"
+                checked={notificationPreferences.achievements}
+                onChange={(e) => handleUpdateNotificationPreferences({
+                  ...notificationPreferences,
+                  achievements: e.target.checked
+                })}
+                disabled={notificationsLoading}
+                className="h-4 w-4 rounded border-gray-300 text-brand-600 focus:ring-brand-500"
+              />
+            </label>
+
+            <label className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-900 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+              <div className="flex items-center gap-3">
+                <span className="text-xl">👥</span>
+                <div>
+                  <p className="text-sm font-medium text-gray-900 dark:text-white">Actividad de amigos</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">Cuando tus amigos completen quizzes</p>
+                </div>
+              </div>
+              <input
+                type="checkbox"
+                checked={notificationPreferences.friend_activity}
+                onChange={(e) => handleUpdateNotificationPreferences({
+                  ...notificationPreferences,
+                  friend_activity: e.target.checked
+                })}
+                disabled={notificationsLoading}
+                className="h-4 w-4 rounded border-gray-300 text-brand-600 focus:ring-brand-500"
+              />
+            </label>
+          </div>
         )}
       </div>
 

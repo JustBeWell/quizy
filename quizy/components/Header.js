@@ -5,6 +5,7 @@ import { useTheme } from '../contexts/ThemeContext'
 import { isAdmin as checkIsAdmin } from '../lib/auth-client'
 
 const UserMenu = dynamic(()=>import('./UserMenu'), { ssr: false })
+const NotificationBell = dynamic(()=>import('./NotificationBell'), { ssr: false })
 
 export default function Header(){
   const [isAdminUser, setIsAdminUser] = useState(false)
@@ -38,6 +39,9 @@ export default function Header(){
 
         <div className="flex items-center gap-3">
           <div className="hidden md:block text-sm text-gray-600 dark:text-[#9d9d9d]">Bienvenido</div>
+          
+          {/* Notificaciones */}
+          <NotificationBell />
           
           <UserMenu />
           
