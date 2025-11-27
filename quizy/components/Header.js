@@ -33,8 +33,8 @@ export default function Header(){
           <Link href="/levels" className="nav-link text-gray-700 dark:text-[#d4d4d4] hover:text-brand-600 dark:hover:text-[#4fc3f7]">Inicio</Link>
           <Link href="/ranking" className="nav-link text-gray-700 dark:text-[#d4d4d4] hover:text-brand-600 dark:hover:text-[#4fc3f7]">Ranking</Link>
           <Link href="/profile" className="nav-link text-gray-700 dark:text-[#d4d4d4] hover:text-brand-600 dark:hover:text-[#4fc3f7]">Perfil</Link>
-          <Link href="/propose-quiz" className="nav-link text-gray-700 dark:text-[#d4d4d4] hover:text-brand-600 dark:hover:text-[#4fc3f7]">📝 Proponer</Link>
-          <Link href="/support" className="nav-link text-gray-700 dark:text-[#d4d4d4] hover:text-brand-600 dark:hover:text-[#4fc3f7]">💬 Soporte</Link>
+          <Link href="/propose-quiz" className="nav-link text-gray-700 dark:text-[#d4d4d4] hover:text-brand-600 dark:hover:text-[#4fc3f7]">Proponer</Link>
+          <Link href="/support" className="nav-link text-gray-700 dark:text-[#d4d4d4] hover:text-brand-600 dark:hover:text-[#4fc3f7]">Soporte</Link>
         </nav>
 
         <div className="flex items-center gap-3">
