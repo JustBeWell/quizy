@@ -65,6 +65,7 @@ export default function Header(){
   }
 
   return (
+    <>
     <header className="site-header sticky top-0 z-30 bg-white dark:bg-[#252526] shadow-sm transition-colors border-b border-gray-200 dark:border-gray-700">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
         {/* Logo */}
@@ -184,13 +185,14 @@ export default function Header(){
           </button>
         </div>
       </div>
-      
-      {/* Modal de Noticias */}
-      <NewsModal 
-        isOpen={showNewsModal} 
-        onClose={handleCloseNews}
-        news={news}
-      />
     </header>
+    
+    {/* Modal de Noticias - Fuera del header para z-index correcto */}
+    <NewsModal 
+      isOpen={showNewsModal} 
+      onClose={handleCloseNews}
+      news={news}
+    />
+    </>
   )
 }

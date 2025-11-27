@@ -28,7 +28,7 @@ export default function NewsModal({ isOpen, onClose, news }) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 overflow-hidden">
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 overflow-hidden">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
