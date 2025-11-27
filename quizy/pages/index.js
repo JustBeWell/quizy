@@ -829,6 +829,17 @@ export default function Home() {
           transition={{ duration: 0.6, delay: 1.9 }}
           className="container mx-auto px-4 py-8 text-center text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700 mt-16"
         >
+          <div className="mb-4 flex justify-center gap-6 text-sm">
+            <a href="/auth" className="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+              Iniciar sesión
+            </a>
+            <a href="/support" className="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+              Soporte
+            </a>
+            <a href="/propose-quiz" className="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+              📝 Proponer Cuestionario
+            </a>
+          </div>
           <p className="mb-2">© 2025 Quizy. Tu compañero de estudio perfecto.</p>
           <p className="text-sm">Hecho con ❤️ para estudiantes que quieren aprobar</p>
         </motion.footer>

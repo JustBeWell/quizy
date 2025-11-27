@@ -925,3 +925,234 @@ export async function sendWelcomeEmail(to, userName) {
     return false
   }
 }
+
+/**
+ * Envía un email de confirmación al usuario tras enviar propuesta de cuestionario
+ * @param {string} to - Email del destinatario
+ * @param {string} userName - Nombre del usuario
+ * @param {string} quizTitle - Título del cuestionario propuesto
+ * @returns {Promise<boolean>} - true si se envió correctamente
+ */
+export async function sendQuizProposalConfirmation(to, userName, quizTitle) {
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD) {
+    console.warn('⚠️ EMAIL_USER o EMAIL_PASSWORD no configurados. Email no enviado.')
+    return false
+  }
+
+  try {
+    const transporter = getTransporter()
+
+    const mailOptions = {
+      from: `"Quizy" <${process.env.EMAIL_USER}>`,
+      to,
+      subject: '✅ Propuesta recibida - Gracias por contribuir a Quizy',
+      html: `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <style>
+            body {
+              font-family: Arial, sans-serif;
+              line-height: 1.6;
+              color: #333;
+            }
+            .container {
+              max-width: 600px;
+              margin: 0 auto;
+              padding: 20px;
+            }
+            .header {
+              background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+              color: white;
+              padding: 40px;
+              text-align: center;
+              border-radius: 10px 10px 0 0;
+            }
+            .header h1 {
+              margin: 0;
+              font-size: 28px;
+            }
+            .content {
+              background: #f9f9f9;
+              padding: 30px;
+              border-radius: 0 0 10px 10px;
+            }
+            .success-box {
+              background: white;
+              border-left: 4px solid #10b981;
+              padding: 20px;
+              border-radius: 5px;
+              margin: 20px 0;
+            }
+            .info-card {
+              background: #ecfdf5;
+              border: 1px solid #a7f3d0;
+              padding: 20px;
+              border-radius: 8px;
+              margin: 20px 0;
+            }
+            .timeline {
+              margin: 25px 0;
+              padding: 20px;
+              background: white;
+              border-radius: 8px;
+            }
+            .timeline-item {
+              display: flex;
+              gap: 15px;
+              margin-bottom: 15px;
+              align-items: flex-start;
+            }
+            .timeline-item:last-child {
+              margin-bottom: 0;
+            }
+            .timeline-icon {
+              flex-shrink: 0;
+              width: 32px;
+              height: 32px;
+              background: #10b981;
+              color: white;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-weight: bold;
+            }
+            .timeline-content {
+              flex: 1;
+              padding-top: 4px;
+            }
+            .quote-box {
+              background: #fef3c7;
+              border-left: 4px solid #f59e0b;
+              padding: 20px;
+              border-radius: 5px;
+              margin: 25px 0;
+              font-style: italic;
+            }
+            .cta-button {
+              display: inline-block;
+              background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+              color: white;
+              padding: 15px 30px;
+              text-decoration: none;
+              border-radius: 8px;
+              font-weight: bold;
+              margin: 20px 0;
+              text-align: center;
+            }
+            .footer {
+              text-align: center;
+              padding: 20px;
+              background-color: #f3f4f6;
+              color: #666;
+              font-size: 12px;
+              margin-top: 20px;
+              border-radius: 8px;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <div class="header">
+              <div style="font-size: 48px; margin-bottom: 10px;">✅</div>
+              <h1>¡Propuesta Recibida!</h1>
+              <p style="margin: 10px 0 0 0; font-size: 16px;">Gracias por contribuir a Quizy</p>
+            </div>
+            
+            <div class="content">
+              <p>Hola <strong>${userName}</strong>,</p>
+              
+              <div class="success-box">
+                <h3 style="margin-top: 0; color: #10b981;">📝 Hemos recibido tu propuesta</h3>
+                <p style="margin: 10px 0 0 0;"><strong>Título:</strong> ${quizTitle}</p>
+              </div>
+
+              <p>¡Muchas gracias por tomarte el tiempo de compartir contenido con la comunidad de Quizy! Tu contribución es muy valiosa para nosotros y para todos los estudiantes que usan la plataforma.</p>
+
+              <div class="info-card">
+                <h3 style="margin-top: 0; color: #059669;">🔍 ¿Qué sucede ahora?</h3>
+                <div class="timeline">
+                  <div class="timeline-item">
+                    <div class="timeline-icon">1</div>
+                    <div class="timeline-content">
+                      <strong>Revisión del contenido</strong>
+                      <p style="margin: 5px 0 0 0; color: #666; font-size: 14px;">Nuestro equipo analizará cuidadosamente tu propuesta</p>
+                    </div>
+                  </div>
+                  
+                  <div class="timeline-item">
+                    <div class="timeline-icon">2</div>
+                    <div class="timeline-content">
+                      <strong>Validación de calidad</strong>
+                      <p style="margin: 5px 0 0 0; color: #666; font-size: 14px;">Verificaremos que cumpla con nuestros estándares educativos</p>
+                    </div>
+                  </div>
+                  
+                  <div class="timeline-item">
+                    <div class="timeline-icon">3</div>
+                    <div class="timeline-content">
+                      <strong>Respuesta en 2-3 días hábiles</strong>
+                      <p style="margin: 5px 0 0 0; color: #666; font-size: 14px;">Te contactaremos con el resultado de la revisión</p>
+                    </div>
+                  </div>
+                  
+                  <div class="timeline-item">
+                    <div class="timeline-icon">4</div>
+                    <div class="timeline-content">
+                      <strong>Publicación (si aprobado)</strong>
+                      <p style="margin: 5px 0 0 0; color: #666; font-size: 14px;">Lo subiremos a la plataforma dándote crédito como autor</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="quote-box">
+                <p style="margin: 0; color: #92400e;">
+                  <strong>💡 Recuerda:</strong> Intentaremos darte una respuesta lo antes posible. Mientras tanto, puedes seguir usando Quizy y proponer más cuestionarios si lo deseas.
+                </p>
+              </div>
+
+              <div style="text-align: center; margin: 30px 0;">
+                <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://quizy.es'}/levels" class="cta-button">
+                  📚 Continuar practicando
+                </a>
+              </div>
+
+              <p style="margin-top: 30px;">
+                Si tienes alguna pregunta sobre tu propuesta o necesitas añadir información adicional, no dudes en contactarnos a través del <strong>sistema de soporte</strong> en la aplicación.
+              </p>
+
+              <div style="margin-top: 30px; padding: 20px; background: white; border-radius: 8px; border: 1px solid #e5e7eb;">
+                <h4 style="margin-top: 0; color: #374151;">📊 Tu impacto en la comunidad</h4>
+                <p style="margin: 10px 0 0 0; color: #6b7280; font-size: 14px;">
+                  Gracias a contribuidores como tú, Quizy crece cada día y ayuda a más estudiantes a alcanzar sus objetivos académicos. ¡Eres parte fundamental de esta comunidad! 🌟
+                </p>
+              </div>
+
+              <p style="margin-top: 30px;">
+                Saludos cordiales,<br>
+                <strong>El equipo de Quizy</strong><br>
+                <span style="color: #10b981; font-size: 14px;">Tu plataforma de aprendizaje colaborativo</span>
+              </p>
+            </div>
+            
+            <div class="footer">
+              <p>Este es un email de confirmación automático.</p>
+              <p style="margin-top: 5px;">© 2025 Quizy - Construyendo conocimiento juntos</p>
+            </div>
+          </div>
+        </body>
+        </html>
+      `
+    }
+
+    await transporter.sendMail(mailOptions)
+    console.log('✓ Email de confirmación de propuesta enviado a:', to)
+    return true
+
+  } catch (error) {
+    console.error('❌ Error enviando email de confirmación:', error)
+    return false
+  }
+}
