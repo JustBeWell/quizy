@@ -41,7 +41,20 @@ export default function AdminSupport() {
       if (response.ok) {
         const data = await response.json()
         // Manejar respuesta con paginación o sin ella (compatibilidad)
-        setTickets(data.tickets || data)
+        const loadedTickets = data.tickets || data
+        setTickets(loadedTickets)
+        
+        // Auto-expandir todos los meses cuando se cargan los tickets
+        if (loadedTickets.length > 0) {
+          // Agrupar por mes para auto-expandir
+          const groups = {}
+          loadedTickets.forEach(ticket => {
+            const date = new Date(ticket.created_at)
+            const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`
+            if (!groups[monthKey]) groups[monthKey] = true
+          })
+          setExpandedMonths(new Set(Object.keys(groups)))
+        }
       }
     } catch (error) {
       console.error('Error loading tickets:', error)
