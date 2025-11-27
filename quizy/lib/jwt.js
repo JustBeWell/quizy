@@ -39,11 +39,18 @@ export function generateToken(user) {
 export function verifyToken(token) {
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
+    
+    // Compatibilidad con tokens antiguos que usaban userId en lugar de id
+    if (decoded.userId && !decoded.id) {
+      decoded.id = decoded.userId;
+    }
+    
     // Validar que el token tenga los campos requeridos
     if (!decoded.id || !decoded.name) {
       console.error('Token inválido: faltan campos requeridos');
       return null;
     }
+    
     return decoded;
   } catch (error) {
     // No loguear el error completo para evitar exponer información
