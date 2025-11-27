@@ -1,6 +1,13 @@
 {
-  "currentVersion": "1.2.0",
+  "currentVersion": "1.3.0",
   "updates": [
+    {
+      "version": "1.3.0",
+      "title": "Sistema de notificaciones en tiempo real",
+      "description": "Ahora recibirás notificaciones de tus logros, rachas, actualizaciones de ranking y nuevas funcionalidades. Mira la campanita en el header para estar al día.",
+      "icon": "🔔",
+      "date": "2025-11-28"
+    },
     {
       "version": "1.2.0",
       "title": "La app ahora es mucho más rápida",
