@@ -68,6 +68,7 @@ export function getUser() {
   // Verificar si el token está expirado
   if (isTokenExpired(token)) {
     // Token expirado, limpiar todos los datos de autenticación
+    console.log('[Auth] Token expirado, limpiando sesión');
     localStorage.removeItem('quiz_token');
     localStorage.removeItem('quiz_user');
     localStorage.removeItem('quiz_user_data');
@@ -78,6 +79,25 @@ export function getUser() {
   
   // Si no se puede decodificar, el token es inválido
   if (!decoded) {
+    console.log('[Auth] Token inválido, limpiando sesión');
+    localStorage.removeItem('quiz_token');
+    localStorage.removeItem('quiz_user');
+    localStorage.removeItem('quiz_user_data');
+    return null;
+  }
+  
+  // Verificar que tenga los campos necesarios (id y name)
+  // Si tiene userId pero no id, es un token muy antiguo - forzar re-login
+  if (!decoded.id && decoded.userId) {
+    console.log('[Auth] Token con formato antiguo detectado, forzando re-login');
+    localStorage.removeItem('quiz_token');
+    localStorage.removeItem('quiz_user');
+    localStorage.removeItem('quiz_user_data');
+    return null;
+  }
+  
+  if (!decoded.id || !decoded.name) {
+    console.log('[Auth] Token sin campos requeridos, limpiando sesión');
     localStorage.removeItem('quiz_token');
     localStorage.removeItem('quiz_user');
     localStorage.removeItem('quiz_user_data');
@@ -105,6 +125,35 @@ export function getToken() {
   // Verificar si el token está expirado
   if (isTokenExpired(token)) {
     // Token expirado, limpiar todos los datos de autenticación
+    console.log('[Auth] Token expirado, limpiando sesión');
+    localStorage.removeItem('quiz_token');
+    localStorage.removeItem('quiz_user');
+    localStorage.removeItem('quiz_user_data');
+    return null;
+  }
+  
+  // Validar que el token tenga formato correcto
+  const decoded = decodeToken(token);
+  if (!decoded) {
+    console.log('[Auth] Token inválido, limpiando sesión');
+    localStorage.removeItem('quiz_token');
+    localStorage.removeItem('quiz_user');
+    localStorage.removeItem('quiz_user_data');
+    return null;
+  }
+  
+  // Si tiene userId pero no id, es formato antiguo - forzar re-login
+  if (!decoded.id && decoded.userId) {
+    console.log('[Auth] Token con formato antiguo detectado, forzando re-login');
+    localStorage.removeItem('quiz_token');
+    localStorage.removeItem('quiz_user');
+    localStorage.removeItem('quiz_user_data');
+    return null;
+  }
+  
+  // Validar campos requeridos
+  if (!decoded.id || !decoded.name) {
+    console.log('[Auth] Token sin campos requeridos, limpiando sesión');
     localStorage.removeItem('quiz_token');
     localStorage.removeItem('quiz_user');
     localStorage.removeItem('quiz_user_data');

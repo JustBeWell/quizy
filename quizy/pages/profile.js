@@ -51,16 +51,25 @@ export default function Profile() {
     // Cargar usuario actual
     const loadProfile = async () => {
       try {
+        // Primero verificar que haya un token válido
+        const token = getToken()
+        if (!token) {
+          console.log('[Profile] No hay token válido, redirigiendo a auth')
+          router.replace('/auth')
+          return
+        }
+        
         const userName = localStorage.getItem('quiz_user')
         const userData = JSON.parse(localStorage.getItem('quiz_user_data') || '{}')
         
         if (!userName) {
+          console.log('[Profile] No hay userName, redirigiendo a auth')
           router.replace('/auth')
           return
         }
         
         // Obtener información completa del usuario desde la API
-        const token = getToken()
+        // El token ya fue validado arriba, aquí solo lo usamos
         if (token) {
           try {
             // Obtener información completa desde la API
