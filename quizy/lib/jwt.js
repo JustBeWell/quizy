@@ -3,10 +3,11 @@ import { query } from './db';
 
 // Secret key para firmar los JWT - OBLIGATORIO en producción
 if (!process.env.JWT_SECRET) {
-  console.error('⚠️  ADVERTENCIA DE SEGURIDAD: JWT_SECRET no está configurado!');
-  console.error('⚠️  Esto es inseguro en producción. Configura JWT_SECRET en .env.local');
   if (process.env.NODE_ENV === 'production') {
+    console.error('❌ ERROR CRÍTICO: JWT_SECRET no está configurado en producción!');
     throw new Error('JWT_SECRET es obligatorio en producción');
+  } else {
+    console.warn('⚠️  DESARROLLO: Usando JWT_SECRET por defecto (NO usar en producción)');
   }
 }
 
