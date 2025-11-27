@@ -33,27 +33,40 @@ export default function NewsModal({ isOpen, onClose, news }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+          className="absolute inset-0 bg-black/60 backdrop-blur-sm"
           onClick={onClose}
         />
 
         {/* Modal */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          className="relative w-full max-w-2xl max-h-[80vh] bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden"
+          exit={{ opacity: 0, scale: 0.9, y: 20 }}
+          className="relative w-full max-w-3xl max-h-[85vh] bg-gradient-to-br from-amber-50 to-orange-100 dark:from-amber-900 dark:to-orange-900 rounded-xl shadow-2xl overflow-hidden"
+          style={{
+            boxShadow: '0 20px 60px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.3)'
+          }}
         >
-          {/* Header */}
-          <div className="sticky top-0 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-700 dark:to-purple-700 text-white p-6 z-10">
-            <div className="flex items-start justify-between">
+          {/* Header con estilo corcho */}
+          <div className="relative bg-gradient-to-br from-amber-600 to-orange-700 dark:from-amber-800 dark:to-orange-800 text-white p-8 shadow-lg">
+            {/* Textura de corcho */}
+            <div className="absolute inset-0 opacity-10" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+            }} />
+            
+            <div className="relative flex items-start justify-between">
               <div>
-                <h2 className="text-2xl font-bold mb-1">📰 Novedades de Quizy</h2>
-                <p className="text-blue-100 text-sm">Versión actual: <span className="font-semibold">{currentVersion}</span></p>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="text-4xl">📌</div>
+                  <h2 className="text-3xl font-bold text-white drop-shadow-lg">Tablón de Noticias</h2>
+                </div>
+                <p className="text-amber-100 text-sm font-medium">
+                  Versión actual: <span className="px-2 py-1 bg-white/20 rounded-md font-bold">{currentVersion}</span>
+                </p>
               </div>
               <button
                 onClick={onClose}
-                className="text-white/80 hover:text-white transition-colors p-1"
+                className="text-white/90 hover:text-white hover:bg-white/10 transition-all p-2 rounded-full"
                 aria-label="Cerrar"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -62,63 +75,78 @@ export default function NewsModal({ isOpen, onClose, news }) {
               </button>
             </div>
 
-            {/* Tabs */}
-            <div className="flex gap-2 mt-4">
+            {/* Tabs con chinchetas */}
+            <div className="relative flex gap-3 mt-6">
               <button
                 onClick={() => setActiveTab('updates')}
-                className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                className={`relative px-5 py-3 rounded-t-lg font-semibold transition-all shadow-md ${
                   activeTab === 'updates'
-                    ? 'bg-white/20 text-white shadow-md'
-                    : 'text-white/70 hover:text-white hover:bg-white/10'
+                    ? 'bg-white dark:bg-gray-800 text-amber-700 dark:text-amber-300 transform -translate-y-1'
+                    : 'bg-amber-700/50 text-white/80 hover:bg-amber-700/70'
                 }`}
               >
-                ✨ Novedades
+                {/* Chincheta */}
+                <span className="absolute -top-2 left-1/2 transform -translate-x-1/2 text-2xl">📌</span>
+                <span className="mt-1 block">✨ Novedades</span>
               </button>
               <button
                 onClick={() => setActiveTab('hotfixes')}
-                className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                className={`relative px-5 py-3 rounded-t-lg font-semibold transition-all shadow-md ${
                   activeTab === 'hotfixes'
-                    ? 'bg-white/20 text-white shadow-md'
-                    : 'text-white/70 hover:text-white hover:bg-white/10'
+                    ? 'bg-white dark:bg-gray-800 text-orange-700 dark:text-orange-300 transform -translate-y-1'
+                    : 'bg-orange-700/50 text-white/80 hover:bg-orange-700/70'
                 }`}
               >
-                🔧 Hotfixes
+                {/* Chincheta */}
+                <span className="absolute -top-2 left-1/2 transform -translate-x-1/2 text-2xl">📌</span>
+                <span className="mt-1 block">🔧 Arreglos</span>
               </button>
             </div>
           </div>
 
-          {/* Content */}
-          <div className="overflow-y-auto p-6 space-y-4" style={{ maxHeight: 'calc(80vh - 180px)' }}>
+          {/* Content - Estilo panel de corcho */}
+          <div className="overflow-y-auto p-8 space-y-6 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-gray-800 dark:to-gray-850" style={{ maxHeight: 'calc(85vh - 240px)' }}>
             {activeTab === 'updates' && (
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {updates.length === 0 ? (
-                  <div className="text-center py-8 text-gray-500 dark:text-gray-400">
-                    <p>No hay actualizaciones recientes</p>
+                  <div className="text-center py-12 text-gray-500 dark:text-gray-400">
+                    <p className="text-lg">📭 No hay actualizaciones recientes</p>
                   </div>
                 ) : (
                   updates.map((update, idx) => (
                     <motion.div
                       key={idx}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
+                      initial={{ opacity: 0, rotate: -2, scale: 0.95 }}
+                      animate={{ opacity: 1, rotate: idx % 2 === 0 ? 1 : -1, scale: 1 }}
                       transition={{ delay: idx * 0.1 }}
-                      className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-700 dark:to-gray-750 rounded-xl p-4 border-l-4 border-blue-500"
+                      className="relative bg-gradient-to-br from-yellow-100 to-yellow-200 dark:from-yellow-800 dark:to-yellow-900 rounded-lg p-5 shadow-lg transform hover:scale-105 hover:rotate-0 transition-all"
+                      style={{
+                        boxShadow: '3px 3px 10px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.5)',
+                      }}
                     >
-                      <div className="flex items-start gap-3">
-                        <div className="text-2xl">{update.icon || '📦'}</div>
+                      {/* Chincheta decorativa */}
+                      <div className="absolute -top-3 left-6 text-3xl transform -rotate-12">
+                        📌
+                      </div>
+                      
+                      {/* Sombra de chincheta */}
+                      <div className="absolute -top-1 left-8 w-4 h-4 bg-black/10 rounded-full blur-sm" />
+                      
+                      <div className="flex items-start gap-4 mt-2">
+                        <div className="text-4xl">{update.icon || '📦'}</div>
                         <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-1">
-                            <h3 className="font-semibold text-gray-900 dark:text-white">{update.title}</h3>
+                          <div className="flex items-center gap-2 mb-2">
+                            <h3 className="font-bold text-lg text-gray-900 dark:text-white">{update.title}</h3>
                             {update.version && (
-                              <span className="text-xs px-2 py-0.5 bg-blue-500 text-white rounded-full">
+                              <span className="text-xs px-2 py-1 bg-blue-600 text-white rounded-full font-bold shadow-sm">
                                 v{update.version}
                               </span>
                             )}
                           </div>
-                          <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">{update.description}</p>
+                          <p className="text-sm text-gray-700 dark:text-gray-200 leading-relaxed mb-2">{update.description}</p>
                           {update.date && (
-                            <p className="text-xs text-gray-500 dark:text-gray-400">
-                              {new Date(update.date).toLocaleDateString('es-ES', {
+                            <p className="text-xs text-gray-600 dark:text-gray-400 font-medium">
+                              📅 {new Date(update.date).toLocaleDateString('es-ES', {
                                 day: 'numeric',
                                 month: 'long',
                                 year: 'numeric'
@@ -127,6 +155,11 @@ export default function NewsModal({ isOpen, onClose, news }) {
                           )}
                         </div>
                       </div>
+                      
+                      {/* Efecto de papel rasgado en el borde inferior */}
+                      <div className="absolute bottom-0 left-0 right-0 h-2 opacity-20" style={{
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60'%3E%3Cpath d='M0,30 Q30,0 60,30 T120,30 T180,30 T240,30 T300,30 T360,30 T420,30 T480,30 T540,30 T600,30 T660,30 T720,30 T780,30 T840,30 T900,30 T960,30 T1020,30 T1080,30 T1140,30 T1200,30 L1200,60 L0,60 Z' fill='%23000000'/%3E%3C/svg%3E")`
+                      }} />
                     </motion.div>
                   ))
                 )}
@@ -134,35 +167,46 @@ export default function NewsModal({ isOpen, onClose, news }) {
             )}
 
             {activeTab === 'hotfixes' && (
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {hotfixes.length === 0 ? (
-                  <div className="text-center py-8 text-gray-500 dark:text-gray-400">
-                    <p>No hay hotfixes recientes</p>
+                  <div className="text-center py-12 text-gray-500 dark:text-gray-400">
+                    <p className="text-lg">✅ No hay arreglos recientes</p>
                   </div>
                 ) : (
                   hotfixes.map((fix, idx) => (
                     <motion.div
                       key={idx}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: idx * 0.1 }}
-                      className="bg-orange-50 dark:bg-gray-700 rounded-lg p-3 border-l-4 border-orange-500"
+                      initial={{ opacity: 0, rotate: 2, scale: 0.95 }}
+                      animate={{ opacity: 1, rotate: idx % 2 === 0 ? -0.5 : 0.5, scale: 1 }}
+                      transition={{ delay: idx * 0.08 }}
+                      className="relative bg-gradient-to-br from-orange-100 to-red-100 dark:from-orange-900 dark:to-red-900 rounded-lg p-4 shadow-md transform hover:scale-105 hover:rotate-0 transition-all"
+                      style={{
+                        boxShadow: '2px 2px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.4)',
+                      }}
                     >
-                      <div className="flex items-start gap-3">
-                        <div className="text-xl">🔧</div>
+                      {/* Chincheta decorativa */}
+                      <div className="absolute -top-2 left-5 text-2xl transform rotate-12">
+                        📌
+                      </div>
+                      
+                      {/* Sombra de chincheta */}
+                      <div className="absolute top-0 left-7 w-3 h-3 bg-black/10 rounded-full blur-sm" />
+                      
+                      <div className="flex items-start gap-3 mt-1">
+                        <div className="text-3xl">🔧</div>
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-1">
-                            <h4 className="font-medium text-gray-900 dark:text-white text-sm">{fix.title}</h4>
+                            <h4 className="font-bold text-gray-900 dark:text-white">{fix.title}</h4>
                             {fix.version && (
-                              <span className="text-xs px-2 py-0.5 bg-orange-500 text-white rounded-full">
+                              <span className="text-xs px-2 py-0.5 bg-orange-600 text-white rounded-full font-bold shadow-sm">
                                 v{fix.version}
                               </span>
                             )}
                           </div>
-                          <p className="text-xs text-gray-600 dark:text-gray-300">{fix.description}</p>
+                          <p className="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">{fix.description}</p>
                           {fix.date && (
-                            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                              {new Date(fix.date).toLocaleDateString('es-ES', {
+                            <p className="text-xs text-gray-600 dark:text-gray-400 font-medium mt-1">
+                              📅 {new Date(fix.date).toLocaleDateString('es-ES', {
                                 day: 'numeric',
                                 month: 'short'
                               })}
@@ -178,12 +222,12 @@ export default function NewsModal({ isOpen, onClose, news }) {
           </div>
 
           {/* Footer */}
-          <div className="sticky bottom-0 bg-gray-50 dark:bg-gray-750 border-t border-gray-200 dark:border-gray-600 p-4">
+          <div className="sticky bottom-0 bg-gradient-to-br from-amber-100 to-orange-200 dark:from-amber-900 dark:to-orange-900 border-t-4 border-amber-600 dark:border-amber-700 p-5 shadow-inner">
             <button
               onClick={onClose}
-              className="w-full py-2 px-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg font-medium transition-all shadow-md hover:shadow-lg"
+              className="w-full py-3 px-6 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
             >
-              Entendido
+              ✓ Entendido
             </button>
           </div>
         </motion.div>
