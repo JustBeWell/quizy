@@ -3,10 +3,20 @@
  * Uso: node scripts/create_test_notifications.js <user_id>
  */
 
-const db = require('../lib/db')
+require('dotenv').config({ path: '.env.local' })
+const { Pool } = require('pg')
 
 async function createTestNotifications(userId) {
   console.log(`📬 Creando notificaciones de prueba para user_id: ${userId}`)
+
+  const connectionString = process.env.DATABASE_URL || process.env.POSTGRES_URL
+  
+  if (!connectionString) {
+    console.error('❌ No DATABASE_URL encontrado')
+    process.exit(1)
+  }
+
+  const pool = new Pool({ connectionString })
 
   const notifications = [
     {
@@ -49,7 +59,7 @@ async function createTestNotifications(userId) {
 
   try {
     for (const notif of notifications) {
-      await db.query(
+      await pool.query(
         `INSERT INTO notifications (user_id, type, title, message, link)
          VALUES ($1, $2, $3, $4, $5)`,
         [userId, notif.type, notif.title, notif.message, notif.link]
@@ -60,7 +70,7 @@ async function createTestNotifications(userId) {
     console.log(`\n🎉 ${notifications.length} notificaciones creadas correctamente`)
     
     // Mostrar resumen
-    const result = await db.query(
+    const result = await pool.query(
       `SELECT COUNT(*) as total, 
               COUNT(CASE WHEN is_read = FALSE THEN 1 END) as unread
        FROM notifications 
@@ -75,7 +85,7 @@ async function createTestNotifications(userId) {
   } catch (error) {
     console.error('❌ Error creando notificaciones:', error)
   } finally {
-    await db.end()
+    await pool.end()
   }
 }
 
