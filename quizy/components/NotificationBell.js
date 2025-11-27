@@ -227,45 +227,43 @@ export default function NotificationBell() {
               ) : (
                 <div className="divide-y divide-gray-200 dark:divide-gray-700">
                   {notifications.map((notification) => (
-                    <motion.div
-                      key={notification.id}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      className={`p-4 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors cursor-pointer ${
-                        !notification.is_read ? 'bg-blue-50 dark:bg-blue-900/10' : ''
-                      }`}
-                      onClick={() => {
-                        if (!notification.is_read) {
-                          markAsRead(notification.id)
-                        }
-                        if (notification.link) {
+                    <Link key={notification.id} href="/notifications">
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className={`p-4 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors cursor-pointer ${
+                          !notification.is_read ? 'bg-blue-50 dark:bg-blue-900/10' : ''
+                        }`}
+                        onClick={() => {
+                          if (!notification.is_read) {
+                            markAsRead(notification.id)
+                          }
                           setIsOpen(false)
-                          window.location.href = notification.link
-                        }
-                      }}
-                    >
-                      <div className="flex gap-3">
-                        <span className="text-2xl flex-shrink-0">
-                          {getNotificationIcon(notification.type)}
-                        </span>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-start justify-between gap-2">
-                            <p className="text-sm font-medium text-gray-900 dark:text-white">
-                              {notification.title}
+                        }}
+                      >
+                        <div className="flex gap-3">
+                          <span className="text-2xl flex-shrink-0">
+                            {getNotificationIcon(notification.type)}
+                          </span>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-start justify-between gap-2">
+                              <p className="text-sm font-medium text-gray-900 dark:text-white">
+                                {notification.title}
+                              </p>
+                              {!notification.is_read && (
+                                <span className="w-2 h-2 bg-brand-500 rounded-full flex-shrink-0 mt-1"></span>
+                              )}
+                            </div>
+                            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1 line-clamp-2">
+                              {notification.message}
                             </p>
-                            {!notification.is_read && (
-                              <span className="w-2 h-2 bg-brand-500 rounded-full flex-shrink-0 mt-1"></span>
-                            )}
+                            <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">
+                              {formatTime(notification.created_at)}
+                            </p>
                           </div>
-                          <p className="text-sm text-gray-600 dark:text-gray-400 mt-1 line-clamp-2">
-                            {notification.message}
-                          </p>
-                          <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">
-                            {formatTime(notification.created_at)}
-                          </p>
                         </div>
-                      </div>
-                    </motion.div>
+                      </motion.div>
+                    </Link>
                   ))}
                 </div>
               )}

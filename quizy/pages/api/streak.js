@@ -1,5 +1,6 @@
 import { query } from '../../lib/db'
 import { verifyToken } from '../../lib/jwt'
+import { notifyStreak } from '../../lib/notifications'
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') {
@@ -75,6 +76,11 @@ export default async function handler(req, res) {
     )
 
     const currentStreak = parseInt(streakResult.rows[0]?.current_streak || 0)
+
+    // Crear notificación de racha en hitos importantes
+    if ([1, 3, 7, 14, 30, 60, 90, 180, 365].includes(currentStreak)) {
+      await notifyStreak(userId, currentStreak)
+    }
 
     // Get longest streak
     const longestStreakResult = await query(

@@ -3,6 +3,7 @@ import path from 'path'
 import { createServerSupabase } from '../../lib/supabaseClient'
 import db from '../../lib/db'
 import { applyRateLimit } from '../../lib/rate-limit'
+import { notifyAchievement, notifyRankingUpdate } from '../../lib/notifications'
 
 const attemptsFile = path.join(process.cwd(),'data','attempts.json')
 
@@ -148,6 +149,99 @@ export default async function handler(req,res){
         
         const q = 'INSERT INTO attempts(bank, user_name, user_email, score, answers, subject_id, bank_name) VALUES($1,$2,$3,$4,$5,$6,$7) RETURNING *'
         const result = await db.query(q, row)
+        
+        // Crear notificaciones de logros
+        const attemptData = result.rows[0]
+        const userName = body.user_name
+        
+        if(userName){
+          // Obtener user_id
+          const userResult = await db.query('SELECT id FROM users WHERE name = $1', [userName])
+          if(userResult.rows.length > 0){
+            const userId = userResult.rows[0].id
+            const score = body.score || 0
+            
+            // Quiz perfecto (100%)
+            if(score === 100){
+              await notifyAchievement(userId, 'perfect_quiz', `Obtuviste 100% en ${bank_name || body.bank}`, score)
+            }
+            
+            // Contar total de attempts del usuario
+            const totalResult = await db.query(
+              'SELECT COUNT(*) as total FROM attempts WHERE user_name = $1',
+              [userName]
+            )
+            const totalAttempts = parseInt(totalResult.rows[0]?.total || 0)
+            
+            // Hitos de cantidad
+            if([10, 50, 100, 200, 500].includes(totalAttempts)){
+              await notifyAchievement(userId, `milestone_${totalAttempts}`, '', totalAttempts)
+            }
+            
+            // Verificar racha de quizzes perfectos
+            const recentResult = await db.query(
+              `SELECT score FROM attempts 
+               WHERE user_name = $1 
+               ORDER BY created_at DESC 
+               LIMIT 5`,
+              [userName]
+            )
+            
+            const recentScores = recentResult.rows.map(r => r.score)
+            const perfectStreak = recentScores.filter(s => s === 100).length
+            
+            if(perfectStreak >= 3 && recentScores.every(s => s === 100)){
+              await notifyAchievement(userId, 'perfect_streak', '', perfectStreak)
+            }
+            
+            // Verificar cambio en ranking (solo cada 5 intentos para no saturar)
+            if(totalAttempts % 5 === 0){
+              // Obtener posición actual en ranking general
+              const rankingResult = await db.query(`
+                WITH user_ranking AS (
+                  SELECT 
+                    a.user_name,
+                    SUM(a.score) as total_score,
+                    ROW_NUMBER() OVER (ORDER BY SUM(a.score) DESC) as position
+                  FROM attempts a
+                  LEFT JOIN question_banks qb ON (
+                    CASE 
+                      WHEN a.bank LIKE 'db_%' THEN qb.id = CAST(REPLACE(a.bank, 'db_', '') AS INTEGER)
+                      ELSE qb.name = UPPER(a.bank)
+                    END
+                  )
+                  WHERE a.user_name IS NOT NULL
+                    AND a.user_name != 'admin'
+                    AND (qb.is_published = true OR a.bank NOT LIKE 'db_%')
+                  GROUP BY a.user_name
+                )
+                SELECT position FROM user_ranking WHERE user_name = $1
+              `, [userName])
+              
+              if(rankingResult.rows.length > 0){
+                const currentPosition = parseInt(rankingResult.rows[0].position)
+                
+                // Obtener última posición guardada
+                const lastPosResult = await db.query(
+                  'SELECT last_ranking_position FROM users WHERE id = $1',
+                  [userId]
+                )
+                
+                const lastPosition = lastPosResult.rows[0]?.last_ranking_position
+                
+                if(lastPosition && lastPosition !== currentPosition && Math.abs(lastPosition - currentPosition) >= 3){
+                  await notifyRankingUpdate(userId, lastPosition, currentPosition, 'general')
+                }
+                
+                // Actualizar última posición
+                await db.query(
+                  'UPDATE users SET last_ranking_position = $1 WHERE id = $2',
+                  [currentPosition, userId]
+                )
+              }
+            }
+          }
+        }
         
         return res.status(201).json({ok:true, data: result.rows})
       }catch(e){
