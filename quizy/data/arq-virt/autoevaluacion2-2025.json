@@ -1,0 +1,213 @@
+[
+  {
+    "id": 1,
+    "question": "¿A cuál de las siguientes técnicas se debería acudir como último recurso para que el hipervisor pueda tener más memoria RAM disponible?",
+    "options": [
+      { "key": "a", "text": "Compresión de memoria" },
+      { "key": "b", "text": "Transparent Page Sharing" },
+      { "key": "c", "text": "Swap" },
+      { "key": "d", "text": "Ballooning" }
+    ],
+    "answers": ["c"]
+  },
+  {
+    "id": 2,
+    "question": "¿Qué tipo(s) de instrucciones son más lentas de ejecutar en una máquina virtual que en una máquina real?",
+    "options": [
+      { "key": "a", "text": "Las operaciones de Entrada/Salida" },
+      { "key": "b", "text": "Las de control de flujo, como saltos a rutinas de usuario" },
+      { "key": "c", "text": "Aquellas que hacen un uso intensivo de la CPU" },
+      { "key": "d", "text": "Privilegiadas" }
+    ],
+    "answers": ["a", "d"]
+  },
+  {
+    "id": 3,
+    "question": "¿Qué ventaja(s) tiene implementar el disco duro de una máquina virtual sobre un fichero?",
+    "options": [
+      { "key": "a", "text": "Mayor velocidad de acceso y menor latencia" },
+      { "key": "b", "text": "Puede ahorrar espacio al asignar sólo el espacio usado" },
+      { "key": "c", "text": "Es más fácil de portar la máquina virtual" },
+      { "key": "d", "text": "Menor retardo en las operaciones de acceso" }
+    ],
+    "answers": ["b", "c"]
+  },
+  {
+    "id": 4,
+    "question": "Tenemos 3 máquinas virtuales con los siguientes shares: MV1 = 1, MV2 = 2, MV3 = 4. Si la capacidad de memoria agregada del servidor es 14 GB ¿Qué cantidad de memoria obtendrá cada una?",
+    "options": [
+      { "key": "a", "text": "MV1 = 4 GB; MV2 = 4 GB; MV3 = 6 GB" },
+      { "key": "b", "text": "MV1 = 8 GB; MV2 = 4 GB; MV3 = 2 GB" },
+      { "key": "c", "text": "MV1 = 2 GB; MV2 = 4 GB; MV3 = 8 GB" },
+      { "key": "d", "text": "MV1 = 1 GB; MV2 = 2 GB; MV3 = 4 GB" }
+    ],
+    "answers": ["c"]
+  },
+  {
+    "id": 5,
+    "question": "¿Cuál de las siguientes afirmaciones sobre DPM (Distributed Power Management) es falsa?",
+    "options": [
+      { "key": "a", "text": "Permite migrar máquinas y apagar los host que las ejecutaban cuando la carga es baja" },
+      { "key": "b", "text": "Permite arrancar host para migrar máquinas cuando la carga supera un límite" },
+      { "key": "c", "text": "Busca reducir el consumo sin perder prestaciones" },
+      { "key": "d", "text": "No es compatible con el Green Computing" }
+    ],
+    "answers": ["d"]
+  },
+  {
+    "id": 6,
+    "question": "¿Cuál de las siguientes no es una función del servidor de administración de un Datacenter?",
+    "options": [
+      { "key": "a", "text": "Control de acceso" },
+      { "key": "b", "text": "Asignación compartida de los recursos de los servidores del DC" },
+      { "key": "c", "text": "Ofrecer un entorno completo de desarrollo (edición+ejecución+depuración)" },
+      { "key": "d", "text": "Monitorización de prestaciones" }
+    ],
+    "answers": ["c"]
+  },
+  {
+    "id": 7,
+    "question": "¿Cuál(es) de estas ventajas son aportadas o añadidas por la tecnología de virtualización si se usa un solo host físico?",
+    "options": [
+      { "key": "a", "text": "Compatibilidad con hardware antiguo" },
+      { "key": "b", "text": "Alta disponibilidad" },
+      { "key": "c", "text": "Consolidación de servidores virtuales para aumentar la eficiencia" },
+      { "key": "d", "text": "Tolerancia a fallos del host físico" },
+      { "key": "e", "text": "Seguridad mediante compartimentación" },
+      { "key": "f", "text": "Balanceo de carga" },
+      { "key": "g", "text": "Migración en vivo" }
+    ],
+    "answers": ["a", "c", "e"]
+  },
+  {
+    "id": 8,
+    "question": "Tenemos dos servidores físicos x86, cada uno con 4 CPUs dual-core @4GHz y 32GB de memoria RAM. ¿Cuáles son los recursos totales que aportarán a un pool estos dos servidores?",
+    "options": [
+      { "key": "a", "text": "64 GHz de cómputo y 32 GB de memoria" },
+      { "key": "b", "text": "32 GHz de cómputo y 32 GB de memoria" },
+      { "key": "c", "text": "32 GHz de cómputo y 64 GB de memoria" },
+      { "key": "d", "text": "64 GHz de cómputo y 64 GB de memoria" }
+    ],
+    "answers": ["d"]
+  },
+  {
+    "id": 9,
+    "question": "La tecnología storage vMotion de VMware permite:",
+    "options": [
+      { "key": "a", "text": "Es la principal fuente de problemas con el storage tiering" },
+      { "key": "b", "text": "Ampliar el tamaño del disco duro de una MV sin apagarla" },
+      { "key": "c", "text": "No existe actualmente ninguna tecnología con ese nombre" },
+      { "key": "d", "text": "Migrar en vivo el almacenamiento de una MV sin parar" }
+    ],
+    "answers": ["d"]
+  },
+  {
+    "id": 10,
+    "question": "De las siguientes, indicar qué operaciones son perjudiciales para el rendimiento del disco duro físico:",
+    "options": [
+      { "key": "a", "text": "Compartición del disco entre varias máquinas virtuales" },
+      { "key": "b", "text": "Arrancar simultáneamente todos los servidores" },
+      { "key": "c", "text": "Reemplazar un disco magnético por un SSD" },
+      { "key": "d", "text": "Reordenación de comandos como hace SCSI" }
+    ],
+    "answers": ["a", "b"]
+  },
+  {
+    "id": 11,
+    "question": "Si el working set de una MV es menor que la memoria que tiene asignada, ¿se puede producir thrashing?",
+    "options": [
+      { "key": "a", "text": "El working set nunca puede ser menor que la memoria asignada" },
+      { "key": "b", "text": "Sí" },
+      { "key": "c", "text": "No" }
+    ],
+    "answers": ["c"]
+  },
+  {
+    "id": 12,
+    "question": "Indica cuál de las siguientes situaciones se pueden dar en un hipervisor respecto a las máquinas virtuales declaradas en él.",
+    "options": [
+      { "key": "a", "text": "La suma de la memoria mínima garantizada es superior a la memoria física" },
+      { "key": "b", "text": "La memoria física es menor que la suma de las memorias configuradas" },
+      { "key": "c", "text": "La memoria en uso supera la física sin disco" },
+      { "key": "d", "text": "La suma de la memoria accedida supera la memoria física" }
+    ],
+    "answers": ["b", "d"]
+  },
+  {
+    "id": 13,
+    "question": "¿Qué nos permite la página web de bienvenida de un host VMware ESXi?",
+    "options": [
+      { "key": "a", "text": "Navegar por los ficheros del datastore" },
+      { "key": "b", "text": "Consultar métricas de rendimiento" },
+      { "key": "c", "text": "Descargar el cliente gráfico adecuado" },
+      { "key": "d", "text": "Encender y apagar máquinas" }
+    ],
+    "answers": ["a", "c"]
+  },
+  {
+    "id": 14,
+    "question": "Generalmente, un datastore de un servidor VMware ESXi 5.x es un volumen formateado en:",
+    "options": [
+      { "key": "a", "text": "VMFS" },
+      { "key": "b", "text": "iSCSI" },
+      { "key": "c", "text": "FAT" },
+      { "key": "d", "text": "NTFS" }
+    ],
+    "answers": ["a"]
+  },
+  {
+    "id": 15,
+    "question": "Marcar cuál(es) de las siguientes afirmaciones sería una definición informal de container.",
+    "options": [
+      { "key": "a", "text": "Un chroot liviano" },
+      { "key": "b", "text": "Una máquina virtual con esteroides" },
+      { "key": "c", "text": "Una máquina virtual liviana" },
+      { "key": "d", "text": "Un chroot con esteroides" }
+    ],
+    "answers": ["c", "d"]
+  },
+  {
+    "id": 16,
+    "question": "Una máquina virtual en comparación con un contenedor:",
+    "options": [
+      { "key": "a", "text": "Es más segura frente ataques de terceros" },
+      { "key": "b", "text": "Arranca más rápidamente" },
+      { "key": "c", "text": "Ocupa prácticamente el mismo espacio en disco" },
+      { "key": "d", "text": "Es más lenta en arrancar" }
+    ],
+    "answers": ["a", "d"]
+  },
+  {
+    "id": 17,
+    "question": "Marca cuál(es) de las siguientes operaciones podemos realizar con un contenedor:",
+    "options": [
+      { "key": "a", "text": "commit" },
+      { "key": "b", "text": "pull" },
+      { "key": "c", "text": "build" },
+      { "key": "d", "text": "stop" }
+    ],
+    "answers": ["a", "d"]
+  },
+  {
+    "id": 18,
+    "question": "¿Qué indica la entrada FROM en un Dockerfile?",
+    "options": [
+      { "key": "a", "text": "La dirección desde donde se descargó la imagen" },
+      { "key": "b", "text": "El autor del fichero" },
+      { "key": "c", "text": "La imagen base usada" },
+      { "key": "d", "text": "Que es la primera línea del fichero" }
+    ],
+    "answers": ["c"]
+  },
+  {
+    "id": 19,
+    "question": "Marca las afirmaciones correctas respecto a la orquestación de contenedores:",
+    "options": [
+      { "key": "a", "text": "Uno de sus objetivos es lograr el balanceo de carga" },
+      { "key": "b", "text": "En Docker se declara en un único archivo yml" },
+      { "key": "c", "text": "Es necesario un clúster siempre" },
+      { "key": "d", "text": "Es necesaria cuando la aplicación está dividida en varios contenedores" }
+    ],
+    "answers": ["b", "d"]
+  }
+]
