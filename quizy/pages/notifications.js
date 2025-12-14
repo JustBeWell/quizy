@@ -107,7 +107,8 @@ export default function NotificationsPage() {
       'new_content': '📚',
       'achievement': '🎉',
       'friend_activity': '👥',
-      'system': '💬'
+      'system': '💬',
+      'admin_broadcast': '📢'
     }
     return icons[type] || '📬'
   }

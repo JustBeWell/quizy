@@ -213,6 +213,18 @@ export default function AdminDashboard() {
             </motion.a>
           </Link>
 
+          <Link href="/admin/notifications">
+            <motion.a
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="block p-6 bg-white rounded-xl border-2 border-gray-200 hover:border-orange-500 hover:shadow-lg transition-all cursor-pointer"
+            >
+              <div className="text-3xl mb-2">🔔</div>
+              <h3 className="font-semibold text-lg mb-1">Notificaciones</h3>
+              <p className="text-sm text-gray-600">Enviar avisos a los usuarios</p>
+            </motion.a>
+          </Link>
+
           <Link href="/admin/attempts">
             <motion.a
               whileHover={{ scale: 1.03, y: -2 }}
