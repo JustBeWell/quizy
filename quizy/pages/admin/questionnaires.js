@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/router'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
@@ -13,6 +13,22 @@ export default function AdminQuestionnaires() {
   const [loadingSubjects, setLoadingSubjects] = useState(true)
   const [showForm, setShowForm] = useState(false)
   const [editingId, setEditingId] = useState(null)
+  
+  // Import JSON state
+  const [showImportModal, setShowImportModal] = useState(false)
+  const [importData, setImportData] = useState({
+    name: '',
+    description: '',
+    subject_id: '',
+    is_published: false,
+    jsonContent: null,
+    fileName: ''
+  })
+  const [importError, setImportError] = useState(null)
+  const [importing, setImporting] = useState(false)
+  const [jsonPreview, setJsonPreview] = useState(null)
+  const fileInputRef = useRef(null)
+  
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -292,6 +308,132 @@ export default function AdminQuestionnaires() {
     setShowForm(true)
   }
 
+  // ========== IMPORT JSON FUNCTIONS ==========
+  
+  function handleFileSelect(e) {
+    const file = e.target.files[0]
+    if (!file) return
+    
+    setImportError(null)
+    setJsonPreview(null)
+    
+    if (!file.name.endsWith('.json')) {
+      setImportError('Por favor selecciona un archivo .json')
+      return
+    }
+    
+    const reader = new FileReader()
+    reader.onload = (event) => {
+      try {
+        const content = JSON.parse(event.target.result)
+        
+        // Validar que sea un array de preguntas
+        if (!Array.isArray(content)) {
+          setImportError('El JSON debe ser un array de preguntas')
+          return
+        }
+        
+        if (content.length === 0) {
+          setImportError('El JSON no contiene preguntas')
+          return
+        }
+        
+        // Vista previa
+        setJsonPreview({
+          totalQuestions: content.length,
+          sampleQuestion: content[0],
+          hasValidStructure: content.every(q => q.question && q.options && q.answers)
+        })
+        
+        // Extraer nombre del archivo
+        const baseName = file.name.replace(/_qna\.json$/, '').replace(/\.json$/, '').replace(/_/g, ' ')
+        
+        setImportData({
+          ...importData,
+          jsonContent: content,
+          fileName: file.name,
+          name: importData.name || baseName.toUpperCase()
+        })
+        
+      } catch (err) {
+        setImportError('Error al leer el JSON: ' + err.message)
+      }
+    }
+    reader.readAsText(file)
+  }
+  
+  async function handleImportSubmit(e) {
+    e.preventDefault()
+    
+    if (!importData.jsonContent) {
+      setImportError('Por favor selecciona un archivo JSON')
+      return
+    }
+    
+    if (!importData.name.trim()) {
+      setImportError('El nombre del cuestionario es obligatorio')
+      return
+    }
+    
+    setImporting(true)
+    setImportError(null)
+    
+    try {
+      const token = getToken()
+      const response = await fetch('/api/admin/import-questionnaire', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: importData.name.trim(),
+          description: importData.description.trim() || null,
+          subject_id: importData.subject_id || null,
+          questions: importData.jsonContent,
+          is_published: importData.is_published
+        })
+      })
+      
+      const data = await response.json()
+      
+      if (response.ok) {
+        alert(`✅ ${data.message}\n\n📊 ${data.questionnaire.questions_count} preguntas importadas`)
+        setShowImportModal(false)
+        resetImportForm()
+        loadData()
+      } else {
+        if (data.details && Array.isArray(data.details)) {
+          setImportError(`${data.error}:\n${data.details.join('\n')}`)
+        } else {
+          setImportError(data.error)
+        }
+      }
+    } catch (error) {
+      setImportError('Error de conexión: ' + error.message)
+    } finally {
+      setImporting(false)
+    }
+  }
+  
+  function resetImportForm() {
+    setImportData({
+      name: '',
+      description: '',
+      subject_id: '',
+      is_published: false,
+      jsonContent: null,
+      fileName: ''
+    })
+    setImportError(null)
+    setJsonPreview(null)
+    if (fileInputRef.current) {
+      fileInputRef.current.value = ''
+    }
+  }
+
+  // ========== END IMPORT JSON FUNCTIONS ==========
+
   async function handleTogglePublish(id, currentPublishedState) {
     const action = currentPublishedState ? 'unpublish' : 'publish'
     const confirmMessage = currentPublishedState
@@ -354,18 +496,225 @@ export default function AdminQuestionnaires() {
       </div>
 
       {!showForm && (
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => {
-            resetForm()
-            setShowForm(true)
-          }}
-          className="mb-6 px-6 py-3 bg-blue-700 dark:bg-blue-600 text-white rounded-lg hover:bg-blue-800 dark:hover:bg-blue-700 transition-colors font-semibold"
-        >
-          + Nuevo Cuestionario
-        </motion.button>
+        <div className="flex gap-3 mb-6">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => {
+              resetForm()
+              setShowForm(true)
+            }}
+            className="px-6 py-3 bg-blue-700 dark:bg-blue-600 text-white rounded-lg hover:bg-blue-800 dark:hover:bg-blue-700 transition-colors font-semibold"
+          >
+            + Nuevo Cuestionario
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => {
+              resetImportForm()
+              setShowImportModal(true)
+            }}
+            className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-semibold flex items-center gap-2"
+          >
+            📥 Importar JSON
+          </motion.button>
+        </div>
       )}
+
+      {/* Import JSON Modal */}
+      <AnimatePresence>
+        {showImportModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+            onClick={() => setShowImportModal(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            >
+              <div className="p-6 border-b border-gray-200 dark:border-gray-700">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                  📥 Importar Cuestionario desde JSON
+                </h2>
+                <p className="text-gray-600 dark:text-gray-400 mt-1">
+                  Sube un archivo JSON con la estructura de preguntas
+                </p>
+              </div>
+
+              <form onSubmit={handleImportSubmit} className="p-6 space-y-4">
+                {/* File Input */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    Archivo JSON *
+                  </label>
+                  <div className="flex items-center gap-3">
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      accept=".json"
+                      onChange={handleFileSelect}
+                      className="hidden"
+                      id="json-file-input"
+                    />
+                    <label
+                      htmlFor="json-file-input"
+                      className="flex-1 px-4 py-3 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:border-purple-500 transition-colors text-center"
+                    >
+                      {importData.fileName ? (
+                        <span className="text-purple-600 font-medium">📄 {importData.fileName}</span>
+                      ) : (
+                        <span className="text-gray-500">Haz clic para seleccionar archivo .json</span>
+                      )}
+                    </label>
+                  </div>
+                </div>
+
+                {/* JSON Preview */}
+                {jsonPreview && (
+                  <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 text-sm">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className={jsonPreview.hasValidStructure ? 'text-green-600' : 'text-yellow-600'}>
+                        {jsonPreview.hasValidStructure ? '✅' : '⚠️'}
+                      </span>
+                      <span className="font-medium">
+                        {jsonPreview.totalQuestions} preguntas encontradas
+                      </span>
+                    </div>
+                    <div className="text-gray-600 dark:text-gray-400">
+                      <p className="font-medium mb-1">Vista previa (primera pregunta):</p>
+                      <p className="truncate">{jsonPreview.sampleQuestion?.question}</p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Error Message */}
+                {importError && (
+                  <div className="bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-300 p-4 rounded-lg text-sm whitespace-pre-wrap">
+                    {importError}
+                  </div>
+                )}
+
+                {/* Name */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    Nombre del cuestionario *
+                  </label>
+                  <input
+                    type="text"
+                    value={importData.name}
+                    onChange={(e) => setImportData({ ...importData, name: e.target.value })}
+                    placeholder="Ej: PARCIAL2_2024"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                    required
+                  />
+                </div>
+
+                {/* Description */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    Descripción (opcional)
+                  </label>
+                  <input
+                    type="text"
+                    value={importData.description}
+                    onChange={(e) => setImportData({ ...importData, description: e.target.value })}
+                    placeholder="Ej: Examen parcial 2 - Curso 2024"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                  />
+                </div>
+
+                {/* Subject */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    Asignatura
+                  </label>
+                  <select
+                    value={importData.subject_id}
+                    onChange={(e) => setImportData({ ...importData, subject_id: e.target.value })}
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                  >
+                    <option value="">Sin asignatura</option>
+                    {subjects.map(s => (
+                      <option key={s.id} value={s.id}>{s.name}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Publish Toggle */}
+                <div className="flex items-center gap-3">
+                  <input
+                    type="checkbox"
+                    id="import-publish"
+                    checked={importData.is_published}
+                    onChange={(e) => setImportData({ ...importData, is_published: e.target.checked })}
+                    className="w-5 h-5 rounded border-gray-300"
+                  />
+                  <label htmlFor="import-publish" className="text-sm text-gray-700 dark:text-gray-300">
+                    Publicar inmediatamente (visible para usuarios)
+                  </label>
+                </div>
+
+                {/* Structure Help */}
+                <div className="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-4 text-sm">
+                  <p className="font-medium text-blue-800 dark:text-blue-300 mb-2">📋 Estructura esperada del JSON:</p>
+                  <pre className="text-xs text-blue-700 dark:text-blue-400 overflow-x-auto">
+{`[
+  {
+    "id": 1,
+    "question": "Texto de la pregunta",
+    "options": [
+      { "key": "a", "text": "Opción A" },
+      { "key": "b", "text": "Opción B" }
+    ],
+    "answers": ["a"]
+  }
+]`}
+                  </pre>
+                </div>
+
+                {/* Buttons */}
+                <div className="flex justify-end gap-3 pt-4">
+                  <motion.button
+                    type="button"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => setShowImportModal(false)}
+                    className="px-6 py-3 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                  >
+                    Cancelar
+                  </motion.button>
+                  <motion.button
+                    type="submit"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    disabled={importing || !importData.jsonContent}
+                    className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                  >
+                    {importing ? (
+                      <>
+                        <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                        </svg>
+                        Importando...
+                      </>
+                    ) : (
+                      <>📥 Importar Cuestionario</>
+                    )}
+                  </motion.button>
+                </div>
+              </form>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <AnimatePresence>
         {showForm && (
