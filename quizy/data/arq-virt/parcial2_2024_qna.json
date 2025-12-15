@@ -1,0 +1,337 @@
+[
+  {
+    "id": 1,
+    "question": "Si el working set de una máquina virtual es mayor que su memoria garantizada (la mínima que se reserva por el hipervisor), ¿qué ocurrirá?",
+    "options": [
+      { "key": "a", "text": "Se producirá thrashing de manera inevitable" },
+      { "key": "b", "text": "El que se produzca thrashing dependerá de la demanda de memoria del resto de máquinas virtuales" },
+      { "key": "c", "text": "Es una situación imposible" }
+    ],
+    "answers": ["b"]
+  },
+  {
+    "id": 2,
+    "question": "¿Qué nos ofrece la virtualización para realizar una computación ecológica o Green Computing?",
+    "options": [
+      { "key": "a", "text": "Ahorrar toda la energía consumida al ejecutar todo con máquinas virtuales" },
+      { "key": "b", "text": "Usar el modo de ejecución de baja energía del sistema operativo guest" },
+      { "key": "c", "text": "Permite desplegar terminales ligeros que consumen mucho menos que el puesto de trabajo clásico" },
+      { "key": "d", "text": "Permite concentrar varios sistemas en un servidor para consumir menos" }
+    ],
+    "answers": ["c", "d"]
+  },
+  {
+    "id": 3,
+    "question": "¿Qué acciones tomarías para fomentar la compartición de páginas de RAM en el hipervisor (TPS)?",
+    "options": [
+      { "key": "a", "text": "Usar plantillas (templates) para crear MVs con una base común" },
+      { "key": "b", "text": "Activar los salvapantallas durante los periodos inactivos de la CPU" },
+      { "key": "c", "text": "Evitar el uso de punteros en el código" },
+      { "key": "d", "text": "Ubicar máquinas con el mismo sistema operativo en el mismo servidor" }
+    ],
+    "answers": ["a", "d"]
+  },
+  {
+    "id": 4,
+    "question": "¿Qué operación de las siguientes podemos realizar desde el cliente VMware vSphere 5.x, sin vCenter disponible?",
+    "options": [
+      { "key": "a", "text": "Crear un full clone de una máquina virtual" },
+      { "key": "b", "text": "Borrar completamente una máquina virtual" },
+      { "key": "c", "text": "Encender/apagar/resetear una máquina virtual" },
+      { "key": "d", "text": "Crear un linked clone de una máquina virtual" },
+      { "key": "e", "text": "Crear una máquina virtual" }
+    ],
+    "answers": ["b", "c"]
+  },
+  {
+    "id": 5,
+    "question": "¿Qué nos permite la página web de bienvenida de un host VMware ESXi?",
+    "options": [
+      { "key": "a", "text": "Encender y apagar máquinas" },
+      { "key": "b", "text": "Descargar el cliente gráfico adecuado para la versión de ESXi" },
+      { "key": "c", "text": "Navegar por los ficheros del datastore del servidor" },
+      { "key": "d", "text": "Consultar métricas de rendimiento del servidor" }
+    ],
+    "answers": ["b", "c", "d"]
+  },
+  {
+    "id": 6,
+    "question": "¿Cuál es la principal utilidad de la agregación de los recursos heterogéneos de un Datacenter virtual?",
+    "options": [
+      { "key": "a", "text": "La asignación estática de recursos" },
+      { "key": "b", "text": "Su compartición de modo transparente al hardware subyacente" },
+      { "key": "c", "text": "La reducción de la carga del hipervisor" },
+      { "key": "d", "text": "La creación más rápida de máquinas virtuales y clones" }
+    ],
+    "answers": ["b"]
+  },
+  {
+    "id": 7,
+    "question": "Indica cuál(es) de las siguientes afirmaciones referentes a la paravirtualización y los drivers optimizados son ciertas:",
+    "options": [
+      { "key": "a", "text": "La paravirtualización reduce el número de excepciones en la implementación de la E/S" },
+      { "key": "b", "text": "La paravirtualización requiere reescribir el kernel del sistema operativo" },
+      { "key": "c", "text": "Los drivers optimizados permiten optimizaciones más simples al dialogar con el hardware" },
+      { "key": "d", "text": "La paravirtualización es más sencilla de implementar que los drivers optimizados" }
+    ],
+    "answers": ["a", "b"]
+  },
+  {
+    "id": 8,
+    "question": "En terminología VMware, ¿a qué se denomina resource pool?",
+    "options": [
+      { "key": "a", "text": "El directorio donde se encuentran ubicadas las máquinas" },
+      { "key": "b", "text": "Un grupo de máquinas que comparten un virtual switch ethernet" },
+      { "key": "c", "text": "Una unidad organizativa de máquinas virtuales" },
+      { "key": "d", "text": "Un grupo de máquinas que se reparten recursos de memoria y CPU, limitados por el administrador" }
+    ],
+    "answers": ["d"]
+  },
+  {
+    "id": 9,
+    "question": "¿Qué tipo de aplicaciones pueden ser ejecutadas en una máquina virtual sin una pérdida significativa de rendimiento?",
+    "options": [
+      { "key": "a", "text": "Cores bound" },
+      { "key": "b", "text": "No timer bound" },
+      { "key": "c", "text": "I/O bound" },
+      { "key": "d", "text": "CPU bound" }
+    ],
+    "answers": ["d"]
+  },
+  {
+    "id": 10,
+    "question": "Indica cuál(es) de las siguientes afirmaciones referentes al overcommitting son ciertas:",
+    "options": [
+      { "key": "a", "text": "No garantiza la asignación de recursos cuando se necesitan" },
+      { "key": "b", "text": "No es aconsejable su uso en un entorno de virtualización" },
+      { "key": "c", "text": "Nunca asigna más recursos virtuales que los que existen realmente" },
+      { "key": "d", "text": "Se basa en que los servidores suelen estar inactivos la mayor parte del tiempo" }
+    ],
+    "answers": ["a", "d"]
+  },
+  {
+    "id": 11,
+    "question": "Tenemos 3 máquinas virtuales con los siguientes shares: MV1 = 1, MV2 = 1, MV3 = 2. Si la capacidad de cómputo agregada del servidor es de 16 GHz, ¿qué cantidad de capacidad de proceso de la CPU obtendrá cada una?",
+    "options": [
+      { "key": "a", "text": "MV1 = 4 GHz; MV2 = 8 GHz; MV3 = 4 GHz" },
+      { "key": "b", "text": "MV1 = MV2 = 8 GHz; MV3 = 4 GHz" },
+      { "key": "c", "text": "MV1 = MV2 = 4 GHz; MV3 = 8 GHz" },
+      { "key": "d", "text": "MV1 = MV2 = 6 GHz; MV3 = 4 GHz" }
+    ],
+    "answers": ["c"]
+  },
+  {
+    "id": 12,
+    "question": "Si tenemos un presupuesto determinado para la compra de servidores ¿cuál es el principal inconveniente de comprar pocos servidores potentes frente a muchos menos potentes?",
+    "options": [
+      { "key": "a", "text": "Es más difícil conseguir una buena tasa de consolidación de servidores virtuales" },
+      { "key": "b", "text": "Los precios de los servidores crecen exponencialmente con su potencia" },
+      { "key": "c", "text": "Son más difíciles de administrar" },
+      { "key": "d", "text": "El gasto en la adquisición de licencias del software" }
+    ],
+    "answers": ["a"]
+  },
+  {
+    "id": 13,
+    "question": "¿Qué ventaja(s) tiene implementar el disco duro de una máquina virtual sobre un fichero?",
+    "options": [
+      { "key": "a", "text": "Puede ahorrar espacio al asignar sólo el espacio usado" },
+      { "key": "b", "text": "Es más fácil de portar la máquina virtual" },
+      { "key": "c", "text": "Mayor velocidad de acceso y menor latencia" },
+      { "key": "d", "text": "Menor retardo en las operaciones de acceso" }
+    ],
+    "answers": ["a", "b"]
+  },
+  {
+    "id": 14,
+    "question": "Con un pool de recursos dividido en dos clusters, uno con 2 servidores y otro con 3 servidores. Si cada servidor aporta 3GHz y 4GB de RAM, ¿qué recursos quedarían disponibles para cada cluster?",
+    "options": [
+      { "key": "a", "text": "El total de los recursos, la división sólo es administrativa" },
+      { "key": "b", "text": "Con este reparto, no quedan recursos libres para profesorado" },
+      { "key": "c", "text": "Los mismos que para laboratorios" },
+      { "key": "d", "text": "Dependerá de la carga de las máquinas virtuales" }
+    ],
+    "answers": ["d"]
+  },
+  {
+    "id": 15,
+    "question": "Si el working set de una MV es menor que la memoria que tiene asignada, ¿se puede producir thrashing?",
+    "options": [
+      { "key": "a", "text": "Sí" },
+      { "key": "b", "text": "El working set nunca podrá ser menor" },
+      { "key": "c", "text": "No" }
+    ],
+    "answers": ["c"]
+  },
+  {
+    "id": 16,
+    "question": "¿Cuál de los siguientes no es un método de acceso al servidor de administración de VMware?",
+    "options": [
+      { "key": "a", "text": "Acceso por web" },
+      { "key": "b", "text": "Conexión por terminal" },
+      { "key": "c", "text": "VI Client" },
+      { "key": "d", "text": "Conexión por telnet" }
+    ],
+    "answers": ["d"]
+  },
+  {
+    "id": 17,
+    "question": "¿Cuál de las siguientes técnicas es la preferible a usar para que el hipervisor gane memoria RAM disponible?",
+    "options": [
+      { "key": "a", "text": "Transparent Page Sharing" },
+      { "key": "b", "text": "Swap" },
+      { "key": "c", "text": "Ballooning" },
+      { "key": "d", "text": "Compresión de memoria" }
+    ],
+    "answers": ["a"]
+  },
+  {
+    "id": 18,
+    "question": "¿Qué es el VMFS?",
+    "options": [
+      { "key": "a", "text": "El archivo de configuración de una máquina virtual" },
+      { "key": "b", "text": "El archivo con el disco duro de una máquina virtual" },
+      { "key": "c", "text": "El servidor de archivos de máquinas virtuales" },
+      { "key": "d", "text": "Un sistema de archivos en cluster" }
+    ],
+    "answers": ["d"]
+  },
+  {
+    "id": 19,
+    "question": "¿Cuál(es) de estas ventajas son aportadas o añadidas por la tecnología de virtualización si se usa un solo host físico?",
+    "options": [
+      { "key": "a", "text": "Migración en vivo" },
+      { "key": "b", "text": "Consolidación de servidores virtuales" },
+      { "key": "c", "text": "Alta disponibilidad" },
+      { "key": "d", "text": "Seguridad mediante compartimentación" },
+      { "key": "e", "text": "Compatibilidad con hardware antiguo" },
+      { "key": "f", "text": "Balanceo de carga" },
+      { "key": "g", "text": "Tolerancia a fallos del host" }
+    ],
+    "answers": ["b", "d", "e"]
+  },
+  {
+    "id": 20,
+    "question": "En un host ESXi, al ejecutar un comando para encender una MV sin RAM suficiente, ¿qué ocurre?",
+    "options": [
+      { "key": "a", "text": "Se apagará el número mínimo de MVs" },
+      { "key": "b", "text": "El hipervisor entrará en kernel panic" },
+      { "key": "c", "text": "Se almacenará en una cola de peticiones" },
+      { "key": "d", "text": "Se imprimirá un mensaje de error y la MV no se encenderá" }
+    ],
+    "answers": ["d"]
+  },
+  {
+    "id": 21,
+    "question": "¿Cuál(es) de las siguientes afirmaciones es verdadera?",
+    "options": [
+      { "key": "a", "text": "Los portátiles son la plataforma ideal para virtualización de servidores" },
+      { "key": "b", "text": "La implementación de Tolerancia a Fallos implica replicación de recursos" },
+      { "key": "c", "text": "Para usar vMotion se necesita almacenamiento DAS" },
+      { "key": "d", "text": "Un disco virtual y un snapshot deben ubicarse en el mismo disco físico" }
+    ],
+    "answers": ["b"]
+  },
+  {
+    "id": 22,
+    "question": "¿Cuál de estas tecnologías consigue restaurar el funcionamiento de una máquina virtual tras un fallo de servidor en menos tiempo?",
+    "options": [
+      { "key": "a", "text": "Migración manual con vMotion" },
+      { "key": "b", "text": "Fault Tolerance" },
+      { "key": "c", "text": "High Availability" },
+      { "key": "d", "text": "Migración automática con vMotion" }
+    ],
+    "answers": ["c"]
+  },
+  {
+    "id": 23,
+    "question": "La tecnología High Availability:",
+    "options": [
+      { "key": "a", "text": "Permite migrar una MV sin interrupción del servicio" },
+      { "key": "b", "text": "Necesita al menos tres servidores físicos" },
+      { "key": "c", "text": "Permite reiniciar rápidamente MVs en un host distinto" },
+      { "key": "d", "text": "Usa una segunda MV shadow copy" }
+    ],
+    "answers": ["c"]
+  },
+  {
+    "id": 24,
+    "question": "Tenemos dos servidores físicos x86 con 4 CPUs dual-core @4GHz y 32GB de RAM. ¿Cuáles son los recursos totales?",
+    "options": [
+      { "key": "a", "text": "64 GHz de cómputo y 64 GB de memoria" },
+      { "key": "b", "text": "32 GHz de cómputo y 32 GB de memoria" },
+      { "key": "c", "text": "32 GHz de cómputo y 64 GB de memoria" },
+      { "key": "d", "text": "64 GHz de cómputo y 32 GB de memoria" }
+    ],
+    "answers": ["a"]
+  },
+  {
+    "id": 25,
+    "question": "¿Cuál de los siguientes aspectos no es relevante a la hora de elegir la configuración de un datacenter?",
+    "options": [
+      { "key": "a", "text": "La planta del edificio" },
+      { "key": "b", "text": "La ubicación del otro datacenter de respaldo" },
+      { "key": "c", "text": "La ubicación del cableado por techo o suelo" },
+      { "key": "d", "text": "La existencia de un ascensor" }
+    ],
+    "answers": ["c"]
+  },
+  {
+    "id": 26,
+    "question": "DRS (Distributed Resource Scheduler):",
+    "options": [
+      { "key": "a", "text": "Asigna dinámicamente las MVs a los hosts según carga" },
+      { "key": "b", "text": "Independiza las MVs de los hosts" },
+      { "key": "c", "text": "Mantiene configuración constante aunque migren" },
+      { "key": "d", "text": "Gestiona hosts de forma independiente" }
+    ],
+    "answers": ["a"]
+  },
+  {
+    "id": 27,
+    "question": "¿Cómo mejorarías la eficiencia de la entrada/salida en tus servidores?",
+    "options": [
+      { "key": "a", "text": "Instalando un kernel paravirtualizado" },
+      { "key": "b", "text": "Usando discos SSD sin sistema operativo" },
+      { "key": "c", "text": "Configurando multipath" },
+      { "key": "d", "text": "Seleccionando adecuadamente los servidores para cargas I/O" }
+    ],
+    "answers": ["a", "c", "d"]
+  },
+  {
+    "id": 28,
+    "question": "¿Cuál(es) de estas ventajas son aportadas por la virtualización si se usa un cluster con dos o más hosts?",
+    "options": [
+      { "key": "a", "text": "Tolerancia a fallos del hardware" },
+      { "key": "b", "text": "Aceleración mediante uso paralelo del hardware" },
+      { "key": "c", "text": "Balanceo de carga" },
+      { "key": "d", "text": "Alta disponibilidad" },
+      { "key": "e", "text": "Independencia del procesador" },
+      { "key": "f", "text": "Reducción del consumo eléctrico sin DPM" }
+    ],
+    "answers": ["a", "b", "c", "d"]
+  },
+  {
+    "id": 29,
+    "question": "Indica cuál de las siguientes situaciones se pueden dar en un hipervisor respecto a las MVs declaradas:",
+    "options": [
+      { "key": "a", "text": "La memoria accedida supera la física" },
+      { "key": "b", "text": "La suma de la memoria garantizada supera la física" },
+      { "key": "c", "text": "La memoria en uso supera la física sin disco" },
+      { "key": "d", "text": "La memoria física es menor que la configurada" }
+    ],
+    "answers": ["a", "d"]
+  },
+  {
+    "id": 30,
+    "question": "La migración en vivo de MVs dentro de un cluster aporta como ventaja(s):",
+    "options": [
+      { "key": "a", "text": "Evitar competencia por recursos" },
+      { "key": "b", "text": "Reducir uso global de CPU y RAM" },
+      { "key": "c", "text": "Tolerancia a fallos del hardware" },
+      { "key": "d", "text": "Desagregar recursos del cluster" },
+      { "key": "e", "text": "Reducir consumo energético total" }
+    ],
+    "answers": ["b", "e"]
+  }
+]
